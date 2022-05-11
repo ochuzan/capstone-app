@@ -1,1 +1,28 @@
-
+#nav{
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1em;
+}
+#nav a{
+    text-decoration: none;
+    color:blue;
+}
+body{
+    background: black;
+}
+#bot{
+    background:blue;
+}
+.News{
+    background: grey;
+}
+.Videos{
+    background: grey;
+}
+#chartContainer{
+    background: grey;
+}

@@ -11,13 +11,13 @@ function App() {
   return (
     <Router>
       <NavBar/>
+      <Bot />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
         <Route path="/videos" element={<Videos />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
-      <Bot />
       <Footer />
     </Router>
   );
