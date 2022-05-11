@@ -20,16 +20,17 @@ function Video() {
 
   console.log(videos)
 
-  const setSearch = (e) =>{
-    setSearchValue(e)
-  }
+  // const setSearch = (e) =>{
+  //   setSearchValue(e)
+  // }
 
   let fetchedVids = videos.map((vid, index)=>{
     return(
         <div className="vid" key={index}>
+          <h4>{vid.snippet.title}</h4>
           <Youtube 
             videoId={vid.id.videoId}
-            opts={{height: "150", width:"150"}}
+            opts={{height: "150", width:"250"}}
           />
         </div>
     )

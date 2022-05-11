@@ -20,9 +20,6 @@ body{
 .articles{
     background: grey;
 }
-.Videos{
-    background: grey;
-}
 #home{
     background: grey;
 }
@@ -31,4 +28,18 @@ body{
 }
 #Education h1{
     color:aqua;
+}
+
+.vids{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* justify-content: space-between; */
+    gap: 5px;
+    margin: 15px;
+}
+.Videos{
+    text-align: center;
+}
+.vid h4{
+    color: aqua;
 }
