@@ -17,12 +17,18 @@ body{
 #bot{
     background:blue;
 }
-.News{
+.articles{
     background: grey;
 }
-.Education{
+.Videos{
     background: grey;
 }
 #home{
     background: grey;
+}
+.news-articles{
+    background: grey;
+}
+#Education h1{
+    color:aqua;
 }

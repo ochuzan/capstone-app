@@ -1,0 +1,16 @@
+.Videos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* .Product{
+    border: solid 1px rgb(255, 253, 240);
+    border-radius: 12px;
+    padding: 2px;
+    gap: 1px;
+    background-color: rgb(179, 189, 206);
+} */
