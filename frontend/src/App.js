@@ -3,7 +3,7 @@ import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import News from "./Components/News";
-import Videos from "./Components/Videos";
+import Education from "./Components/Education";
 import PageNotFound from "./Components/PageNotFound";
 import Bot from "./Components/Bot"
 
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
-        <Route path="/videos" element={<Videos />} />
+        <Route path="/education" element={<Education/>} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
