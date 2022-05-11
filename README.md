@@ -1,1 +1,2 @@
-This project was created by Group 1
+ERD
+<img src="./images/erd.png" alt="event-relational-database"/>
