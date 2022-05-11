@@ -1,4 +1,4 @@
-function NewsArticles() {
+function News() {
     return (
       <div className="news-articles">
         <h2>News Goes Here</h2>
@@ -6,4 +6,4 @@ function NewsArticles() {
     );
   }
   
-  export default NewsArticles;
+  export default News;
