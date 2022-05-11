@@ -1,0 +1,33 @@
+.News {
+    text-align: center;
+}
+
+.news-dropdown {
+    text-align: left;
+    background-color: #666;
+    padding: 10px;
+}
+
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+
+
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+}
+
+.article-preview {
+    background-color: lightgray;
+}
+
+.news-container article {
+    background-color: white;
+    margin: 10px;
+    display: grid;
+}
+
+.news-image {
+    width: 50%;
+}
