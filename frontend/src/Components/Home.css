@@ -8,8 +8,13 @@ header {
 
 #chatbot {
     background-color: red;
-    height: 100px;
+    height: 200px;
     text-align: center;
+}
+
+#chatbot img {
+    width: 30%;
+    margin: 10px;
 }
 
 #chart-coins-container {
@@ -20,12 +25,34 @@ header {
 
 #chart-widget {
     background-color: orange;
-    height: 100px;
+    height: 300px;
     text-align: center;
+}
+
+#chart {
+    background-color: white;
+    margin: 10px;
+}
+
+#chart img {
+    height: auto;
+    width: 50%;
 }
 
 #top-coins {
     background-color: lightseagreen;
-    height: 100px;
+    height: 300px;
     text-align: center;
+}
+
+#coins-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#coin {
+    background-color: navy;
+    color: orange;
+    padding: 5px;
+    margin: 5px;
 }
