@@ -7,6 +7,9 @@ import Videos from "./Components/Videos";
 import PageNotFound from "./Components/PageNotFound";
 import Bot from "./Components/Bot"
 import Cryptocurrency from "./Components/Cryptocurrency";
+import Profile from "./Components/Profile";
+import ProfileCreate from "./Components/ProfileCreate";
+import ProfileEdit from "./Components/ProfileEdit";
 
 function App() {
   return (
@@ -17,7 +20,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
         <Route path="/cryptocurrency" element={<Cryptocurrency />} />
-        <Route path="/videos" element={<Videos />} />
+        <Route path="/education" element={<null />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/create-profile" element={<ProfileCreate />} />
+        <Route path="/edit-profile" element={<ProfileEdit />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />

@@ -14,9 +14,6 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 
-const pages = ['Cryptocurrency', 'Education', 'News'];
-const settings = ['Profile', 'Create Profile', 'Edit Profile'];
-
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -37,12 +34,7 @@ function NavBar() {
   };
 
   return (
-    // <nav id="nav" className="navbar">
-    //     <h3><Link to="/news"> News</Link></h3>
-    //     <h3><Link to="/">Welcome to the Crypto Chat App</Link></h3>
-    //     <h3><Link to="/videos">Videos</Link></h3>
-    // </nav>
-    <AppBar position="sticky" sx={{backgroundColor: "#4166F5"}}>
+    <AppBar position="sticky" sx={{backgroundColor: "#4D4DFF"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -93,15 +85,21 @@ function NavBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">Cryptocurrency</Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">Education</Typography>
-              </MenuItem>
-              <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">News</Typography>
-              </MenuItem>
+              <Link to="/cryptocurrency">
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">Cryptocurrency</Typography>
+                </MenuItem>
+              </Link>
+              <Link to="/education">
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">Education</Typography>
+                </MenuItem>
+              </Link>
+              <Link to="/news">
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">News</Typography>
+                </MenuItem>
+              </Link>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -109,7 +107,7 @@ function NavBar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -124,15 +122,30 @@ function NavBar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            <Link to="/cryptocurrency">
               <Button
-                key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none" }}
               >
-                {page}
+                Cryptocurrency
               </Button>
-            ))}
+            </Link>
+            <Link to="/education">
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none" }}
+              >
+                Education
+              </Button>
+            </Link>
+            <Link to="/news">
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none" }}
+              >
+                News
+              </Button>
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -157,11 +170,21 @@ function NavBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+              <Link to="/profile">
+                <MenuItem  onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Profile</Typography>
                 </MenuItem>
-              ))}
+              </Link>
+              <Link to="/create-profile">
+                <MenuItem  onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Create Profile</Typography>
+                </MenuItem>
+              </Link>
+              <Link to="/edit-profile">
+                <MenuItem  onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Edit Profile</Typography>
+                </MenuItem>
+              </Link>
             </Menu>
           </Box>
         </Toolbar>
