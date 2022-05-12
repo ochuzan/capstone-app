@@ -6,6 +6,7 @@ import News from "./Components/News";
 import Videos from "./Components/Videos";
 import PageNotFound from "./Components/PageNotFound";
 import Bot from "./Components/Bot"
+import Cryptocurrency from "./Components/Cryptocurrency";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
+        <Route path="/cryptocurrency" element={<Cryptocurrency />} />
         <Route path="/videos" element={<Videos />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>

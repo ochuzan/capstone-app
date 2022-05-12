@@ -13,6 +13,8 @@
 }
 body{
     background: black;
+    width: 100%;
+    margin: 0 auto;
 }
 #bot{
     background:blue;
