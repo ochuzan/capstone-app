@@ -1,0 +1,31 @@
+#chartContainer {
+    display: grid;
+}
+
+header {
+    text-align: center;
+}
+
+#chatbot {
+    background-color: red;
+    height: 100px;
+    text-align: center;
+}
+
+#chart-coins-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#chart-widget {
+    background-color: orange;
+    height: 100px;
+    text-align: center;
+}
+
+#top-coins {
+    background-color: lightseagreen;
+    height: 100px;
+    text-align: center;
+}
