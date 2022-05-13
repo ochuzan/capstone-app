@@ -1,0 +1,37 @@
+import "./Bot.css";
+
+const Bot = () => {
+  // function openForm() {
+  //   document.getElementById("myForm").style.display = "block";
+  // }
+  
+  // function closeForm() {
+  //   document.getElementById("myForm").style.display = "none";
+  // }
+
+  return (
+<body>
+
+<h2>Popup Chat Window</h2>
+<p>Click on the button at the bottom of this page to open the chat form.</p>
+<p>Note that the button and the form is fixed - they will always be positioned to the bottom of the browser window.</p>
+
+<button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Chat</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+</body>
+  );
+};
+
+export default Bot;
