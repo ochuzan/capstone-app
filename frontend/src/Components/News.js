@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-function News() {
-    return (
-      <div className="news-articles">
-        <h2>News Goes Here</h2>
-=======
 // import axios from "axios";
 // import { useState, useEffect } from "react";
 // import { Link } from "react-router-dom";
@@ -38,13 +32,12 @@ function News() {
           <option value="crypto">crypto</option>
           <option value="education">education</option>
         </select>
->>>>>>> 3f1a6de7ee825c3d5657bcdfd200f68e2311fb8a
       </div>
 
       <div className="news-container">
-        {newsData.map((oneArticle) => {
+        {newsData.map((oneArticle, index) => {
           return (
-            <article>
+            <article key={index}>
               <NewsArticle oneArticle={oneArticle} />
             </article>
           );

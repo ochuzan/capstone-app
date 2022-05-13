@@ -29,7 +29,7 @@ console.log(articles)
 let fetchedArticles = articles.slice(11).map((article, index)=>{
     return(
       <div className="article" key={index}>
-        <h4>{article.title}</h4>
+        <h3>{article.title}</h3>
         <p>{article.description}</p>
         <p>{article.url}</p>
       </div>

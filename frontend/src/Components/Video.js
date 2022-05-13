@@ -1,19 +1,18 @@
 // import { useState, useEffect } from "react";
-// import YoutubeEmbed from "./YoutubeEmbed";
-import videos from "./VideoData"
-import "./Video.css"
+import videos from "./VideoData";
+import "./Video.css";
 
 function Video() {
   // const [videos, setVideos] = useState([]);
   // const [searchValue, setSearchValue] = useState("ETH Basics")
 
-  // let searchValue = "BTC Basics"
+  // let search = "BTC Basics"
 
   // useEffect(()=>{
-  //   fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=9&q=${searchValue}&type=video&key=${process.env.REACT_APP_API_KEY}`)
+  //   fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=9&q=${search}&type=video&key=${process.env.REACT_APP_API_KEY}`)
   //   .then(res=> res.json())
   //   .then((data)=>{
-  //     // setVideos(data.items);
+  //     setVideos(data.items);
   //     console.log(data)
   //   }).catch((err)=>{
   //     console.log(err)
@@ -29,20 +28,15 @@ function Video() {
     return(
         <div className="vid" key={index}>
           <h4>{vid.title}</h4>
-          {/* <video controls width="250">
-            <source src={`https://www.youtube.com/watch?v=${vid.vidId}`} type="youtube"/>
-      
-          </video> */}
-              <iframe
-      width="400"
-      height="300"
-      src={`https://www.youtube.com/watch?v=${vid.videoId}`}
-      frameBorder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="Embedded youtube"
-    />
-
+          <iframe
+            width="400"
+            height="300"
+            src={`https://www.youtube.com/embed/${vid.videoId}`}
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            title="video"
+			    />
         </div>
     )
   })

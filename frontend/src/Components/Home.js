@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-
-function Home() {
-  
-  return(
-      <div id="home">
-          <h1>Body of Home Page</h1>
-=======
 import { useEffect } from "react";
 import "./Home.css";
 
@@ -68,7 +60,6 @@ function Home() {
             <div id="coin">DOGECOIN</div>
           </div>
         </div>
->>>>>>> 3f1a6de7ee825c3d5657bcdfd200f68e2311fb8a
       </div>
     </div>
   );

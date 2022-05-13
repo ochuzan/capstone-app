@@ -1,15 +1,15 @@
 .articles{
     background: rgb(162, 204, 219);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
-    gap: 5px;
-    margin: 15px   
+    grid-template-columns: repeat(3,1fr); 
+    grid-auto-rows: 1fr;
+    margin: 15px;
+    padding: 10px;
+    overflow: auto;   
 }
 .Articles{
     text-align: center;
     background: purple;
-    /* display:flex; */
-    /* flex-wrap: wrap; */
 
 }
 .article{
@@ -17,8 +17,11 @@
     padding:10px;
     background: rgb(91, 153, 91);
     border: 2px solid black;
-    width: 500px;
+    align-items: center;
 }
 .article h4{
     text-align: center;
+}
+p{
+    font-weight: 500;
 }
