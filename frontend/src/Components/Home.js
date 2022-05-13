@@ -20,8 +20,8 @@ function Home() {
   return (
     <div id="chartContainer">
       <header>
-        <h1>Welcome to App-Name.com</h1>
-        <h4>your education portal for crypto</h4>
+        <h1>Welcome to Crypto-versation</h1>
+        <h4>Your education portal for crypto</h4>
         <hr />
       </header>
       <div id="chatbot">
