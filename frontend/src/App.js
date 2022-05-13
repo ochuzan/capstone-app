@@ -5,13 +5,15 @@ import Footer from "./Components/Footer";
 import News from "./Components/News";
 import Videos from "./Components/Videos";
 import PageNotFound from "./Components/PageNotFound";
-import Bot from "./Components/Bot"
+// import Bot from "./Components/ChatBot/Bot";
+import Popchat from "./Components/ChatBot/Popchat";
 
 function App() {
   return (
     <Router>
       <NavBar/>
-      <Bot />
+      <Popchat />
+      {/* <Bot /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
