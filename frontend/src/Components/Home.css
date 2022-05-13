@@ -7,7 +7,7 @@ header {
 }
 
 #chatbot {
-    background-color: red;
+    background-color: lightgrey;
     height: 200px;
     text-align: center;
 }
@@ -24,9 +24,10 @@ header {
 }
 
 #chart-widget {
-    background-color: orange;
+    background-color: navy;
     height: 300px;
     text-align: center;
+    color: orange;
 }
 
 #chart {
@@ -36,11 +37,11 @@ header {
 
 #chart img {
     height: auto;
-    width: 50%;
+    width: 45%;
 }
 
 #top-coins {
-    background-color: lightseagreen;
+    background-color: #333;
     height: 300px;
     text-align: center;
 }
