@@ -35,9 +35,9 @@ function News() {
       </div>
 
       <div className="news-container">
-        {newsData.map((oneArticle) => {
+        {newsData.map((oneArticle, index) => {
           return (
-            <article>
+            <article key={index}>
               <NewsArticle oneArticle={oneArticle} />
             </article>
           );

@@ -1,0 +1,27 @@
+.articles{
+    background: rgb(162, 204, 219);
+    display: grid;
+    grid-template-columns: repeat(3,1fr); 
+    grid-auto-rows: 1fr;
+    margin: 15px;
+    padding: 10px;
+    overflow: auto;   
+}
+.Articles{
+    text-align: center;
+    background: purple;
+
+}
+.article{
+    margin: 5px;
+    padding:10px;
+    background: rgb(91, 153, 91);
+    border: 2px solid black;
+    align-items: center;
+}
+.article h4{
+    text-align: center;
+}
+p{
+    font-weight: 500;
+}

@@ -38,15 +38,15 @@ function Footer() {
           ],
           "showSymbolLogo": true,
           "colorTheme": "dark",
-          "isTransparent": false,
+          "isTransparent": true,
           "displayMode": "adaptive",
           "locale": "en"
         }
       )
-      document.getElementById("myContainer").appendChild(script);
+      document.getElementById("footerContainer").appendChild(script);
     }, [])
   return(
-      <div id="myContainer">
+      <div id="footerContainer">
           {/* <div className="tradingview-widget-container"> */}
           {/* </div> */}
       </div>

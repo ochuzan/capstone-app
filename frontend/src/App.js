@@ -2,11 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
-import News from "./Components/News";
-import Videos from "./Components/Videos";
+import Education from "./Components/Education";
 import PageNotFound from "./Components/PageNotFound";
+import News from "./Components/News";
 // import Bot from "./Components/ChatBot/Bot";
 import Popchat from "./Components/ChatBot/Popchat";
+
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
-        <Route path="/videos" element={<Videos />} />
+        <Route path="/education" element={<Education/>} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
