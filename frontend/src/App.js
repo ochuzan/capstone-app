@@ -4,14 +4,17 @@ import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import Education from "./Components/Education";
 import PageNotFound from "./Components/PageNotFound";
-import Bot from "./Components/Bot"
 import News from "./Components/News";
+// import Bot from "./Components/ChatBot/Bot";
+import Popchat from "./Components/ChatBot/Popchat";
+
 
 function App() {
   return (
     <Router>
       <NavBar/>
-      <Bot />
+      <Popchat />
+      {/* <Bot /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />

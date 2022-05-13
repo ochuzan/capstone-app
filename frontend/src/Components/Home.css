@@ -1,0 +1,59 @@
+#chartContainer {
+    display: grid;
+}
+
+header {
+    text-align: center;
+}
+
+#chatbot {
+    background-color: lightgrey;
+    height: 200px;
+    text-align: center;
+}
+
+#chatbot img {
+    width: 30%;
+    margin: 10px;
+}
+
+#chart-coins-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#chart-widget {
+    background-color: navy;
+    height: 300px;
+    text-align: center;
+    color: orange;
+}
+
+#chart {
+    background-color: white;
+    margin: 10px;
+}
+
+#chart img {
+    height: auto;
+    width: 45%;
+}
+
+#top-coins {
+    background-color: #333;
+    height: 300px;
+    text-align: center;
+}
+
+#coins-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#coin {
+    background-color: navy;
+    color: orange;
+    padding: 5px;
+    margin: 5px;
+}
