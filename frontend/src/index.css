@@ -18,7 +18,7 @@ body{
     background:blue;
 }
 .articles{
-    background: grey;
+    background: rgb(162, 204, 219);
 }
 #home{
     background: grey;
@@ -28,6 +28,8 @@ body{
 }
 #Education h1{
     color:aqua;
+    text-align: center;
+    border: 2px solid rgb(28, 109, 159);
 }
 
 .vids{
@@ -36,6 +38,18 @@ body{
     /* justify-content: space-between; */
     gap: 5px;
     margin: 15px;
+}
+.articles{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* justify-content: space-between; */
+    gap: 5px;
+    margin: auto;
+    
+}
+.article{
+    text-align: center;
+    border: 2px solid black;
 }
 .Videos{
     text-align: center;
