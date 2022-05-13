@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import "./Articles.css"
 
 let key = process.env.REACT_APP_API_ARTICLE_KEY;
 
@@ -36,7 +37,7 @@ let fetchedArticles = articles.slice(11).map((article, index)=>{
 });
 console.log(fetchedArticles.length)
     return (
-      <div className="article">
+      <div className="Articles">
         <h1>Articles Go Here</h1>
         <div className="articles">
           {fetchedArticles}

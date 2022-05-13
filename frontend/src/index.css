@@ -1,59 +1,11 @@
-#nav{
-    font-weight: bold;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: aliceblue;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 1em;
-}
-#nav a{
-    text-decoration: none;
-    color:blue;
-}
 body{
     background: black;
 }
 #bot{
     background:blue;
 }
-.articles{
-    background: rgb(162, 204, 219);
-}
+
 #home{
     background: grey;
 }
-.news-articles{
-    background: grey;
-}
-#Education h1{
-    color:aqua;
-    text-align: center;
-    border: 2px solid rgb(28, 109, 159);
-}
 
-.vids{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* justify-content: space-between; */
-    gap: 5px;
-    margin: 15px;
-}
-.articles{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* justify-content: space-between; */
-    gap: 5px;
-    margin: auto;
-    
-}
-.article{
-    text-align: center;
-    border: 2px solid black;
-}
-.Videos{
-    text-align: center;
-}
-.vid h4{
-    color: aqua;
-}

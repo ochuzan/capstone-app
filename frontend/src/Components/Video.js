@@ -1,6 +1,7 @@
 // import { useState, useEffect } from "react";
-import YoutubeEmbed from "./YoutubeEmbed";
+// import YoutubeEmbed from "./YoutubeEmbed";
 import videos from "./VideoData"
+import "./Video.css"
 
 function Video() {
   // const [videos, setVideos] = useState([]);
