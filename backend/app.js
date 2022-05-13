@@ -9,5 +9,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
     res.send("Welcome to our Capstone Project");
 });
+app.get("*", (req, res)=>{
+    res.status(404).json({error: "Page not found."})
+});
 
 module.exports = app;
