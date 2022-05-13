@@ -19,6 +19,7 @@ body{
     background: rgb(29, 28, 30);
     width: 100%;
     margin: 0 auto;
+    height: auto;
     color: whitesmoke;
 }
 #bot{
