@@ -38,3 +38,13 @@ body{
     height: 100%;
 }
 
+body{
+    background: black;
+}
+#bot{
+    background:blue;
+}
+
+#home{
+    background: grey;
+}

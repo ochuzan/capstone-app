@@ -1,0 +1,13 @@
+.vids{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    margin: 15px;
+}
+
+.Videos{
+    text-align: center;
+}
+.vid h4{
+    color: aqua;
+}
