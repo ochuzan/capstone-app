@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
+import "./NavBar.css"
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -53,7 +54,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            CRYPTO-VERSATION
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -119,7 +120,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            CRYPTO-VERSATION
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Link to="/cryptocurrency">
