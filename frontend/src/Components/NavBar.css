@@ -11,3 +11,8 @@
     text-decoration: none;
     color:blue;
 }
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }

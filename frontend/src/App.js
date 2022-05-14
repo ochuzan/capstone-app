@@ -12,6 +12,7 @@ import Popchat from "./Components/ChatBot/Popchat";
 function App() {
   return (
     <Router>
+      <Footer />
       <NavBar/>
       <Popchat />
       {/* <Bot /> */}
@@ -21,7 +22,6 @@ function App() {
         <Route path="/education" element={<Education/>} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
-      <Footer />
     </Router>
   );
 }
