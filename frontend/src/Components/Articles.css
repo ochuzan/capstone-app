@@ -22,6 +22,13 @@
 .article h4{
     text-align: center;
 }
+.article iframe{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
 p{
     font-weight: 500;
+}
+#inlineFrameExample{
+    margin: 5px;
 }

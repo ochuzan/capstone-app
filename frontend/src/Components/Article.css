@@ -1,4 +1,4 @@
-article{
+#article{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     /* text-align: center; */
@@ -10,17 +10,17 @@ ol{
     background-color: black;
 }
 h1{
-    
+    background-color: blue;
     color: rgb(25, 222, 222);
     text-align: center;
 }
 h3{
     color: rgb(25, 222, 222);
 }
-article a{
+#article a{
     text-decoration: none;
 }
 #inlineFrame{
     border: 2px solid rgb(80, 255, 249);
-    margin: 5px;
+    /* margin: 5px; */
 }

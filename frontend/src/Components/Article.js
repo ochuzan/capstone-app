@@ -15,7 +15,7 @@ function Article(){
     return(
         <div>
         <h1>{articlesData[id].source}</h1>
-        <article className="article">
+        <article id="article">
         <ol>{links}</ol>
         <iframe id="inlineFrame"
           title={articlesData[id].source}
@@ -24,7 +24,7 @@ function Article(){
           src={`${articlesData[id].url}`}>
         </iframe>
         </article>
-        <Video />
+        {/* <Video /> */}
         </div>
     )
 }

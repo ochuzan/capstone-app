@@ -35,7 +35,7 @@ let fetchedArticles = articlesData.map((article, index)=>{
         <iframe id="inlineFrameExample"
           title={article.source}
           width="350"
-          height="200"
+          height="250"
           src={`${article.url}`}>
         </iframe>
         {/* <h3>{article.title}</h3>
