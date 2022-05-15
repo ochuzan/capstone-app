@@ -1,27 +1,13 @@
-import { useEffect } from "react";
+import SingleTickerBTC from "./Widgets/SingleTickerBTC";
+import SymbolOverview from "./Widgets/SymbolOverview";
 import "./Home.css";
 
 function Home() {
-  // useEffect(() => {
-  //   const chartScript = document.createElement("chartScript");
-  //   chartScript.src =
-  //     "https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js";
-  //   chartScript.async = true;
-  //   chartScript.innerHTML = JSON.stringify({
-  //     symbol: "BITSTAMP:BTCUSD",
-  //     width: "100%",
-  //     colorTheme: "dark",
-  //     isTransparent: false,
-  //     locale: "en",
-  //   });
-  //   document.getElementById("chartContainer").appendChild(chartScript);
-  // }, []);
-
   return (
     <div id="chartContainer">
       <header>
-        <h1>Welcome to App-Name.com</h1>
-        <h4>your education portal for crypto</h4>
+        <h1>Welcome to Crypto-versation</h1>
+        <h4>Your education portal for crypto</h4>
         <hr />
       </header>
       <div id="chatbot">
@@ -36,6 +22,8 @@ function Home() {
       <div id="chart-coins-container">
         <div id="chart-widget">
           BTC Chart or Crypto Market widget
+          <SingleTickerBTC />
+          <SymbolOverview />
           <div id="chart">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pushkin_population_history.svg/1200px-Pushkin_population_history.svg.png"

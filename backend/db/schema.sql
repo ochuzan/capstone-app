@@ -21,6 +21,8 @@ CREATE TABLE resources(
     url TEXT,
     articles_id TEXT,
     is_favorite BOOLEAN
+    users_id INTEGER REFERENCES users(id)
+    ON DELETE CASCADE
 );
 
 -- DROP TABLE IF EXISTS favorites;
