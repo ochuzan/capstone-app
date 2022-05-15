@@ -39,6 +39,9 @@ h3:hover{
 #article a{
     text-decoration: none;
 }
+ul{
+    list-style-type: none;
+}
 #inlineFrame{
     border: 2px solid rgb(80, 255, 249);
     /* margin-bottom: 10px; */
