@@ -9,7 +9,7 @@ function Article(){
     let links = articlesData.map((article)=>{
         let index = articlesData.indexOf(article)
         return(
-            <li ><Link to={`/articles/${index}`} className="hvr-grow"><h3>{article.source}</h3></Link></li>
+            <li ><Link to={`/articles/${index}`} ><h3 className="hvr-grow">{article.source}</h3></Link></li>
         )
     })
     return(

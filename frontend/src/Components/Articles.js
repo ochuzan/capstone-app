@@ -31,7 +31,7 @@ console.log(articlesData)
 let fetchedArticles = articlesData.map((article, index)=>{
     return(
       <div className="article" key={index}>
-        <Link to={`/articles/${index}`}><h2>{article.source}</h2></Link>
+        <Link to={`/articles/${index}`} ><h3 className="hvr-grow">{article.source}</h3></Link>
         <iframe id="inlineFrameExample"
           title={article.source}
           width="450"

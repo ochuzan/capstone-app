@@ -1,10 +1,8 @@
 .articles{
-    background: aqua;
     display: grid;
     grid-template-columns: repeat(3,1fr); 
     grid-auto-rows: 1fr;
-    /* margin: 15px; */
-    /* padding: 10px; */
+    gap: 5px;
     overflow: auto;   
 }
 .Articles{
@@ -12,17 +10,17 @@
 
 }
 .article{
-    margin: 5px;
-    padding:10px;
+    padding:20px;
     background: black;
     border: 2px solid black;
     align-items: center;
+    border: 4px solid aqua;
 }
-.article h4{
+.article h3{
     text-align: center;
 }
 .article iframe{
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     padding-bottom: 10px;
 }
 p{
@@ -31,9 +29,26 @@ p{
 #inlineFrameExample{
     margin: 5px;
 }
-h2 {
+h3 {
     color: aqua;
 }
-h2:hover{
-    color: rgb(239, 178, 135);
+h3:hover{
+    color: orange;
+}
+.hvr-grow {
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
 }
