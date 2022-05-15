@@ -44,17 +44,21 @@ const updateUser = async(id, user) => {
     };
 };
 
-
-
-
-
-
-
-
+const deleteUser = async(id) => {
+    try{
+        const deletedUser = await db.one(
+            "DELETE FROM users WHERE id=$1 RETURNING *",
+            id
+        );
+        return deletedUser;
+    } catch(err){
+        return err;
+    }
+};
 
 module.exports = {
     getOneUser,
     createUser,
     updateUser,
-
-}
+    deleteUser
+};

@@ -4,6 +4,7 @@ const {
     createUser,
     getOneUser,
     updateUser,
+    deleteUser,
 } = require("../queries/users.js");
 
 users.post("/", async(req, res) => {
@@ -45,6 +46,14 @@ users.put("/:id", async(req, res) => {
     }
 });
 
-
+users.delete("/:id", async(req, res) => {
+    const { id } = req.params;
+    const deletedUser = await deleteUser(id);
+    if(deletedUser.id){
+        res.status(200).json(deletedUser);
+    } else {
+        res.status(404).json("Error: User not found");
+    }
+});
 
 module.exports = users;
