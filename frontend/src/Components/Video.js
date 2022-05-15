@@ -27,7 +27,7 @@ function Video() {
   let fetchedVids = videos.map((vid, index)=>{
     return(
         <div className="vid" key={index}>
-          <h4>{vid.title}</h4>
+          <h3 className="hvr-grow">{vid.title}</h3>
           <iframe
             width="400"
             height="300"

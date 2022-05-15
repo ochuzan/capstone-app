@@ -10,11 +10,16 @@ function NewsArticle({ oneArticle }) {
             <div>
                 Date: {oneArticle.date} - Views: {oneArticle.views}
             </div>
-            <div>
+            {/* <div>
                 <img className="news-image" src={oneArticle.photo} alt="coins for crypto" />
-            </div>
+            </div> */}
             <br />
-            <a href={oneArticle.url} target="_blank">Click here to go to article</a>
+            <iframe id="inlineFrameExample"
+              title="Inline Frame Example"
+              width="300"
+              height="200"
+              src="https://www.bitcoin.com/get-started/where-can-i-spend-bitcoin-and-crypto/">
+            </iframe>
             <br />
             Crypto News Favorite? {oneArticle.favorite ? "💰 yes" : "📈 no"}
         </section>

@@ -7,7 +7,7 @@ function Education() {
     return (
       <div id="Education">
         <h1>Education</h1>
-        <button></button>
+        <button>Articles / Videos</button>
         <Articles />
         <Video />
       </div>
