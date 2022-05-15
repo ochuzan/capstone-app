@@ -7,6 +7,8 @@ import PageNotFound from "./Components/PageNotFound";
 import News from "./Components/News";
 // import Bot from "./Components/ChatBot/Bot";
 import Popchat from "./Components/ChatBot/Popchat";
+import Articles from "./Components/Articles";
+import Article from "./Components/Article";
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
         <Route path="/education" element={<Education/>} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/articles/:id" element={<Article />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </Router>

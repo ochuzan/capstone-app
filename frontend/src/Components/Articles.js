@@ -1,7 +1,8 @@
 // import { useState, useEffect } from "react";
 // import axios from "axios";
-import "./Articles.css"
-import articlesData from "../data/articlesData"
+import {Link} from "react-router-dom";
+import "./Articles.css";
+import articlesData from "../data/articlesData";
 
 let key = process.env.REACT_APP_API_ARTICLE_KEY;
 
@@ -30,13 +31,13 @@ console.log(articlesData)
 let fetchedArticles = articlesData.map((article, index)=>{
     return(
       <div className="article" key={index}>
-        <h3>{article.source}</h3>
+        <Link to={`/articles/${index}`}><h5>{article.source}</h5></Link>
         <iframe id="inlineFrameExample"
           title={article.source}
           width="350"
           height="200"
           src={`${article.url}`}>
-</iframe>
+        </iframe>
         {/* <h3>{article.title}</h3>
         <p>{article.description}</p>
         <p>{article.url}</p> */}

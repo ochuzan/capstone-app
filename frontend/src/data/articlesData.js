@@ -1,17 +1,17 @@
 let articlesData = [
-    {
-        source: "Investopedia", 
-        url:"https://www.investopedia.com/tech/crypto-primer-currencies-commodities-tokens/"
+    { 
+        source: "What is Bitcoin?", 
+        url:"https://www.bitcoin.com/get-started/what-is-bitcoin/"
     },
 
     {
-        source: "Investopedia", 
-        url:"https://www.investopedia.com/terms/b/bitcoin.asp"
+        source: "How to Buy Bitcoin", 
+        url:"https://www.bitcoin.com/get-started/how-to-buy-bitcoin/"
     },
 
     {
-        source: "Investopedia", 
-        url: "https://www.investopedia.com/terms/b/bitcoin.asp"
+        source: "How to Sell Bitcoin", 
+        url: "https://www.bitcoin.com/get-started/how-to-sell-bitcoin/"
     },
 
     {
@@ -20,23 +20,23 @@ let articlesData = [
     },
 
     {
-        source: "Understanding Bitcoin", 
-        url:"https://www.investopedia.com/terms/b/bitcoin.asp#toc-understanding-bitcoin"
+        source: "What is a Bitcoin Wallet?", 
+        url:"https://www.bitcoin.com/get-started/what-is-a-bitcoin-wallet/"
+    },
+
+    {
+        source: "What is Ethereum Used For?", 
+        url:"https://www.bitcoin.com/get-started/what-is-eth-used-for/"
     },
 
     {
         source: "What is Ethereum?", 
-        url:"https://www.investopedia.com/terms/e/ethereum.asp"
+        url:"https://www.bitcoin.com/get-started/what-is-ethereum/"
     },
 
     {
-        source: "Understanding Ethereum", 
-        url:"https://www.investopedia.com/terms/e/ethereum.asp#toc-understanding-ethereum"
-    },
-
-    {
-        source: "What is Cryptocurrency?", 
-        url:"https://www.investopedia.com/terms/c/cryptocurrency.asp"
+        source: "Digital Asset Security", 
+        url:"https://www.bitcoin.com/get-started/digital-asset-security/"
     },
 
     {
