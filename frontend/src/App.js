@@ -16,7 +16,6 @@ function App() {
     <Router>
       <Footer />
       <NavBar/>
-      <Popchat />
       {/* <Bot /> */}
       <Routes>
         <Route path="/" element={<Home />} />
@@ -26,6 +25,7 @@ function App() {
         <Route path="/articles/:id" element={<Article />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
+      <Popchat />
     </Router>
   );
 }

@@ -15,8 +15,8 @@ let articlesData = [
     },
 
     {
-        // source: "Reuters Article", 
-        // url:"https://www.reuters.com/world/africa/central-african-bank-regulator-reminds-states-crypto-ban-2022-05-13/"
+        source: "Reuters Article", 
+        url:"https://www.reuters.com/world/africa/central-african-bank-regulator-reminds-states-crypto-ban-2022-05-13/"
     },
 
     {
@@ -40,8 +40,8 @@ let articlesData = [
     },
 
     {
-        // source: "Cnet", 
-        // url:"https://www.bitcoin.com/get-started/what-is-ethereum/"
+        source: "What is Ethereum", 
+        url:"https://www.bitcoin.com/get-started/what-is-ethereum/"
     },
 ]
 
