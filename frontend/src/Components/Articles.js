@@ -31,10 +31,10 @@ console.log(articlesData)
 let fetchedArticles = articlesData.map((article, index)=>{
     return(
       <div className="article" key={index}>
-        <Link to={`/articles/${index}`}><h5>{article.source}</h5></Link>
+        <Link to={`/articles/${index}`}><h2>{article.source}</h2></Link>
         <iframe id="inlineFrameExample"
           title={article.source}
-          width="350"
+          width="450"
           height="250"
           src={`${article.url}`}>
         </iframe>

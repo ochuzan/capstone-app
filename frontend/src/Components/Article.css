@@ -4,6 +4,7 @@
     /* text-align: center; */
     justify-content: top;
     border: 2px solid rgb(80, 255, 249);
+    /* margin-bottom: 10px; */
 }
 ol{
     text-align: left;
@@ -17,10 +18,30 @@ h1{
 h3{
     color: rgb(25, 222, 222);
 }
+h3:hover{
+    color: orange;
+}
+/* Grow */
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    transform: scale(1.1);
+}
 #article a{
     text-decoration: none;
 }
 #inlineFrame{
     border: 2px solid rgb(80, 255, 249);
-    /* margin: 5px; */
+    margin-bottom: 10px;
 }

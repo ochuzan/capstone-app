@@ -9,12 +9,12 @@ function Article(){
     let links = articlesData.map((article)=>{
         let index = articlesData.indexOf(article)
         return(
-            <li><Link to={`/articles/${index}`}><h3>{article.source}</h3></Link></li>
+            <li ><Link to={`/articles/${index}`} className="hvr-grow"><h3>{article.source}</h3></Link></li>
         )
     })
     return(
         <div>
-        <h1>{articlesData[id].source}</h1>
+        <h1 >{articlesData[id].source}</h1>
         <article id="article">
         <ol>{links}</ol>
         <iframe id="inlineFrame"
