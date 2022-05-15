@@ -26,8 +26,35 @@ const getOneUser = async(id) => {
     };
 };
 
+const updateUser = async(id, user) => {
+    try{
+        const updatedUser = await db.one(
+            "UPDATE users SET username=$1, password=$2, contact_email=$3, active=$4 WHERE id=$5 RETURNING *",
+            [
+                user.username,
+                user.password,
+                user.contact_email,
+                user.active,
+                id
+            ]
+        );
+        return updatedUser;
+    } catch(err){
+        return err;
+    };
+};
+
+
+
+
+
+
+
+
+
 module.exports = {
     getOneUser,
     createUser,
-    
+    updateUser,
+
 }

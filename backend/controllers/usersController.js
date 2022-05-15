@@ -3,6 +3,7 @@ const users = express.Router();
 const {
     createUser,
     getOneUser,
+    updateUser,
 } = require("../queries/users.js");
 
 users.post("/", async(req, res) => {
@@ -32,5 +33,18 @@ users.get("/:id", async(req, res) => {
         return err;
     }
 });
+
+users.put("/:id", async(req, res) => {
+    const { id } = req.params;
+    const { body } = req;
+    const updatedUser = await updateUser(id, body);
+    if(updatedUser.id){
+        res.status(200).json(updatedUser);
+    } else {
+        res.status(404).json("Error: Unable to update User");
+    }
+});
+
+
 
 module.exports = users;
