@@ -15,7 +15,7 @@ let articlesData = [
     },
 
     {
-        source: "Reuters Article", 
+        source: "Crypto Ban in Aftica", 
         url:"https://www.reuters.com/world/africa/central-african-bank-regulator-reminds-states-crypto-ban-2022-05-13/"
     },
 
