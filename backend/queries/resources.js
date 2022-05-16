@@ -24,6 +24,27 @@ const getOneResource = async (id) => {
     }
 };
 
+// This might be a feature later on - for a user to create a resource
+const createResource = async(resource) => {
+    try{
+        const newResource = await db.one(
+            "INSERT INTO resources (subject, description, type, url, articles_id, is_favorite, users_id) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+            [
+                resource.subject,
+                resource.description,
+                resource.type,
+                resource.url,
+                resource.articles_id,
+                resource.is_favorite,
+                resource.users_id,
+            ]
+        );
+        return newResource;
+    } catch(err){
+        return err;
+    };
+};
+
 // Should this only update the is_favorite field since they shouldn't update any articles
 const updateResource = async (id, resource) => {
     try {
@@ -61,6 +82,7 @@ const deleteResource = async (id) => {
 module.exports={
     getAllResources,
     getOneResource,
+    createResource,
     updateResource,
     deleteResource
 }
