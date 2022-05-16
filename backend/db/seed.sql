@@ -23,3 +23,4 @@ INSERT INTO resources(subject, description, type, url, articles_id, is_favorite,
 ('Bitcoin2','Bitcoin 101','article','www.Bitcoin101.com','1223',true, 2),
 ('Dogecoin','Dogecoin for Beginners','video','www.Dogecoin-for-Beginners.com','54321',true, 3),
 ('Uniswap','Uniswap Fundamentals','article','www.Blockchain101.com','22454',false, 1);
+

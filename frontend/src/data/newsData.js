@@ -30,7 +30,7 @@ const newsData = [
     name: "Bitcoin, Ethereum Technical Analysis",
     description: `The token of the Terra ecosystem, LUNA, took the brunt of the news, and has lost more than 30% of its value since Thursday, May 5th. The price of LUNA fell from $87, down to as low as $58.6, and is trading at $60.17 as of this writing.`,
     photo: "https://api.time.com/wp-content/uploads/2022/05/GettyImages-1326414122.jpg?quality=85&w=800",
-    url: "https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-btc-surge-over-10-as-big-2-lead-crypto-rebound/",
+    url: "https://bitcoinmagazine.com/culture/what-makes-bitcoin-different-from-crypto",
     date: "June 11, 2022",
     favorite: true,
     views: 230
