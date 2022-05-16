@@ -3,7 +3,7 @@ const users = express.Router();
 const { createUser, getOneUser, updateUser, deleteUser } = require("../queries/users.js");
 
 const resourcesController = require("../controllers/resourcesController.js");
-users.use("./users_id/resources", resourcesController);
+users.use("./:usersId/resources", resourcesController);
 
 
 users.post("/", async(req, res) => {

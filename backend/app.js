@@ -1,10 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-
-const usersController = require("./controllers/usersController.js");
-const resourcesController = require("./controllers/resourcesController.js");
-
 const app = express();
+const usersController = require("./controllers/usersController.js");
 
 app.use(cors());
 app.use(express.json());
