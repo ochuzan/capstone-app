@@ -11,6 +11,7 @@ app.use("/resources", resourcesController);
 app.get("/", (req, res) => {
     res.send("Welcome to our Capstone Project");
 });
+
 app.get("*", (req, res)=>{
     res.status(404).json({error: "404 Page not found."});
 });
