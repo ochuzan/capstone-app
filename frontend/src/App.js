@@ -13,6 +13,7 @@ import News from "./Components/News";
 import Popchat from "./Components/ChatBot/Popchat";
 import Articles from "./Components/Articles";
 import Article from "./Components/Article";
+import TickerTape from "./Components/Widgets/TickerTape";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <Router>
       <NavBar/>
       {/* <Bot /> */}
+      <TickerTape />
       <Footer />
       <Routes>
         <Route path="/" element={<Home />} />
