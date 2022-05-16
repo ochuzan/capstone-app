@@ -2,6 +2,8 @@ const express = require("express");
 const resources = express.Router({mergeParams: true});
 const { getAllResources, getOneResource, updateResource, deleteResource } = require("../queries/resources.js");
 
+
+
 // Get all resources with the users id of {id}
 resources.get("/", async (req, res)=>{
     const { usersId } = req.params;
@@ -13,7 +15,7 @@ resources.get("/", async (req, res)=>{
     }
 })
 
-// Get one resource 
+// Get one resource - Example: http://localhost:3333/users/1/resources/3
 resources.get("/:id", async (req, res)=>{
     const { id } = req.params;
     try {
