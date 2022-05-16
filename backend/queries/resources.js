@@ -24,6 +24,7 @@ const getOneResource = async (id) => {
     }
 };
 
+// Should this only update the is_favorite field since they shouldn't update any articles
 const updateResource = async (id, resource) => {
     try {
         const updatedResource = await db.one(
