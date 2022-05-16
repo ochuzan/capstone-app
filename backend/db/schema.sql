@@ -20,7 +20,7 @@ CREATE TABLE resources(
     type TEXT,
     url TEXT,
     articles_id TEXT,
-    is_favorite BOOLEAN
+    is_favorite BOOLEAN,
     users_id INTEGER REFERENCES users(id)
     ON DELETE CASCADE
 );
