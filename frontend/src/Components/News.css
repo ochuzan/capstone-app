@@ -17,11 +17,11 @@
 }
 
 .article-preview {
-    background-color: lightgray;
+    background-color: black;
 }
 
 .news-container article {
-    background-color: white;
+    background-color: grey;
     margin: 5px;
     display: grid;
 }
@@ -30,5 +30,5 @@
     width: 50%;
 }
 h2 { 
-    color: blue;
+    color: aqua;
  }
