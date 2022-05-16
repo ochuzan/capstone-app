@@ -10,15 +10,6 @@ function Home() {
         <h4>Your education portal for crypto</h4>
         <hr />
       </header>
-      <div id="chatbot">
-        Chatbot
-        <div>
-          <img
-            src="https://hybrid.chat/wp-content/uploads/2019/12/auto-hide-text-box.gif"
-            alt="chatbot"
-          />
-        </div>
-      </div>
       <div id="chart-coins-container">
         <div id="chart-widget">
           BTC Chart or Crypto Market widget

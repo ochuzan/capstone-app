@@ -18,9 +18,9 @@ import Article from "./Components/Article";
 function App() {
   return (
     <Router>
+      <Footer />
       <NavBar/>
       {/* <Bot /> */}
-      <Footer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
