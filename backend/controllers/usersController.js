@@ -1,10 +1,15 @@
 const express = require("express");
 const users = express.Router();
-const { createUser, getOneUser, updateUser, deleteUser } = require("../queries/users.js");
 
-const resourcesController = require("../controllers/resourcesController.js");
-users.use("./users_id/resources", resourcesController);
+const {
+    createUser,
+    getOneUser,
+    updateUser,
+    deleteUser,
+} = require("../queries/users.js");
 
+const resourcesController = require("./resourcesController.js");
+users.use("/:usersId/resources", resourcesController);
 
 users.post("/", async(req, res) => {
     const { body } = req;
