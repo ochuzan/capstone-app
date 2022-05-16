@@ -1,6 +1,6 @@
 const express = require("express");
 const resources = express.Router({mergeParams: true});
-const { getAllResources, getOneResource, updateResource, deleteResource } = require("../queries/resources.js");
+const { getAllResources, getOneResource, createResource, updateResource, deleteResource } = require("../queries/resources.js");
 
 // Get all resources with the users id of {id}
 resources.get("/", async (req, res)=>{
@@ -28,6 +28,21 @@ resources.get("/:id", async (req, res)=>{
     }
 })
 
+// This might be a feature later on - for a user to post a resource
+resources.post("/", async(req, res) => {
+    const { body } = req;
+    try{
+        const createdResource = await createResource(body);
+        if(createdResource.id){
+            res.status(200).json(createdResource);
+        } else {
+            res.status(422).json("Error: Resource creation error");
+        }
+    } catch(err){
+        console.log(err);
+    }
+});
+
 // Update resource
 resources.put("/:id", async (req, res)=>{
     const { id } = req.params;
@@ -54,6 +69,5 @@ resources.delete("/:id", async (req, res)=>{
         res.status(404).json({ error: "resource to delete not found" }); 
     }
 })
-
 
 module.exports = resources;
