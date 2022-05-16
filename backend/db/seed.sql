@@ -8,4 +8,7 @@ INSERT INTO users(username, password, contact_email, active) VALUES
 INSERT INTO resources(users_id,subject, description, type, url, articles_id, is_favorite) VALUES
 ('1','Bitcoin','Bitcoin 101','article','www.Bitcoin101.com','1223',true),
 ('2','Ethereum','ETH for Beginners','article','www.ETH-for-Beginners.com','54321',true),
-('3','Blockchain','Blockchain Fundamentals','article','www.Blockchain101.com','22454',true);
+('3','Blockchain','Blockchain Fundamentals','article','www.Blockchain101.com','22454',true),
+('1','Blockchain','Blockchain Fundamentals','article','www.Blockchain101.com','22454',false),
+('2','Blockchain','Blockchain Fundamentals','article','www.Blockchain101.com','22454',false),
+('3','Blockchain','Blockchain Fundamentals','article','www.Blockchain101.com','22454',false);

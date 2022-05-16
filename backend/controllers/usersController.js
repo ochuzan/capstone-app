@@ -6,9 +6,6 @@ const resourcesController = require("../controllers/resourcesController.js");
 users.use("./users_id/resources", resourcesController);
 
 
-const resourcesController = require("./resourcesController.js");
-users.use("/:usersId/resources", resourcesController);
-
 users.post("/", async(req, res) => {
     const { body } = req;
     try{
