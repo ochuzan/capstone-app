@@ -19,6 +19,7 @@ import TickerTape from "./Components/Widgets/TickerTape";
 function App() {
   return (
     <Router>
+      <Footer />
       <NavBar/>
       {/* <Bot /> */}
       <TickerTape />

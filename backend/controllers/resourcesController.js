@@ -3,13 +3,17 @@ const resources = express.Router({mergeParams: true});
 const { getAllResources, getOneResource, createResource, updateResource, deleteResource } = require("../queries/resources.js");
 
 
-
 // Get all resources with the users id of {id}
 resources.get("/", async (req, res)=>{
     const { usersId } = req.params;
+    console.log(usersId)
     try {
         const allResources = await getAllResources(usersId);
-        res.status(200).json(allResources);
+        if(allResources.id){
+            res.status(200).json(allResources);
+        }else{
+            res.status(404).json({Error: "No resources found"})
+        }
     } catch (error){
         console.log(error);
     }
