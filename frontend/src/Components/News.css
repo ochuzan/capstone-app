@@ -13,10 +13,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
-
-
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
+    gap: 5px;
+    /* grid-row-gap: 15px; */
 }
 
 .article-preview {
@@ -25,13 +23,13 @@
 
 .news-container article {
     background-color: white;
-    margin: 10px;
+    margin: 5px;
     display: grid;
 }
 
 .news-image {
     width: 50%;
 }
-/* h2 { */
-    /* color: aqua; */
-/* } */
+h2 { 
+    color: blue;
+ }

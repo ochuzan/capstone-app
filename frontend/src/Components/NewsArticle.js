@@ -16,9 +16,9 @@ function NewsArticle({ oneArticle }) {
             <br />
             <iframe id="inlineFrameExample"
               title="Inline Frame Example"
-              width="300"
-              height="200"
-              src="https://www.bitcoin.com/get-started/where-can-i-spend-bitcoin-and-crypto/">
+              width="450"
+              height="250"
+              src={oneArticle.url}>
             </iframe>
             <br />
             Crypto News Favorite? {oneArticle.favorite ? "💰 yes" : "📈 no"}
