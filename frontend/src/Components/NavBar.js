@@ -35,10 +35,10 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="sticky" sx={{backgroundColor: "#4D4DFF", height: "90px"}}>
+    <AppBar position="sticky" sx={{ backgroundColor: "#4D4DFF", height: "90px" }}>
       <Container maxWidth="xl" >
-        <Toolbar sx={{marginTop:"10px"}}disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <Toolbar sx={{ marginTop: "10px" }} disableGutters>
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,  }} />
           <Typography
             variant="h6"
             noWrap

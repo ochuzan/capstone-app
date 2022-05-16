@@ -22,14 +22,14 @@ function Home() {
       <div id="chart-coins-container">
         <div id="chart-widget">
           BTC Chart or Crypto Market widget
-          <SingleTickerBTC />
+          {/* <SingleTickerBTC /> */}
           <SymbolOverview />
-          <div id="chart">
+          {/* <div id="chart">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pushkin_population_history.svg/1200px-Pushkin_population_history.svg.png"
               alt="chart"
             />
-          </div>
+          </div> */}
         </div>
         <div id="top-coins">
           <header>Top Coins</header>
