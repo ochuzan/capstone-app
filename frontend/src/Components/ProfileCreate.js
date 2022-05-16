@@ -2,7 +2,13 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function ProfileCreate() {
-    let { id } = useParams();
+    const [ userProfile, setUserProfile ] = useState({
+        username: "",
+        password: "",
+        contact_email: "",
+        active: false
+    });
+
     
     return (
         <h1>Profile Create Page</h1>
