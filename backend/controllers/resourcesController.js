@@ -13,7 +13,7 @@ resources.get("/", async (req, res)=>{
     }
 })
 
-// Get one resource 
+// Get one resource - Example: http://localhost:3333/users/1/resources/3
 resources.get("/:id", async (req, res)=>{
     const { id } = req.params;
     try {
