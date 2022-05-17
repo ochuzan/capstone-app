@@ -9,7 +9,7 @@ resources.get("/", async (req, res)=>{
     console.log(usersId)
     try {
         const allResources = await getAllResources(usersId);
-        if(allResources.id){
+        if(allResources[0]){
             res.status(200).json(allResources);
         }else{
             res.status(404).json({Error: "No resources found"})
