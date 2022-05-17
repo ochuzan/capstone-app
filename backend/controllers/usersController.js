@@ -7,7 +7,7 @@ const {
     deleteUser,
 } = require("../queries/users.js");
 
-const resourcesController = require("./resourcesController.js");
+const resourcesController = require("./resourcesController");
 users.use("/:usersId/resources", resourcesController);
 
 users.post("/", async(req, res) => {
