@@ -3,17 +3,27 @@ const users = require("../controllers/usersController.js");
 const db = require("../db/dbConfig.js");
 
 // http://localhost:3333/users/1/favorites
+// http://localhost:3333/users/3/favorites
+// users_id is dynamic
+// Only shows the resource if `resources.is_favorite` is "true"
 const getFavoritesByUserId = async (users_id) => {
     try {
         const allFavorites = await db.any(
-            `SELECT resources.id
+            `SELECT resources.id,
+              resources.subject,
+              resources.description,
+              resources.type,
+              resources.url,
+              resources.articles_id,
+              resources.is_favorite,
+              resources.users_id
             FROM favorites
             JOIN resources
               ON favorites.resources_id = 
             resources.id
-            WHERE favorites.users_id=1;
+            WHERE favorites.users_id=${users_id}
+              AND resources.is_favorite='true';
             `,
-            users_id
         );
         return allFavorites;
     } catch (error) {
@@ -34,7 +44,7 @@ const getFavoritesByUserId = async (users_id) => {
 
 
 
-
+///////////////////////////////////////////////////////////////////////////
 // get all favorites and all users
 const getAllFavoritesAndAllUsers = async (users_id) => {
     try {
