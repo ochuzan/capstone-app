@@ -1,5 +1,5 @@
 import Articles from "./Articles";
-import Video from "./Video";
+import Video from "./Videos";
 import "./Education.css"
 function Education() {
 

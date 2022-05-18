@@ -9,10 +9,12 @@ import ProfileEdit from "./Components/ProfileEdit";
 import Education from "./Components/Education";
 import PageNotFound from "./Components/PageNotFound";
 import News from "./Components/News";
+import Videos from "./Components/Videos"
 // import Bot from "./Components/ChatBot/Bot";
 import Popchat from "./Components/ChatBot/Popchat";
 import Articles from "./Components/Articles";
 import Article from "./Components/Article";
+import Video from "./Components/Video";
 
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
         <Route path="/education" element={<Education/>} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:id" element={<Article />} />
+        <Route path="videos" element={<Videos />} />
+        <Route path="/videos/:id" element={<Video />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/create-profile" element={<ProfileCreate />} />
         <Route path="/edit-profile" element={<ProfileEdit />} />

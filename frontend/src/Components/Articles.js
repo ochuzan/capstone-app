@@ -38,7 +38,7 @@ let fetchedArticles = articlesData.map((article, index)=>{
           height="250"
           src={`${article.url}`}>
         </iframe>
-        <h3>Favorite {article.is_favorite? "💰 yes" : "📈 no"}</h3>
+        <h3 className="hvr-grow">Favorite {article.is_favorite? "💰 yes" : "📈 no"}</h3>
       </div>
     )
 });
