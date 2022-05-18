@@ -32,12 +32,14 @@ let fetchedArticles = articlesData.map((article, index)=>{
     return(
       <div className="article" key={index}>
         <Link to={`/articles/${index}`}><h3 className="hvr-grow">{article.source}</h3></Link>
-        <iframe id="inlineFrameExample"
+        <div>
+          <iframe id="inlineFrameExample"
           title={article.source}
           width="450"
           height="250"
           src={`${article.url}`}>
         </iframe>
+        </div>
         <h3 className="hvr-grow">Favorite {article.is_favorite? "💰 yes" : "📈 no"}</h3>
       </div>
     )
