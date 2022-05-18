@@ -16,7 +16,7 @@ function Video(){
             <iframe id="inlineFrame"
                 title={videos[id].title}
                 width="800"
-                height="650"
+                height="750"
                 src={`https://www.youtube.com/embed/${videos[id].videoId}`}>
             </iframe>
             </article>
