@@ -1,18 +1,20 @@
 const express = require("express");
 const favorites = express.Router({mergeParams: true});
 const { 
-    getAllFavoritesForUsers,
+    getFavoritesByUserId,
+
+    getAllFavoritesAndAllUsers,
     getAllFavoritesForResources,
     getFavoritesAndUsername,
     getFavoritesResourcesOfVideo
     } = require("../queries/favorites.js");
 
 
-// For query `getAllFavoritesForUsers`
+// For query `getFavoritesByUserId` http://localhost:3333/favorites
 favorites.get("/", async (req, res)=>{
     const { usersId } = req.params;
     try {
-        const allFavorites = await getAllFavorites(usersId);
+        const allFavorites = await getFavoritesByUserId(usersId);
         if(allFavorites[0]){
             res.status(200).json(allFavorites);
         }else{
@@ -23,23 +25,5 @@ favorites.get("/", async (req, res)=>{
     }
 });
 
-// For query `getAllFavoritesForResources`
-// favorites.get("/", async (req, res)=>{
-//     const { usersId } = req.params;
-//     try {
-//         const favoritesAndUsername = await getFavoritesAndUsername(usersId);
-//         if(favoritesAndUsername[0]){
-//             res.status(200).json(favoritesAndUsername);
-//         }else{
-//             res.status(404).json({ error: "No favorites and username found" })
-//         }
-//     } catch (error){
-//         console.log(error);
-//     }
-// });
-
-
-// For query `getFavoritesAndUsername`
-// For query `getFavoritesResourcesOfVideo`
 
 module.exports = favorites;
