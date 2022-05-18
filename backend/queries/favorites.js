@@ -6,10 +6,13 @@ const db = require("../db/dbConfig.js");
 // http://localhost:3333/users/3/favorites
 // users_id is dynamic
 // Only shows the resource if `resources.is_favorite` is "true"
+// Renaming the "id" for favorites and resources to indicate which table
 const getFavoritesByUserId = async (users_id) => {
     try {
         const allFavorites = await db.any(
-            `SELECT resources.id,
+            `SELECT favorites.id AS favorites_table_id,
+              favorites.favorited_date,
+              resources.id AS resources_table_id,
               resources.subject,
               resources.description,
               resources.type,
@@ -38,30 +41,55 @@ const getFavoritesByUserId = async (users_id) => {
 //     resource_id
 //     user_id
 // }
-
-// Deleting a favorite
-// delete by user_id and the resources_id - find the favorite and then delete it
-
-
-
-///////////////////////////////////////////////////////////////////////////
-// get all favorites and all users
-const getAllFavoritesAndAllUsers = async (users_id) => {
+const createNewFavorite = async (favorite) => {
     try {
-        const allFavorites = await db.any(
-            `SELECT * 
-            FROM favorites 
-            JOIN users 
-              ON favorites.users_id 
-            = users.id;
-            `,
-            users_id
+        const newFavorite = await db.one(
+            `INSERT INTO favorites (favorited_date, resources_id, users_id) VALUES($1, $2, $3) RETURNING *`,
+            [
+                favorite.favorited_date,
+                favorite.resources_id,
+                favorite.users_id,
+            ]
         );
-        return allFavorites;
+        return newFavorite;
     } catch (error) {
         return error;
     }
 };
+
+// Deleting a favorite
+// delete by user_id and the resources_id - find the favorite and then delete it
+const deleteFavorite = async (id) => {
+    try {
+        const deletedFavorite = await db.one(
+            "DELETE FROM favorites WHERE id=$1 RETURNING *",
+            id
+        );
+        return deletedFavorite;
+    } catch (error) {
+        return error;
+    }
+};
+
+
+///////////////////////////////////////////////////////////////////////////
+// get all favorites and all users
+// const getAllFavoritesAndAllUsers = async (users_id) => {
+//     try {
+//         const allFavorites = await db.any(
+//             `SELECT * 
+//             FROM favorites 
+//             JOIN users 
+//               ON favorites.users_id 
+//             = users.id;
+//             `,
+//             users_id
+//         );
+//         return allFavorites;
+//     } catch (error) {
+//         return error;
+//     }
+// };
 
 /* 
     ^^^
@@ -88,22 +116,22 @@ const getAllFavoritesAndAllUsers = async (users_id) => {
 */
 
 // get all favorites for all resources
-const getAllFavoritesForResources = async (users_id) => {
-    try {
-        const allFavorites = await db.any(
-            `SELECT *
-            FROM favorites
-            JOIN resources
-              ON favorites.resources_id = 
-            resources.id;
-            `,
-            users_id
-        );
-        return allFavorites;
-    } catch (error) {
-        return error;
-    }
-};
+// const getAllFavoritesForResources = async (users_id) => {
+//     try {
+//         const allFavorites = await db.any(
+//             `SELECT *
+//             FROM favorites
+//             JOIN resources
+//               ON favorites.resources_id = 
+//             resources.id;
+//             `,
+//             users_id
+//         );
+//         return allFavorites;
+//     } catch (error) {
+//         return error;
+//     }
+// };
 
 /*
     ^^^
@@ -129,23 +157,23 @@ const getAllFavoritesForResources = async (users_id) => {
 
 
 // get favorites ID and usernames
-const getFavoritesAndUsername = async (users_id) => {
-    try {
-        const allFavorites = await db.any(
-            `SELECT favorites.id,
-            users.username
-            FROM favorites
-            JOIN users
-              ON favorites.users_id 
-            = users.id;
-            `,
-            users_id
-        );
-        return allFavorites;
-    } catch (error) {
-        return error;
-    }
-};
+// const getFavoritesAndUsername = async (users_id) => {
+//     try {
+//         const allFavorites = await db.any(
+//             `SELECT favorites.id,
+//             users.username
+//             FROM favorites
+//             JOIN users
+//               ON favorites.users_id 
+//             = users.id;
+//             `,
+//             users_id
+//         );
+//         return allFavorites;
+//     } catch (error) {
+//         return error;
+//     }
+// };
 
 /*
     ^^^
@@ -170,23 +198,23 @@ const getFavoritesAndUsername = async (users_id) => {
 
 // Select all `favorites` from `resources` table with a type of "video"
 // get all favorites for all users
-const getFavoritesResourcesOfVideo = async (users_id) => {
-    try {
-        const allFavorites = await db.any(
-            `SELECT * 
-            FROM favorites 
-            JOIN resources
-              ON favorites.resources_id
-            = resources.id
-            WHERE resources.type = 'video';
-            `,
-            users_id
-        );
-        return allFavorites;
-    } catch (error) {
-        return error;
-    }
-};
+// const getFavoritesResourcesOfVideo = async (users_id) => {
+//     try {
+//         const allFavorites = await db.any(
+//             `SELECT * 
+//             FROM favorites 
+//             JOIN resources
+//               ON favorites.resources_id
+//             = resources.id
+//             WHERE resources.type = 'video';
+//             `,
+//             users_id
+//         );
+//         return allFavorites;
+//     } catch (error) {
+//         return error;
+//     }
+// };
 
 
 /*
@@ -205,12 +233,14 @@ const getFavoritesResourcesOfVideo = async (users_id) => {
 
 module.exports={
     getFavoritesByUserId,
+    createNewFavorite,
+    deleteFavorite,
 
 
-    getAllFavoritesAndAllUsers,
-    getAllFavoritesForResources,
-    getFavoritesAndUsername,
-    getFavoritesResourcesOfVideo
+    // getAllFavoritesAndAllUsers,
+    // getAllFavoritesForResources,
+    // getFavoritesAndUsername,
+    // getFavoritesResourcesOfVideo
 }
 
 
