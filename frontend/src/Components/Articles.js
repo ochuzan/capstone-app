@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import "./Articles.css";
 import articlesData from "../data/articlesData";
 
-let key = process.env.REACT_APP_API_ARTICLE_KEY;
+// let key = process.env.REACT_APP_API_ARTICLE_KEY;
 
 function Articles() {
 // const[articles, setArticles]= useState([]);
@@ -38,9 +38,7 @@ let fetchedArticles = articlesData.map((article, index)=>{
           height="250"
           src={`${article.url}`}>
         </iframe>
-        {/* <h3>{article.title}</h3>
-        <p>{article.description}</p>
-        <p>{article.url}</p> */}
+        <h3>Favorite {article.is_favorite? "💰 yes" : "📈 no"}</h3>
       </div>
     )
 });

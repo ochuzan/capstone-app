@@ -37,6 +37,7 @@ function Video() {
             allowFullScreen
             title="video"
 			    />
+          <h3>Favorite {vid.is_favorite ? "💰 yes" : "📈 no"}</h3>
         </div>
     )
   })
