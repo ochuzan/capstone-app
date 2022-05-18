@@ -47,7 +47,7 @@ let fetchedArticles = articlesData.map((article, index)=>{
 console.log(fetchedArticles.length)
     return (
       <div className="Articles">
-        <h1>Articles Go Here</h1>
+        {/* <h1>Articles Go Here</h1> */}
         <div className="articles">
           {fetchedArticles}
         </div>
