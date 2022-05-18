@@ -27,22 +27,24 @@ let articlesData = [
     {
         source: "What is Ethereum Used For?", 
         url:"https://www.bitcoin.com/get-started/what-is-eth-used-for/"
-    },
+    }
+    // ,
 
-    {
-        source: "What is Ethereum?", 
-        url:"https://www.bitcoin.com/get-started/what-is-ethereum/"
-    },
+    // {
+    //     source: "What is Ethereum?", 
+    //     url:"https://www.bitcoin.com/get-started/what-is-ethereum/"
+    // }
+    // ,
 
-    {
-        source: "Digital Asset Security", 
-        url:"https://www.bitcoin.com/get-started/digital-asset-security/"
-    },
+    // {
+    //     source: "Digital Asset Security", 
+    //     url:"https://www.bitcoin.com/get-started/digital-asset-security/"
+    // },
 
-    {
-        source: "What is Ethereum", 
-        url:"https://www.bitcoin.com/get-started/what-is-ethereum/"
-    },
+    // {
+    //     source: "What is Ethereum", 
+    //     url:"https://www.bitcoin.com/get-started/what-is-ethereum/"
+    // },
 ]
 
 export default articlesData
