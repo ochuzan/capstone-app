@@ -24,3 +24,15 @@ INSERT INTO resources(subject, description, type, url, articles_id, is_favorite,
 ('Dogecoin','Dogecoin for Beginners','video','www.Dogecoin-for-Beginners.com','54321',true, 3),
 ('Uniswap','Uniswap Fundamentals','article','www.Blockchain101.com','22454',false, 1);
 
+-- adding `favorited_date` so we can see the differences in our tables/data
+INSERT INTO favorites(favorited_date, resources_id, users_id) VALUES
+('10-22-2017', 1, 1),
+('09-24-2019', 2, 2),
+('07-18-2018', 3, 3),
+('11-21-2021', 4, 4),
+('02-13-2021', 5, 5),
+('03-02-2017', 6, 6),
+('04-22-2016', 7, 7),
+('05-19-2016', 8, 8),
+('06-25-2014', 9, 9),
+('01-20-2022', 10, 10);
