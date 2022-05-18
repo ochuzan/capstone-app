@@ -5,7 +5,7 @@ const newsData = [
     photo: "https://api.time.com/wp-content/uploads/2022/05/GettyImages-1326414122.jpg?quality=85&w=800",
     url: "https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-back-below-2000-as-btc-down-6-to-start-weekend/",
     date: "May 11, 2022 ",
-    favorite: true,
+    is_favorite: true,
     views: 130
   },
   {
@@ -14,7 +14,7 @@ const newsData = [
     photo: "https://d1-invdn-com.investing.com/content/pic1f20278e43ef9de68acecd489f4bd4db.jpg",
     url: "https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-btc-surge-over-10-as-big-2-lead-crypto-rebound/",
     date: "June 12, 2022",
-    favorite: true,
+    is_favorite: true,
     views: 160
   },
   {
@@ -23,7 +23,7 @@ const newsData = [
     photo: "https://ton.twitter.com/onboarding/privacy_policy_2022/privacy_cover.png",
     url: "https://news.bitcoin.com/rich-dad-poor-dads-robert-kiyosaki-plans-to-buy-bitcoin-when-the-bottom-is-in-17k/",
     date: "May 13, 2022",
-    favorite: false,
+    is_favorite: false,
     views: 185
   },
   {
@@ -32,7 +32,7 @@ const newsData = [
     photo: "https://api.time.com/wp-content/uploads/2022/05/GettyImages-1326414122.jpg?quality=85&w=800",
     url: "https://bitcoinmagazine.com/culture/what-makes-bitcoin-different-from-crypto",
     date: "June 11, 2022",
-    favorite: true,
+    is_favorite: true,
     views: 230
   },
   {
@@ -41,7 +41,7 @@ const newsData = [
     photo: "https://api.time.com/wp-content/uploads/2022/05/GettyImages-1326414122.jpg?quality=85&w=800",
     url: "https://news.bitcoin.com/coinbase-now-allows-cardano-staking-services-firm-plans-to-continue-to-scale-staking-portfolio/",
     date: "August 14, 2022",
-    favorite: true,
+    is_favorite: false,
     views: 145
   },
   {
@@ -50,7 +50,7 @@ const newsData = [
     photo: "https://pbs.twimg.com/card_img/1522018777063469056/N0668A5i?format=jpg&name=small",
     url: "https://news.bitcoin.com/tesla-ceo-elon-musk-reaffirms-dogecoin-has-potential-as-a-currency-as-twitter-deal-is-put-on-hold/",
     date: "July 15, 2022",
-    favorite: false,
+    is_favorite: false,
     views: 15
   },
   {
@@ -59,7 +59,7 @@ const newsData = [
     photo: "https://ton.twitter.com/onboarding/privacy_policy_2022/privacy_cover.png",
     url: "https://news.bitcoin.com/cardano-to-reach-58-by-2030-according-to-finders-poll/",
     date: "May 13, 2022",
-    favorite: false,
+    is_favorite: false,
     views: 185
   },
   {
@@ -68,7 +68,7 @@ const newsData = [
     photo: "https://api.time.com/wp-content/uploads/2022/05/GettyImages-1326414122.jpg?quality=85&w=800",
     url: "https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-bounces-back-up-2-while-btc-climbs-above-30000/",
     date: "June 11, 2022",
-    favorite: true,
+    is_favorite: true,
     views: 230
   },
   {
@@ -77,7 +77,7 @@ const newsData = [
     photo: "https://api.time.com/wp-content/uploads/2022/05/GettyImages-1326414122.jpg?quality=85&w=800",
     url: "https://news.bitcoin.com/top-diamond-producer-de-beers-deploys-blockchain-based-platform-at-scale/",
     date: "August 14, 2022",
-    favorite: true,
+    is_favorite: true,
     views: 145
   },
   {
@@ -86,7 +86,7 @@ const newsData = [
     photo: "https://pbs.twimg.com/card_img/1522018777063469056/N0668A5i?format=jpg&name=small",
     url: "https://news.bitcoin.com/lbank-and-adanian-labs-kickstarts-a-crypto-accelerator-program-in-kenya/",
     date: "July 15, 2022",
-    favorite: false,
+    is_favorite: false,
     views: 15
   }
 ]
