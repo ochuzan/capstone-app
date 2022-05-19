@@ -21,7 +21,7 @@ function Video(){
                 src={`https://www.youtube.com/embed/${videos[id].videoId}`}>
             </iframe>
             </div>
-            <div className="vid-container"></div>
+            <div className="vid-container"><h3> Favorite {videos[id].is_favorite ? "💰 yes" : "📈 no"}</h3></div>
             </article>
         </div>
     )
