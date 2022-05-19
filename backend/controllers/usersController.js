@@ -7,8 +7,11 @@ const {
     deleteUser,
 } = require("../queries/users.js");
 
+// Controllers
 const resourcesController = require("./resourcesController.js");
+const favoritesController = require("./favoritesController.js");
 users.use("/:usersId/resources", resourcesController);
+users.use("/:usersId/favorites", favoritesController);
 
 users.post("/", async(req, res) => {
     const { body } = req;
