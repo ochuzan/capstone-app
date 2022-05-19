@@ -4,44 +4,60 @@ function TickerTape() {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js'
-    script.async = true;
+    script.async = false;
     script.innerHTML = JSON.stringify({
         "symbols": [
-        {
-            "proName": "BITSTAMP:BTCUSD",
-            "title": "Bitcoin"
-        },
-        {
-            "proName": "BITSTAMP:ETHUSD",
-            "title": "Ethereum"
-        },
-        {
-            "description": "Litecoin",
-            "proName": "BITFINEX:LTCUSD"
-        },
-        {
-            "description": "Chainlink",
-            "proName": "BINANCE:LINKUSD"
-        },
-        {
-            "description": "Matic",
-            "proName": "COINBASE:MATICUSD"
-        },
-        {
-            "description": "Cardano",
-            "proName": "KRAKEN:ADAUSD"
-        },
-        {
-            "description": "Monero",
-            "proName": "KRAKEN:XMRUSD"
-        }
-        ],
-        "showSymbolLogo": true,
-        "colorTheme": "dark",
-        "isTransparent": false,
-        "displayMode": "adaptive",
-        "locale": "en"
-    })
+            {
+              "proName": "BITSTAMP:BTCUSD",
+              "title": "Bitcoin"
+            },
+            {
+              "proName": "BITSTAMP:ETHUSD",
+              "title": "Ethereum"
+            },
+            {
+              "description": "Cardano",
+              "proName": "KRAKEN:ADAUSD"
+            },
+            {
+              "description": "Litecoin",
+              "proName": "BITSTAMP:LTCUSD"
+            },
+            {
+              "description": "Tether",
+              "proName": "BINANCEUS:USDTUSD"
+            },
+            {
+              "description": "Solana",
+              "proName": "FTX:SOLUSD"
+            },
+            {
+              "description": "USD Coin",
+              "proName": "BITSTAMP:USDCUSD"
+            },
+            {
+              "description": "BNB",
+              "proName": "BINANCE:BNBUSD"
+            },
+            {
+              "description": "Dogecoin",
+              "proName": "BITTREX:DOGEUSD"
+            },
+            {
+              "description": "XRP",
+              "proName": "BITSTAMP:XRPUSD"
+            },
+            {
+              "description": "Uniswap",
+              "proName": "KRAKEN:UNIUSD"
+            }
+          ],
+          "showSymbolLogo": true,
+          "colorTheme": "dark",
+          "isTransparent": false,
+          "displayMode": "adaptive",
+          "locale": "en"
+        })
     document.getElementById("ticker-tape-container").appendChild(script);
     }, [])
   return(

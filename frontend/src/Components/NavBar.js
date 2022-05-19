@@ -14,6 +14,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import "./NavBar.css"
+import logo from "../Images/chatbot-logo.png"
+import logoNoBE from "../Images/chatbot-logo-no-black-eyes.png"
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -38,7 +40,13 @@ function NavBar() {
     <AppBar position="sticky" sx={{ backgroundColor: "#4366F5", height: "90px" }}>
       <Container maxWidth="xl" >
         <Toolbar sx={{ marginTop: "10px" }} disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,  }} />
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,  }}>
+            <img id="navbar-logo" src={logoNoBE}/>
+          </Box>
+          {/* <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,  }}>
+            <img id="navbar-logo" src={logo}/>
+          </Box> */}
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,  }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -103,7 +111,13 @@ function NavBar() {
               </Link>
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          {/* <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1,  }}>
+            <img id="navbar-logo" src={logo}/>
+          </Box> */}
+          <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1,  }}>
+            <img id="navbar-logo" src={logoNoBE}/>
+          </Box>
+          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -120,7 +134,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            CRYPTO-VERSATION
+            CryptoTalk
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Link to="/cryptocurrency">

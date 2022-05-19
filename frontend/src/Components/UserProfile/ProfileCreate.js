@@ -1,12 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Avatar, Button, Checkbox, FormControl, FormControlLabel, InputLabel, OutlinedInput, InputAdornment, IconButton, Grid, Paper, TextField, Typography } from "@mui/material"
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import { Visibility, VisibilityOff } from "@mui/icons-material"
 
 function ProfileCreate() {
     const [ userProfile, setUserProfile ] = useState({
+        first_name: "",
+        last_name: "",
         username: "",
         password: "",
         contact_email: "",
@@ -51,6 +53,15 @@ function ProfileCreate() {
         event.preventDefault();
     };
 
+    const disableButton = () =>{
+        if(userProfile.active){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+
     const paperStyle = {padding: "30px 20px", width: 400, margin: "20px auto"}
     const headerStyle = {margin: "0", color: "#016BFD"}
     return (
@@ -62,11 +73,15 @@ function ProfileCreate() {
                     </Avatar>
                     <h2 style={headerStyle}>Sign Up</h2>
                     <Typography variant="caption" >Please fill this form to create a profile</Typography>
-                    {/* <Typography variant="caption" fullWidth>Required fields have an asterisk: *</Typography> */}
+                    <div>
+                        <Typography variant="caption">Required fields have an asterisk: *</Typography>
+                    </div>
                 </Grid>
                 <form onSubmit={handleSubmit}>
+                    <TextField required onChange={handleChange('first_name')} margin="dense" fullWidth label='First Name' placeholder="Enter your first name"/>
+                    <TextField required onChange={handleChange('last_name')} margin="dense" fullWidth label='Last Name' placeholder="Enter your last name"/>
+                    <TextField required onChange={handleChange('username')} margin="dense" fullWidth label='Username' placeholder="Enter your username"/>
                     <TextField required onChange={handleChange('contact_email')} margin="dense" fullWidth label='Email' placeholder="Enter your email address"/>
-                    <TextField required onChange={handleChange('username')}margin="dense" fullWidth label='Username' placeholder="Enter your username"/>
                     <FormControl fullWidth margin="dense" variant="outlined">
                         <InputLabel required htmlFor="outlined-adornment-password">Password</InputLabel>
                         <OutlinedInput
@@ -93,10 +108,13 @@ function ProfileCreate() {
                         <Checkbox
                             onChange={handleCheckboxChange}
                         />}
-                        label="I accept the terms and conditions"
+                        label="I accept the terms and conditions*"
                     />
-                    <Button type="submit" variant="contained" color="primary" fullWidth>Create Profile</Button>
+                    <Button type="submit" variant="contained" size="large" color="primary" fullWidth disabled={disableButton()}>Create Profile</Button>
                 </form>
+                <Grid align="center" sx={{marginTop:"20px"}}>
+                    <Typography>Already have a CryptoTalk profile? <Link to="/">Log in</Link></Typography>
+                </Grid>
             </Paper>
         </Grid>
     )
