@@ -16,7 +16,6 @@ import Footer from "./Components/Footer";
 import NewsPage from "./Components/NewsPage"
 import Videos from "./Components/Videos"
 // import Bot from "./Components/ChatBot/Bot";
-import Popchat from "./Components/ChatBot/Popchat";
 import Video from "./Components/Video";
 // import MuiSandbox from "./Components/MuiSandbox";
 
