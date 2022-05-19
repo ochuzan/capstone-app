@@ -1,6 +1,6 @@
 // import axios from "axios";
 // import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./News.css";
 import NewsArticle from "./NewsArticle";
@@ -38,7 +38,8 @@ function News() {
         {newsData.map((oneArticle, index) => {
           return (
             <article key={index}>
-              <NewsArticle oneArticle={oneArticle} />
+
+              <NewsArticle oneArticle={oneArticle} index={index}/>
             </article>
           );
         })}

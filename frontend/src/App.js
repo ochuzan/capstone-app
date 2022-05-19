@@ -13,6 +13,12 @@ import Popchat from "./Components/ChatBot/Popchat";
 import Articles from "./Components/Articles";
 import Article from "./Components/Article";
 import Footer from "./Components/Footer";
+import NewsPage from "./Components/NewsPage"
+import Videos from "./Components/Videos"
+// import Bot from "./Components/ChatBot/Bot";
+import Popchat from "./Components/ChatBot/Popchat";
+import Video from "./Components/Video";
+// import MuiSandbox from "./Components/MuiSandbox";
 
 
 function App() {
@@ -21,12 +27,16 @@ function App() {
       <Header />
       <NavBar/>
       <Routes>
+        {/* <Route path="/sandbox" element={<MuiSandbox />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
+        <Route path="/news/:id" element={<NewsPage />} />
         <Route path="/cryptocurrency" element={<Cryptocurrency />} />
         <Route path="/education" element={<Education/>} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:id" element={<Article />} />
+        <Route path="videos" element={<Videos />} />
+        <Route path="/videos/:id" element={<Video />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/create-profile" element={<ProfileCreate />} />
         <Route path="/edit-profile" element={<ProfileEdit />} />

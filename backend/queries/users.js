@@ -3,8 +3,10 @@ const db = require("../db/dbConfig.js");
 const createUser = async(user) => {
     try{
         const newUser = await db.one(
-            "INSERT INTO users (username, password, contact_email, active) VALUES($1, $2, $3, $4) RETURNING *",
+            "INSERT INTO users (firstname, lastname, username, password, contact_email, active) VALUES($1, $2, $3, $4) RETURNING *",
             [
+                user.firstname,
+                user.lastname,
                 user.username,
                 user.password,
                 user.contact_email,
@@ -29,8 +31,10 @@ const getOneUser = async(id) => {
 const updateUser = async(id, user) => {
     try{
         const updatedUser = await db.one(
-            "UPDATE users SET username=$1, password=$2, contact_email=$3, active=$4 WHERE id=$5 RETURNING *",
+            "UPDATE users SET firstname=$1, lastname=$2, username=$3, password=$4, contact_email=$5, active=$6 WHERE id=$7 RETURNING *",
             [
+                user.firstname,
+                user.lastname,
                 user.username,
                 user.password,
                 user.contact_email,
