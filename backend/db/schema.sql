@@ -5,6 +5,8 @@ CREATE DATABASE crypto_users;
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
+    firstname TEXT,
+    lastname TEXT,
     username TEXT UNIQUE NOT NULL,
     password TEXT,
     contact_email TEXT,

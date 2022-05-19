@@ -1,16 +1,17 @@
 \c crypto_users;
 
-INSERT INTO users(username, password, contact_email, active) VALUES
-('Christina_234','12345','123@gmail.org', true),
-('Oliver_123','mypassword123','HTMLStudy@meetup.com', true),
-('Deb2468','54321','1abc@gmail', true),
-('Milton456','mPassword345','Flexbox@studygroup.com', true),
-('Ruben4321','yupYup2022','codepro@mentor.com', true),
-('Olaver_123','mepass100','HTMLman@meetup.com', false),
-('Dab2468','543a210','ethereum@gmail.edu', false),
-('Malton456','drowssaP','CSSlearner@study.com', false),
-('coffee7Shop','cupOcoffee1','beans@coffee.com', true),
-('coderHero','codecode4','cody@coding.com', true);
+INSERT INTO users(firstname, lastname, username, password, contact_email, active) VALUES
+('Christina', 'Loiacono', 'Christina_234','12345','123@gmail.org', true),
+('Oliver', 'Chuzan', 'Oliver_123','mypassword123','HTMLStudy@meetup.com', true),
+('Deborah', 'Campos', 'Deb2468','54321','1abc@gmail', true),
+('Milton', 'Clark', 'Milton456','mPassword345','Flexbox@studygroup.com', true),
+('Ruben', 'Profit', 'Ruben4321','yupYup2022','codepro@mentor.com', true),
+('Olaver', 'Cheezin', 'Olaver_123','mepass100','HTMLman@meetup.com', false),
+('Dab', 'Camper', 'Dab2468','543a210','ethereum@gmail.edu', false),
+('Malton', 'Clerk', 'Malton456','drowssaP','CSSlearner@study.com', false),
+('Greg', 'Coffeeman', 'coffee7Shop','cupOcoffee1','beans@coffee.com', true),
+('Sam', 'Caffeinated', 'g00dCoffee','goodCoffe3','garbagecoffee@coffee.com', true),
+('Cody', 'Coder', 'coderHero','codecode4','cody@coding.com', true);
 
 INSERT INTO resources(name, type, category, url, is_favorite, users_id) VALUES
 (
