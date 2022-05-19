@@ -1,12 +1,24 @@
 const db = require("../db/dbConfig.js");
 
-const getAllResources = async (users_id) => {
+// Get all resources (for the bot) - http://localhost:3333/resources/
+const getAllResources = async() => {
     try {
         const allResources = await db.any(
+            "SELECT * FROM resources"
+        )
+        return allResources;
+    } catch (error) {
+        return error;
+    }
+}
+
+const getAllResourcesByUserId = async (users_id) => {
+    try {
+        const allResourcesByUserId = await db.any(
             "SELECT * FROM resources WHERE users_id=$1",
             users_id
         );
-        return allResources;
+        return allResourcesByUserId;
     } catch (error) {
         return error;
     }
@@ -79,8 +91,8 @@ const deleteResource = async (id) => {
 };
 
 module.exports={
-    getAllResourcesForTheBot,
     getAllResources,
+    getAllResourcesByUserId,
     getOneResource,
     createResource,
     updateResource,
