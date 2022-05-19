@@ -9,6 +9,7 @@ import ProfileEdit from "./Components/ProfileEdit";
 import Education from "./Components/Education";
 import PageNotFound from "./Components/PageNotFound";
 import News from "./Components/News";
+import NewsPage from "./Components/NewsPage"
 import Videos from "./Components/Videos"
 // import Bot from "./Components/ChatBot/Bot";
 import Popchat from "./Components/ChatBot/Popchat";
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
+        <Route path="/news/:id" element={<NewsPage />} />
         <Route path="/cryptocurrency" element={<Cryptocurrency />} />
         <Route path="/education" element={<Education/>} />
         <Route path="/articles" element={<Articles />} />
