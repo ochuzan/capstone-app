@@ -16,6 +16,7 @@ import Popchat from "./Components/ChatBot/Popchat";
 import Articles from "./Components/Articles";
 import Article from "./Components/Article";
 import Video from "./Components/Video";
+// import MuiSandbox from "./Components/MuiSandbox";
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <NavBar/>
       {/* <Bot /> */}
       <Routes>
+        {/* <Route path="/sandbox" element={<MuiSandbox />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="/news" element={<News />} />
         <Route path="/news/:id" element={<NewsPage />} />

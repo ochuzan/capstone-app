@@ -47,7 +47,7 @@ function Videos() {
   console.log(videos)
     return (
       <div className="Videos">
-        <h1>Educational Videos</h1>
+        <h1>Videos</h1>
         <div className="vids">{fetchedVids}</div>
       </div>
     );
