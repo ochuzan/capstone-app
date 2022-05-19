@@ -57,12 +57,29 @@ const createNewFavorite = async (favorite) => {
     }
 };
 
+// Get a favorite by its ID
+// Get one favorite - Example: http://localhost:3333/users/2/favorites/12
+const getOneFavorite = async (id) => {
+    try {
+        const oneFavorite = await db.one(
+            `SELECT * FROM favorites 
+            WHERE id=${id}`,
+            id
+        );
+        return oneFavorite;
+    } catch (error) {
+        return error;
+    }
+};
+
 // Deleting a favorite
 // delete by user_id and the resources_id - find the favorite and then delete it
 const deleteFavorite = async (id) => {
     try {
         const deletedFavorite = await db.one(
-            "DELETE FROM favorites WHERE id=$1 RETURNING *",
+            `DELETE FROM favorites 
+            WHERE id=${id} 
+            RETURNING *`,
             id
         );
         return deletedFavorite;
@@ -234,6 +251,7 @@ const deleteFavorite = async (id) => {
 module.exports={
     getFavoritesByUserId,
     createNewFavorite,
+    getOneFavorite,
     deleteFavorite,
 
 

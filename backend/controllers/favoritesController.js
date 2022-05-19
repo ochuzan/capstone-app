@@ -3,6 +3,7 @@ const favorites = express.Router({mergeParams: true});
 const { 
     getFavoritesByUserId,
     createNewFavorite,
+    getOneFavorite,
     deleteFavorite,
 
     getAllFavoritesAndAllUsers,
@@ -42,7 +43,25 @@ favorites.post("/", async(req, res) => {
     }
 });
 
-// Deleting a favorite
+
+// Get a favorite by its ID
+// Get one favorite - Example: http://localhost:3333/users/2/favorites/12
+favorites.get("/:id", async (req, res)=>{
+    const { id } = req.params;
+    try {
+        const getFavorite = await getOneFavorite(id);
+        if (getFavorite.id){
+            res.status(200).json(getFavorite);
+        } else {
+            res.status(500).json({ error: "favorite not found!" });
+        }
+    } catch (error){
+        console.log(error);
+    }
+})
+
+
+// Deleting a favorite by its ID
 favorites.delete("/:id", async (req, res) => {
 const { id } = req.params;
 
