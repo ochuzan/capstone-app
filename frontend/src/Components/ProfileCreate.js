@@ -14,31 +14,31 @@ function ProfileCreate() {
         showPassword: false
     });
 
-    // const API = process.env.REACT_APP_URL;
+    const API = process.env.REACT_APP_API_URL;
 
-    // let navigate = useNavigate();
+    let navigate = useNavigate();
 
-    // const addUser = (newUser) => {
-    //     axios.post(`${API}/users`, newUser)
-    //         .then((res) => {
-    //             navigate("/keyboards");
-    //         }).catch((error) => {
-    //             console.log(error);
-    //         })
-    // };
+    const addUser = (newUser) => {
+        axios.post(`${API}/users`, newUser)
+            .then(() => {
+                navigate("/profile");
+            }).catch((error) => {
+                console.log(error);
+            })
+    };
 
     // const handleTextChange = (event) => {
     //     setUser({ ...user, [event.target.id]: event.target.value });
     // };
 
-    // const handleCheckboxChange = () => {
-    //     setUser({ ...user, featured: !user.featured });
-    // };
+    const handleCheckboxChange = () => {
+        setUserProfile({ ...userProfile, active: !userProfile.active });
+    };
 
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     addUser(user);
-    // };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        addUser(userProfile);
+    };
 
     const handleChange = (prop) => (event) => {
         setUserProfile({ ...userProfile, [prop]: event.target.value });
@@ -55,7 +55,7 @@ function ProfileCreate() {
         event.preventDefault();
     };
 
-    const paperStyle = {padding: "30px 20px", width: 300, margin: "20px auto"}
+    const paperStyle = {padding: "30px 20px", width: 400, margin: "20px auto"}
     const headerStyle = {margin: "0", color: "#016BFD"}
     return (
         <Grid>
@@ -65,14 +65,14 @@ function ProfileCreate() {
                         <PersonAddAltOutlinedIcon/>
                     </Avatar>
                     <h2 style={headerStyle}>Sign Up</h2>
-                    <Typography variant="caption">Please fill this form to create a profile</Typography>
+                    <Typography variant="caption" >Please fill this form to create a profile</Typography>
+                    {/* <Typography variant="caption" fullWidth>Required fields have an asterisk: *</Typography> */}
                 </Grid>
-                <form>
-                    <TextField margin="dense" fullWidth label='Email' placeholder="Enter your email address"/>
-                    <TextField margin="dense" fullWidth label='Username' placeholder="Enter your username"/>
-                    {/* <TextField margin="dense" fullWidth label='Password' placeholder="Enter your password"/> */}
+                <form onSubmit={handleSubmit}>
+                    <TextField required onChange={handleChange('contact_email')} margin="dense" fullWidth label='Email' placeholder="Enter your email address"/>
+                    <TextField required onChange={handleChange('username')}margin="dense" fullWidth label='Username' placeholder="Enter your username"/>
                     <FormControl fullWidth margin="dense" variant="outlined">
-                        <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                        <InputLabel required htmlFor="outlined-adornment-password">Password</InputLabel>
                         <OutlinedInput
                             id="outlined-adornment-password"
                             type={userProfile.showPassword ? 'text' : 'password'}
@@ -93,10 +93,13 @@ function ProfileCreate() {
                             label="Password"
                         />
                     </FormControl>
-                    <FormControlLabel control={<Checkbox/>}
+                    <FormControlLabel control={
+                        <Checkbox
+                            onChange={handleCheckboxChange}
+                        />}
                         label="I accept the terms and conditions"
                     />
-                    <Button type="submit" variant="contained" color="primary">Sign up</Button>
+                    <Button type="submit" variant="contained" color="primary" fullWidth>Create Profile</Button>
                 </form>
             </Paper>
         </Grid>
