@@ -12,11 +12,12 @@ const getFavoritesByUserId = async (users_id) => {
             `SELECT favorites.id AS favorites_table_id,
               favorites.favorited_date,
               resources.id AS resources_table_id,
-              resources.subject,
+              resources.name,
               resources.description,
               resources.type,
+              resources.photo,
               resources.url,
-              resources.articles_id,
+              resources.date,
               resources.is_favorite,
               resources.users_id
             FROM favorites

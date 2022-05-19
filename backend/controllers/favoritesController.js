@@ -5,7 +5,7 @@ const {
     createNewFavorite,
     getOneFavorite,
     deleteFavorite
-    } = require("../queries/favorites.js");
+} = require("../queries/favorites.js");
 
 // For query `getFavoritesByUserId` - Examples: http://localhost:3333/users/1/favorites , http://localhost:3333/users/3/favorites
 favorites.get("/", async (req, res)=>{

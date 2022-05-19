@@ -15,11 +15,12 @@ DROP TABLE IF EXISTS resources;
  
 CREATE TABLE resources(
     id SERIAL PRIMARY KEY,
-    subject TEXT NOT NULL,
+    name TEXT NOT NULL,
     description TEXT,
     type TEXT,
-    url TEXT,
-    articles_id TEXT,
+    photo VARCHAR(2048),
+    url VARCHAR(2048),
+    date TEXT,
     is_favorite BOOLEAN,
     users_id INTEGER REFERENCES users(id)
     ON DELETE CASCADE
