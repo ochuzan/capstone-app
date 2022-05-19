@@ -3,7 +3,7 @@ const db = require("../db/dbConfig.js");
 const createUser = async(user) => {
     try{
         const newUser = await db.one(
-            "INSERT INTO users (firstname, lastname, username, password, contact_email, active) VALUES($1, $2, $3, $4) RETURNING *",
+            "INSERT INTO users (firstname, lastname, username, password, contact_email, active) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
             [
                 user.firstname,
                 user.lastname,
