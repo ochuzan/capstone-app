@@ -12,19 +12,53 @@ INSERT INTO users(username, password, contact_email, active) VALUES
 ('coffee7Shop','cupOcoffee1','beans@coffee.com', true),
 ('coderHero','codecode4','cody@coding.com', true);
 
-INSERT INTO resources(name, description, type, photo, url, date, is_favorite, users_id) VALUES
-('Ethereum News', 'Bank accounts in the U.S. are protected by deposit insurance offered by the Federal Deposit Insurance Corporation. In the event a bank fails, the FDIC steps in to protect deposits up to $250,000, preventing depositors from going broke along with the bank. Crypto exchanges don''t offer that same protection—which is the primary reason why crypto enthusiasts advise investors to hold their cryptocurrency in a personal wallet, rather than on an exchange.', 'article', 'https://api.time.com/wp-content/uploads/2022/05/GettyImages-1326414122.jpg?quality=85&w=800', 'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-back-below-2000-as-btc-down-6-to-start-weekend/', '05/11/2022 09:30', 130, true, 1),
-('Bitcoin News"', 'Coinbase does offer a self-custody wallet, titled “Coinbase Wallet,” in which users know their private key, and a Coinbase Wallet—or any crypto wallet—is not required to trade crypto on Coinbase. But by admitting that crypto assets aren''t secure in the event of a bankruptcy, Coinbase is also highlighting a major difference between storing your funds with blockchain exchanges, versus keeping cash with traditional banks.', 'article', 'https://d1-invdn-com.investing.com/content/pic1f20278e43ef9de68acecd489f4bd4db.jpg', 'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-btc-surge-over-10-as-big-2-lead-crypto-rebound/', '06/12/2022 07:00', 160, true, 1),
-('Crypto Wallet', 'Access to a crypto wallet is governed by a private key, which is a long string of characters that effectively acts as a password. Without the key, the cryptocurrency in the wallet can''t be accessed. On Coinbase, the exchange holds the private key and lets users access the funds within the wallet using a more conventional password. The setup makes it easier for users to enter their accounts, by remembering an easier password.', 'article', 'https://ton.twitter.com/onboarding/privacy_policy_2022/privacy_cover.png', 'https://news.bitcoin.com/rich-dad-poor-dads-robert-kiyosaki-plans-to-buy-bitcoin-when-the-bottom-is-in-17k/', '05/13/2022 10:15', 185, false, 2),
-('Bitcoin, Ethereum Technical Analysis', 'The token of the Terra ecosystem, LUNA, took the brunt of the news, and has lost more than 30% of its value since Thursday, May 5th. The price of LUNA fell from $87, down to as low as $58.6, and is trading at $60.17 as of this writing.', 'article', 'https://image.cnbcfm.com/api/v1/image/107005776-1643087617730-gettyimages-1237955656-20090101220124-99-833573.jpeg?v=1644414643', 'https://bitcoinmagazine.com/culture/what-makes-bitcoin-different-from-crypto', '06/11/2022 08:45', 230, true, 2),
-('Pursuit Announces Crypto for Fellows', 'The market crash, which saw Bitcoin hit a 10-month low, also caused an unexpected twist of fate for Terra''s algorithmic stablecoin, TerraUSD (UST). On Saturday, the UST lost its 1:1 dollar peg for a brief moment.', 'article', 'https://time.com/nextadvisor/wp-content/uploads/2022/05/daily-crypto-update-4-9-884x584.jpg', 'https://news.bitcoin.com/coinbase-now-allows-cardano-staking-services-firm-plans-to-continue-to-scale-staking-portfolio/', '08/14/2022 18:30', 145, false, 3),
-('Crypto for Retirement', 'Since Thursday, Bitcoin has lost more than 17% of its value. Bitcoin, which was priced at around $39,800 just after the announcement, hit an interday low of $32,813-its lowest value since June 2021.', 'article', 'https://phantom-marca.unidadeditorial.es/4c8a5cd6093e1ca13b001e77b6433f61/resize/660/f/webp/assets/multimedia/imagenes/2022/03/19/16476999218789.jpg', 'https://news.bitcoin.com/tesla-ceo-elon-musk-reaffirms-dogecoin-has-potential-as-a-currency-as-twitter-deal-is-put-on-hold/', '07/15/2022 22:00', 15, false, 4),
-('Teachers Donating Crypto', 'Access to a crypto wallet is governed by a private key, which is a long string of characters that effectively acts as a password. Without the key, the cryptocurrency in the wallet can''t be accessed. On Coinbase, the exchange holds the private key and lets users access the funds within the wallet using a more conventional password. The setup makes it easier for users to enter their accounts, by remembering an easier password.', 'article', 'https://www.cnet.com/a/img/resize/941676ec40a5f484a5a3421c0fab4fc66d83adf2/2022/04/23/ddcb4d2b-32be-43f0-b48f-f6d31e44bec9/crypto-story-1.png?auto=webp&fit=crop&height=630&width=1200', 'https://news.bitcoin.com/cardano-to-reach-58-by-2030-according-to-finders-poll/', '05/13/2022 17:00', 185, false, 5),
-('Charity funds Crypto for Homeless', 'The token of the Terra ecosystem, LUNA, took the brunt of the news, and has lost more than 30% of its value since Thursday, May 5th. The price of LUNA fell from $87, down to as low as $58.6, and is trading at $60.17 as of this writing.', 'article', 'https://assets.theedgemarkets.com/Cryptocurrency_20210211161132_theedgemarkets_9.jpg?Azh.eJsWDGb9T6DsBNIq5X27Z6ywBG5q', 'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-bounces-back-up-2-while-btc-climbs-above-30000/', '06/11/2022 14:10', 230, true, 6),
-('Crypto Machines Coming Soon to Walmart', 'The market crash, which saw Bitcoin hit a 10-month low, also caused an unexpected twist of fate for Terra''s algorithmic stablecoin, TerraUSD (UST). On Saturday, the UST lost its 1:1 dollar peg for a brief moment.', 'article', 'https://www2.deloitte.com/content/dam/Deloitte/us/Images/promo_images/abstract/green-circular-connecting-globe-promo.jpg', 'https://news.bitcoin.com/top-diamond-producer-de-beers-deploys-blockchain-based-platform-at-scale/', '08/14/2022 18:00', 145, true, 7),
-('Crypto Platform Hack Rocks Blockchain Community', 'On Oct. 14, in a house near Leeds, England, Laurence Day was sitting down to a dinner of fish and chips on his couch when his phone buzzed. The text was from a colleague who worked with him on Indexed Finance, a cryptocurrency platform that creates tokens representing baskets of other tokens—like an index fund, but on the blockchain. The colleague had sent over a screenshot showing a recent trade, followed by a question mark. “If you didn''t know what you were looking at, you might say, ''Nice-looking trade,'' ” Day says. But he knew enough to be alarmed: A user had bought up certain tokens at drastically deflated values, which shouldn''t have been possible. Something was very wrong.', 'article', 'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iQaZaN32u.nQ/v0/1400x-1.jpg', 'https://www.bloomberg.com/news/features/2022-05-19/crypto-platform-hack-rocks-blockchain-community', '05/19/2022 01:01', 245, true, 8),
-('Crypto-loving S.Koreans bet on Luna rising from ashes, worrying regulator', 'SEOUL, May 19 (Reuters) - Reckoning they have little to lose with prices so ridiculously low, South Korean speculators in recent days have piled into Luna, a cryptocurrency that lost 99.99% of its value last week after its paired stablecoin TerraUSD collapsed. Both tokens are affiliated with Terra, a blockchain platform co-founded by Korean developer Do Kwon and, according to blockchain analytics firm Elliptic, investors in them have lost around $42 billion.', 'article', 'https://www.reuters.com/resizer/ZB2b1uPek3GHIW28ZeKE8XK9F04=/960x0/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/5FVAN7WCNZOY3PAYFNGHSJ4JHM.jpg', 'https://www.reuters.com/markets/currencies/crypto-loving-skoreans-bet-luna-rising-ashes-worrying-regulator-2022-05-19/', '05/19/2022 04:06', 643, true, 9),
-('Crypto Accelerator Program in Kenya', 'The blockchain ecosystem is growing exponentially. It has brought prosperity to most African countries by creating wealth for individuals and fast economic growth for their people. However, many believe that the region is yet to tap into its full potential, that is, leveraging blockchain technology to build a solid ecosystem. As a result, there has been an increasing global interest in Africa recently, with many prominent investors and companies looking to invest in this promising continent.', 'article', 'https://thedial.co/wp-content/uploads/2022/03/crypto.jpeg', 'https://news.bitcoin.com/lbank-and-adanian-labs-kickstarts-a-crypto-accelerator-program-in-kenya/', '07/15/2022 03:30', 45, true, 10);
+INSERT INTO resources(name, type, category, url, is_favorite, users_id) VALUES
+(
+    'Ethereum News', 'article', 'education', 
+    'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-back-below-2000-as-btc-down-6-to-start-weekend/', 
+    true, 1
+),
+(
+    'Bitcoin News"', 'article', 'news', 
+    'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-btc-surge-over-10-as-big-2-lead-crypto-rebound/', 
+    true, 1
+),
+(
+    'Crypto Wallet', 'article', 'education', 
+    'https://news.bitcoin.com/rich-dad-poor-dads-robert-kiyosaki-plans-to-buy-bitcoin-when-the-bottom-is-in-17k/', 
+    false, 2
+),
+(
+    'Bitcoin, Ethereum Technical Analysis', 'article', 'education', 
+    'https://bitcoinmagazine.com/culture/what-makes-bitcoin-different-from-crypto', 
+    true, 2
+),
+(
+    'Pursuit Announces Crypto for Fellows', 'article', 'news', 
+    'https://news.bitcoin.com/coinbase-now-allows-cardano-staking-services-firm-plans-to-continue-to-scale-staking-portfolio/', 
+    false, 3
+),
+('Crypto for Retirement', 'article', 'education', 
+    'https://news.bitcoin.com/tesla-ceo-elon-musk-reaffirms-dogecoin-has-potential-as-a-currency-as-twitter-deal-is-put-on-hold/', 
+    false, 4),
+('Teachers Donating Crypto', 'article', 'news', 
+    'https://news.bitcoin.com/cardano-to-reach-58-by-2030-according-to-finders-poll/', 
+    false, 5),
+('Pursuit Now Accepting Crypto', 'article', 'education',
+    'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-bounces-back-up-2-while-btc-climbs-above-30000/', 
+    true, 6),
+('Bitcoin Market Crash', 'article', 'news', 
+    'https://news.bitcoin.com/top-diamond-producer-de-beers-deploys-blockchain-based-platform-at-scale/', 
+    true, 7),
+('Crypto Platform Hack Rocks Blockchain Community', 'article', 'education', 
+    'https://www.bloomberg.com/news/features/2022-05-19/crypto-platform-hack-rocks-blockchain-community', 
+    true, 8),
+('Crypto-loving S.Koreans bet on Luna rising from ashes, worrying regulator', 'article', 'news', 
+    'https://www.reuters.com/markets/currencies/crypto-loving-skoreans-bet-luna-rising-ashes-worrying-regulator-2022-05-19/', 
+    true, 9),
+('Crypto Accelerator Program in Kenya', 'article', 'education', 
+    'https://news.bitcoin.com/lbank-and-adanian-labs-kickstarts-a-crypto-accelerator-program-in-kenya/', 
+    true, 10);
 
 -- adding `favorited_date` so we can see the differences in our tables/data
 INSERT INTO favorites(favorited_date, resources_id, users_id) VALUES
