@@ -27,10 +27,6 @@ function ProfileCreate() {
             })
     };
 
-    // const handleTextChange = (event) => {
-    //     setUser({ ...user, [event.target.id]: event.target.value });
-    // };
-
     const handleCheckboxChange = () => {
         setUserProfile({ ...userProfile, active: !userProfile.active });
     };
