@@ -4,16 +4,11 @@ const {
     getFavoritesByUserId,
     createNewFavorite,
     getOneFavorite,
-    deleteFavorite,
-
-    getAllFavoritesAndAllUsers,
-    getAllFavoritesForResources,
-    getFavoritesAndUsername,
-    getFavoritesResourcesOfVideo
+    deleteFavorite
     } = require("../queries/favorites.js");
 
 
-// For query `getFavoritesByUserId` http://localhost:3333/favorites
+// For query `getFavoritesByUserId` - Examples: http://localhost:3333/users/1/favorites , http://localhost:3333/users/3/favorites
 favorites.get("/", async (req, res)=>{
     const { usersId } = req.params;
     try {
@@ -28,7 +23,7 @@ favorites.get("/", async (req, res)=>{
     }
 });
 
-// Creating a favorite
+// Creating a favorite - http://localhost:3333/users/1/favorites/
 favorites.post("/", async(req, res) => {
     const { body } = req;
     try{
@@ -45,7 +40,7 @@ favorites.post("/", async(req, res) => {
 
 
 // Get a favorite by its ID
-// Get one favorite - Example: http://localhost:3333/users/2/favorites/12
+// Get one favorite - Example: http://localhost:3333/users/1/favorites/8
 favorites.get("/:id", async (req, res)=>{
     const { id } = req.params;
     try {
@@ -61,7 +56,7 @@ favorites.get("/:id", async (req, res)=>{
 })
 
 
-// Deleting a favorite by its ID
+// Deleting a favorite by its ID - Example: http://localhost:3333/users/1/favorites/8
 favorites.delete("/:id", async (req, res) => {
 const { id } = req.params;
 
