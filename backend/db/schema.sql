@@ -5,6 +5,8 @@ CREATE DATABASE crypto_users;
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
+    firstname TEXT,
+    lastname TEXT,
     username TEXT UNIQUE NOT NULL,
     password TEXT,
     contact_email TEXT,
@@ -15,11 +17,10 @@ DROP TABLE IF EXISTS resources;
  
 CREATE TABLE resources(
     id SERIAL PRIMARY KEY,
-    subject TEXT NOT NULL,
-    description TEXT,
+    name TEXT NOT NULL,
     type TEXT,
-    url TEXT,
-    articles_id TEXT,
+    category TEXT,
+    url VARCHAR(2048),
     is_favorite BOOLEAN,
     users_id INTEGER REFERENCES users(id)
     ON DELETE CASCADE
