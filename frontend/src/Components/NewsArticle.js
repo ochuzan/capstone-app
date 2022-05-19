@@ -21,7 +21,7 @@ function NewsArticle({ oneArticle }) {
               src={oneArticle.url}>
             </iframe>
             <br />
-            Crypto News Favorite? {oneArticle.favorite ? "💰 yes" : "📈 no"}
+            <h2>Crypto News Favorite? {oneArticle.is_favorite ? "💰 yes" : "📈 no"}</h2>
         </section>
     </article>
   );

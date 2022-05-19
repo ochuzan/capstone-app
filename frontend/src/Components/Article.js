@@ -23,6 +23,7 @@ function Article(){
           height="800"
           src={`${articlesData[id].url}`}>
         </iframe>
+        <h3> Favorite {articlesData[id].is_favorite ? "💰 yes" : "📈 no"}</h3>
         </article>
         {/* <Video /> */}
         </div>

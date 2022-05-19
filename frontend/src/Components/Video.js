@@ -37,13 +37,14 @@ function Video() {
             allowFullScreen
             title="video"
 			    />
+          <h3>Favorite {vid.is_favorite ? "💰 yes" : "📈 no"}</h3>
         </div>
     )
   })
   console.log(videos)
     return (
       <div className="Videos">
-        <h1>Videos go Here</h1>
+        <h1>Educational Videos</h1>
         <div className="vids">{fetchedVids}</div>
       </div>
     );
