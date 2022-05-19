@@ -3,7 +3,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
 }
-
+.vid-container{
+    display: grid;
+    justify-content: center;
+}
 .Videos{
     text-align: center;
     
@@ -11,12 +14,18 @@
 .vid h3{
     color: aqua;
 }
+ul{
+    padding: 20px;
+    margin: 20px;
+}
 .vid h3:hover{
     color:orange;
 }
 .vid{
     border: 4px solid aqua;
+    padding: 20px
 }
+
 .hvr-grow {
     display: inline-block;
     vertical-align: middle;
