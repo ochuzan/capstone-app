@@ -3,6 +3,7 @@ import Video from "./Videos";
 import "./Education.css"
 function Education() {
 
+  //MUI Simple Variant Horizontal orientation empty background
 
     return (
       <div id="Education">
