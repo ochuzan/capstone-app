@@ -54,7 +54,9 @@ function ProfileCreate() {
     };
 
     const disableButton = () =>{
-        if(userProfile.active){
+        const { active, first_name, last_name, username, contact_email} = userProfile;
+
+        if(active && first_name && last_name && username && contact_email){
             return false;
         } else {
             return true;
