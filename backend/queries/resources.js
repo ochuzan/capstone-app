@@ -1,10 +1,12 @@
 const db = require("../db/dbConfig.js");
 
-// Get all resources (for the bot) - http://localhost:3333/resources/
-const getAllResources = async() => {
+// Method GET      `users/{id}/resources/`   Returns the details of all resources with an id of {id}.
+// Example: http://localhost:3333/users/2/resources
+const getAllResources = async(users_id) => {
     try {
         const allResources = await db.any(
-            "SELECT * FROM resources"
+            "SELECT * FROM resources WHERE users_id=$1",
+            users_id
         )
         return allResources;
     } catch (error) {
@@ -12,18 +14,8 @@ const getAllResources = async() => {
     }
 }
 
-const getAllResourcesByUserId = async (users_id) => {
-    try {
-        const allResourcesByUserId = await db.any(
-            "SELECT * FROM resources WHERE users_id=$1",
-            users_id
-        );
-        return allResourcesByUserId;
-    } catch (error) {
-        return error;
-    }
-};
-
+// Method GET      `/users/{id}/resources/{id}`  Return details of one `resource` associated with the `users` with an id of {id}
+// Example: http://localhost:3333/users/1/resources/3
 const getOneResource = async (id) => {
     try {
         const oneResource = await db.one(
@@ -37,6 +29,7 @@ const getOneResource = async (id) => {
 };
 
 // This might be a feature later on - for a user to create a resource
+// http://localhost:3333/users/2/resources/
 const createResource = async(resource) => {
     try{
         const newResource = await db.one(
@@ -57,6 +50,7 @@ const createResource = async(resource) => {
 };
 
 // Should this only update the is_favorite field since they shouldn't update any articles
+// http://localhost:3333/users/2/resources/3
 const updateResource = async (id, resource) => {
     try {
         const updatedResource = await db.one(
@@ -78,6 +72,7 @@ const updateResource = async (id, resource) => {
 };
 
 // Do we need delete resource? Will regular users be able to delete or admin only?
+// // http://localhost:3333/users/2/resources/3
 const deleteResource = async (id) => {
     try {
         const deletedResource = await db.one(
@@ -92,7 +87,6 @@ const deleteResource = async (id) => {
 
 module.exports={
     getAllResources,
-    getAllResourcesByUserId,
     getOneResource,
     createResource,
     updateResource,
