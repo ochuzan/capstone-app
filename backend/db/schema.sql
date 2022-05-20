@@ -14,7 +14,7 @@ CREATE TABLE users(
 );
 
 DROP TABLE IF EXISTS resources;
- 
+
 CREATE TABLE resources(
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,

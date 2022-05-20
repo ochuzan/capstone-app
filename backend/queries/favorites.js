@@ -2,7 +2,6 @@ const favorites = require("../controllers/favoritesController.js");
 const users = require("../controllers/usersController.js");
 const db = require("../db/dbConfig.js");
 
-
 // Get all favorites - Example: http://localhost:3333/users/1/favorites
 const getAllFavoritesForUser = async (users_id) => {
     try {
@@ -31,8 +30,6 @@ const getOneUsersFavoriteByFavoriteId = async (id) => {
     }
 };
 
-
-
 // Creating a favorite
 // POST request
 // http://localhost:3333/users/1/favorites/
@@ -55,8 +52,6 @@ const getOneUsersFavoriteByFavoriteId = async (id) => {
 //         return error;
 //     }
 // };
-
-
 
 // Deleting a favorite by its ID - Example: http://localhost:3333/users/1/favorites/8
 // delete by user_id and the resources_id - find the favorite and then delete it

@@ -2,9 +2,9 @@ const express = require("express");
 const resources = express.Router({mergeParams: true});
 const { getAllResources, 
     getOneResource, 
-    // createResource, 
-    // updateResource, 
-    // deleteResource 
+    createResource, 
+    updateResource, 
+    deleteResource 
 } = require("../queries/resources.js");
 
 // Method GET      `users/{id}/resources/`   Returns the details of all resources with an id of {id}.
@@ -41,45 +41,48 @@ resources.get("/:id", async (req, res)=>{
 })
 
 // This might be a feature later on - for a user to post a resource
-// resources.post("/", async(req, res) => {
-//     const { body } = req;
-//     try{
-//         const createdResource = await createResource(body);
-//         if(createdResource.id){
-//             res.status(200).json(createdResource);
-//         } else {
-//             res.status(422).json("Error: Resource creation error");
-//         }
-//     } catch(err){
-//         console.log(err);
-//     }
-// });
+// http://localhost:3333/users/2/resources/
+resources.post("/", async(req, res) => {
+    const { body } = req;
+    try{
+        const createdResource = await createResource(body);
+        if(createdResource.id){
+            res.status(200).json(createdResource);
+        } else {
+            res.status(422).json("Error: Resource creation error");
+        }
+    } catch(err){
+        console.log(err);
+    }
+});
 
 // Update resource
-// resources.put("/:id", async (req, res)=>{
-//     const { id } = req.params;
-//     const { body } = req;
-//     try {
-//         const updateOneResource = await updateResource(id, body);
-//         if (updateOneResource.id){
-//             res.status(200).json(updateOneResource);
-//         } else {
-//             res.status(404).json({ error: "resource not found" });
-//         }
-//     } catch (error){
-//         console.log(error);
-//     }
-// })
+// http://localhost:3333/users/2/resources/3
+resources.put("/:id", async (req, res)=>{
+    const { id } = req.params;
+    const { body } = req;
+    try {
+        const updateOneResource = await updateResource(id, body);
+        if (updateOneResource.id){
+            res.status(200).json(updateOneResource);
+        } else {
+            res.status(404).json({ error: "resource not found" });
+        }
+    } catch (error){
+        console.log(error);
+    }
+})
 
 // Delete resource
-// resources.delete("/:id", async (req, res)=>{
-//     const { id } = req.params;
-//     const deletedResource = await deleteResource(id);
-//     if (deletedResource.id){
-//         res.status(200).json(deletedResource);
-//     } else {
-//         res.status(404).json({ error: "resource to delete not found" }); 
-//     }
-// })
+// http://localhost:3333/users/2/resources/3
+resources.delete("/:id", async (req, res)=>{
+    const { id } = req.params;
+    const deletedResource = await deleteResource(id);
+    if (deletedResource.id){
+        res.status(200).json(deletedResource);
+    } else {
+        res.status(404).json({ error: "resource to delete not found" }); 
+    }
+})
 
 module.exports = resources;
