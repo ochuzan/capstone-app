@@ -102,6 +102,7 @@ function ProfileCreate() {
                             </InputAdornment>
                             }
                             label="Password"
+                            placeholder="Enter password"
                         />
                     </FormControl>
                     <FormControlLabel control={
@@ -113,7 +114,7 @@ function ProfileCreate() {
                     <Button type="submit" variant="contained" size="large" color="primary" fullWidth disabled={disableButton()}>Create Profile</Button>
                 </form>
                 <Grid align="center" sx={{marginTop:"20px"}}>
-                    <Typography>Already have a CryptoTalk profile? <Link to="/">Log in</Link></Typography>
+                    <Typography>Already have a CryptoTalk profile? <Link to="/login-profile">Log in</Link></Typography>
                 </Grid>
             </Paper>
         </Grid>

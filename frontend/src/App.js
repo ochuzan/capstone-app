@@ -17,6 +17,7 @@ import NewsPage from "./Components/NewsPage"
 import Videos from "./Components/Videos"
 // import Bot from "./Components/ChatBot/Bot";
 import Video from "./Components/Video";
+import ProfileLogin from "./Components/UserProfile/ProfileLogin";
 // import MuiSandbox from "./Components/MuiSandbox";
 
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="videos" element={<Videos />} />
         <Route path="/videos/:id" element={<Video />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/login-profile" element={<ProfileLogin />} />
         <Route path="/create-profile" element={<ProfileCreate />} />
         <Route path="/edit-profile" element={<ProfileEdit />} />
         <Route path="/*" element={<PageNotFound />} />
