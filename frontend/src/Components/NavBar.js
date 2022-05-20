@@ -15,7 +15,6 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import "./NavBar.css"
 import logo from "../Images/chatbot-logo.png"
-import logoNoBE from "../Images/chatbot-logo-no-black-eyes.png"
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -41,12 +40,8 @@ function NavBar() {
       <Container maxWidth="xl" >
         <Toolbar sx={{ marginTop: "10px" }} disableGutters>
           <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,  }}>
-            <img id="navbar-logo" src={logoNoBE}/>
+            <img id="navbar-logo" src={logo} alt="cryptotalk logo"/>
           </Box>
-          {/* <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,  }}>
-            <img id="navbar-logo" src={logo}/>
-          </Box> */}
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,  }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -111,13 +106,9 @@ function NavBar() {
               </Link>
             </Menu>
           </Box>
-          {/* <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1,  }}>
-            <img id="navbar-logo" src={logo}/>
-          </Box> */}
           <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1,  }}>
-            <img id="navbar-logo" src={logoNoBE}/>
+            <img id="navbar-logo" src={logo} alt="cryptotalk logo"/>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
