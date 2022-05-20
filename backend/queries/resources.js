@@ -50,6 +50,7 @@ const createResource = async(resource) => {
 };
 
 // Should this only update the is_favorite field since they shouldn't update any articles
+// http://localhost:3333/users/2/resources/3
 const updateResource = async (id, resource) => {
     try {
         const updatedResource = await db.one(
@@ -71,6 +72,7 @@ const updateResource = async (id, resource) => {
 };
 
 // Do we need delete resource? Will regular users be able to delete or admin only?
+// // http://localhost:3333/users/2/resources/3
 const deleteResource = async (id) => {
     try {
         const deletedResource = await db.one(
