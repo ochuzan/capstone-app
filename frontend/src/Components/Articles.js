@@ -10,17 +10,13 @@ function Articles() {
 // const[articles, setArticles]= useState([]);
 
 
-// let url = 'https://newsapi.org/v2/everything?' +
-//           'q=Bitcoin&' +
-//           'from=2022-05-12&' +
-//           'language=en&'+
-//           'sortBy=relevancy&' +
-//           `apiKey=${key}`;
+// let url = 'https://bot-test-backend.herokuapp.com/resources'
 
 //   useEffect(()=>{
 //     axios.get(url)
 //     .then((res)=>{
-//       setArticles(res.data.articles);
+//       console.log(res.data)
+//       setArticles(res.data);
 //     }).catch((err)=>{
 //       console.log(err)
 //     })
