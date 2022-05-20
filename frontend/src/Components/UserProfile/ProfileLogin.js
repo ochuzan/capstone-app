@@ -30,8 +30,8 @@ function ProfileLogin() {
         event.preventDefault();
     };
 
-    const paperStyle = {padding: 20, width: 280, margin: "20px auto"}
-    const avatarStyle = {backgroundColor: "#4366F5"}
+    const paperStyle = { padding: 20, width: 280, margin: "20px auto" }
+    const avatarStyle = { backgroundColor: "#4366F5" }
     return(
         <Grid>
             <Paper elevation={10} style={paperStyle}>
@@ -68,7 +68,7 @@ function ProfileLogin() {
                     label="Remember me"
                 />
                 <Button type="submit" variant="contained" size="large" color="primary" fullWidth >Sign in</Button>
-                <Grid align="center" sx={{marginTop:"20px"}}>
+                <Grid align="center" sx={{ marginTop:"20px" }}>
                     <Typography><Link to="#">Forgot password?</Link></Typography>
                     <Typography>Don't have an account? <Link to="/create-profile">Sign up</Link></Typography>
                     <Typography><Link to="#">Privacy Policy</Link></Typography>
