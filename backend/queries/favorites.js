@@ -2,31 +2,29 @@ const favorites = require("../controllers/favoritesController.js");
 const users = require("../controllers/usersController.js");
 const db = require("../db/dbConfig.js");
 
-// Examples: http://localhost:3333/users/1/favorites , http://localhost:3333/users/3/favorites
-// `users_id` is dynamic
-// Only shows the resource if `resources.is_favorite` is "true"
-// Renaming the "id" for favorites and resources to indicate which table
-const getFavoritesByUserId = async (users_id) => {
+// Get all favorites - Example: http://localhost:3333/users/1/favorites
+const getAllFavoritesForUser = async (users_id) => {
     try {
         const allFavorites = await db.any(
-            `SELECT favorites.id AS favorites_table_id,
-              favorites.favorited_date,
-              resources.id AS resources_table_id,
-              resources.name,
-              resources.type,
-              resources.category,
-              resources.url,
-              resources.is_favorite,
-              resources.users_id
-            FROM favorites
-            JOIN resources
-              ON favorites.resources_id = 
-            resources.id
-            WHERE favorites.users_id=${users_id}
-              AND resources.is_favorite='true';
-            `,
+            `SELECT * FROM favorites 
+            WHERE users_id=$1`,
+            users_id
         );
         return allFavorites;
+    } catch (error) {
+        return error;
+    }
+};
+
+// Get a favorite by its ID
+// Get one favorite - Example: http://localhost:3333/users/1/favorites/8
+const getOneUsersFavoriteByFavoriteId = async (id) => {
+    try {
+        const oneFavorite = await db.one(
+            "SELECT * FROM favorites WHERE id=$1",
+            id
+        );
+        return oneFavorite;
     } catch (error) {
         return error;
     }
@@ -55,21 +53,6 @@ const createNewFavorite = async (favorite) => {
     }
 };
 
-// Get a favorite by its ID
-// Get one favorite - Example: http://localhost:3333/users/1/favorites/8
-const getOneFavorite = async (id) => {
-    try {
-        const oneFavorite = await db.one(
-            `SELECT * FROM favorites 
-            WHERE id=${id}`,
-            id
-        );
-        return oneFavorite;
-    } catch (error) {
-        return error;
-    }
-};
-
 // Deleting a favorite by its ID - Example: http://localhost:3333/users/1/favorites/8
 // delete by user_id and the resources_id - find the favorite and then delete it
 const deleteFavorite = async (id) => {
@@ -87,8 +70,8 @@ const deleteFavorite = async (id) => {
 };
 
 module.exports={
-    getFavoritesByUserId,
+    getAllFavoritesForUser,
+    getOneUsersFavoriteByFavoriteId,
     createNewFavorite,
-    getOneFavorite,
     deleteFavorite
 }

@@ -1,11 +1,18 @@
 const express = require("express");
 const resources = express.Router({mergeParams: true});
-const { getAllResources, getAllResourcesByUserId, getOneResource, createResource, updateResource, deleteResource } = require("../queries/resources.js");
+const { getAllResources, 
+    getOneResource, 
+    createResource, 
+    updateResource, 
+    deleteResource 
+} = require("../queries/resources.js");
 
-// Get all resources (for the bot)
+// Method GET      `users/{id}/resources/`   Returns the details of all resources with an id of {id}.
+// Example: http://localhost:3333/users/2/resources
 resources.get('/', async (req, res)=>{
+    const { usersId } = req.params;
     try {
-        const allResources = await getAllResources();
+        const allResources = await getAllResources(usersId);
         if (allResources[0]){
             res.status(200).json(allResources);
         } else {
@@ -16,23 +23,9 @@ resources.get('/', async (req, res)=>{
     }
 });
 
-// Get all resources with the users id of {id}
-resources.get("/", async (req, res)=>{
-    const { usersId } = req.params;
-    console.log(usersId)
-    try {
-        const allResources = await getAllResourcesByUserId(usersId);
-        if(allResources[0]){
-            res.status(200).json(allResources);
-        }else{
-            res.status(404).json({Error: "No resources found"})
-        }
-    } catch (error){
-        console.log(error);
-    }
-})
 
-// Get one resource - Example: http://localhost:3333/users/1/resources/3
+// Method GET      `/users/{id}/resources/{id}`  Return details of one `resource` associated with the `users` with an id of {id}
+// Example: http://localhost:3333/users/1/resources/3
 resources.get("/:id", async (req, res)=>{
     const { id } = req.params;
     try {
@@ -48,6 +41,7 @@ resources.get("/:id", async (req, res)=>{
 })
 
 // This might be a feature later on - for a user to post a resource
+// http://localhost:3333/users/2/resources/
 resources.post("/", async(req, res) => {
     const { body } = req;
     try{
@@ -63,6 +57,7 @@ resources.post("/", async(req, res) => {
 });
 
 // Update resource
+// http://localhost:3333/users/2/resources/3
 resources.put("/:id", async (req, res)=>{
     const { id } = req.params;
     const { body } = req;
@@ -79,6 +74,7 @@ resources.put("/:id", async (req, res)=>{
 })
 
 // Delete resource
+// http://localhost:3333/users/2/resources/3
 resources.delete("/:id", async (req, res)=>{
     const { id } = req.params;
     const deletedResource = await deleteResource(id);
