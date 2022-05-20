@@ -1,12 +1,24 @@
 const db = require("../db/dbConfig.js");
 
-const getAllResources = async (users_id) => {
+// Get all resources (for the bot) - http://localhost:3333/resources/
+const getAllResources = async() => {
     try {
         const allResources = await db.any(
+            "SELECT * FROM resources"
+        )
+        return allResources;
+    } catch (error) {
+        return error;
+    }
+}
+
+const getAllResourcesByUserId = async (users_id) => {
+    try {
+        const allResourcesByUserId = await db.any(
             "SELECT * FROM resources WHERE users_id=$1",
             users_id
         );
-        return allResources;
+        return allResourcesByUserId;
     } catch (error) {
         return error;
     }
@@ -28,13 +40,12 @@ const getOneResource = async (id) => {
 const createResource = async(resource) => {
     try{
         const newResource = await db.one(
-            "INSERT INTO resources (subject, description, type, url, articles_id, is_favorite, users_id) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+            "INSERT INTO resources (name, type, category, url, is_favorite, users_id) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
             [
-                resource.subject,
-                resource.description,
+                resource.name,
                 resource.type,
+                resource.category,
                 resource.url,
-                resource.articles_id,
                 resource.is_favorite,
                 resource.users_id,
             ]
@@ -49,14 +60,14 @@ const createResource = async(resource) => {
 const updateResource = async (id, resource) => {
     try {
         const updatedResource = await db.one(
-            "UPDATE resources SET subject=$1, description=$2, type=$3, url=$4, articles_id=$5, is_favorite=$6 WHERE id=$7 RETURNING *",
+            "UPDATE resources SET name=$1, type=$2, category=$3, url=$4, is_favorite=$5, users_id=$6 WHERE id=$7 RETURNING *",
             [
-                resource.subject,
-                resource.description,
+                resource.name,
                 resource.type,
+                resource.category,
                 resource.url,
-                resource.articles_id,
                 resource.is_favorite,
+                resource.users_id,
                 id
             ]
         )
@@ -81,6 +92,7 @@ const deleteResource = async (id) => {
 
 module.exports={
     getAllResources,
+    getAllResourcesByUserId,
     getOneResource,
     createResource,
     updateResource,

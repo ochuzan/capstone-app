@@ -1,14 +1,27 @@
 const express = require("express");
 const resources = express.Router({mergeParams: true});
-const { getAllResources, getOneResource, createResource, updateResource, deleteResource } = require("../queries/resources.js");
+const { getAllResources, getAllResourcesByUserId, getOneResource, createResource, updateResource, deleteResource } = require("../queries/resources.js");
 
+// Get all resources (for the bot)
+resources.get('/', async (req, res)=>{
+    try {
+        const allResources = await getAllResources();
+        if (allResources[0]){
+            res.status(200).json(allResources);
+        } else {
+            res.status(500).json({ error: "no resources found." });
+        }
+    } catch (error){
+        console.log(error);
+    }
+});
 
 // Get all resources with the users id of {id}
 resources.get("/", async (req, res)=>{
     const { usersId } = req.params;
     console.log(usersId)
     try {
-        const allResources = await getAllResources(usersId);
+        const allResources = await getAllResourcesByUserId(usersId);
         if(allResources[0]){
             res.status(200).json(allResources);
         }else{
