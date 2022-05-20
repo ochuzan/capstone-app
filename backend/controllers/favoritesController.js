@@ -3,8 +3,8 @@ const favorites = express.Router({mergeParams: true});
 const { 
     getAllFavoritesForUser,
     getOneUsersFavoriteByFavoriteId,
-    // createNewFavorite,
-    // deleteFavorite
+    createNewFavorite,
+    deleteFavorite
 } = require("../queries/favorites.js");
 
 // Get all favorites for a user - Example: http://localhost:3333/users/1/favorites 
@@ -39,30 +39,30 @@ favorites.get("/:id", async (req, res)=>{
 
 
 // Creating a favorite - http://localhost:3333/users/1/favorites/
-// favorites.post("/", async(req, res) => {
-//     const { body } = req;
-//     try{
-//         const createdResource = await createNewFavorite(body);
-//         if(createdResource.id){
-//             res.status(200).json(createdResource);
-//         } else {
-//             res.status(422).json({ error: "Favorites creation error" });
-//         }
-//     } catch(err){
-//         console.log(err);
-//     }
-// });
+favorites.post("/", async(req, res) => {
+    const { body } = req;
+    try{
+        const createdResource = await createNewFavorite(body);
+        if(createdResource.id){
+            res.status(200).json(createdResource);
+        } else {
+            res.status(422).json({ error: "Favorites creation error" });
+        }
+    } catch(err){
+        console.log(err);
+    }
+});
 
 // Deleting a favorite by its ID - Example: http://localhost:3333/users/1/favorites/8
-// favorites.delete("/:id", async (req, res) => {
-// const { id } = req.params;
+favorites.delete("/:id", async (req, res) => {
+const { id } = req.params;
 
-// const deletedFavorite = await deleteFavorite(id);
-// if (deletedFavorite.id) {
-//     res.status(200).json(deletedFavorite);
-// } else {
-//     res.status(404).json({ error: "Favorite not found" });
-// }
-// });
+const deletedFavorite = await deleteFavorite(id);
+if (deletedFavorite.id) {
+    res.status(200).json(deletedFavorite);
+} else {
+    res.status(404).json({ error: "Favorite not found" });
+}
+});
 
 module.exports = favorites;
