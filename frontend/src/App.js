@@ -19,6 +19,7 @@ import Videos from "./Components/Videos"
 import Video from "./Components/Video";
 import ProfileLogin from "./Components/UserProfile/ProfileLogin";
 // import MuiSandbox from "./Components/MuiSandbox";
+import AlanBot from "./Components/ChatBot/AlanBot"
 
 
 function App() {
@@ -44,7 +45,8 @@ function App() {
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />
-      <Popchat />
+      <AlanBot />
+      {/* <Popchat /> */}
     </Router>
   );
 }
