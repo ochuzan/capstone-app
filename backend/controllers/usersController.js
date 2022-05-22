@@ -7,13 +7,9 @@ const {
     deleteUser,
 } = require("../queries/users.js");
 
-<<<<<<< HEAD
-const resourcesController = require("./resourcesController");
-=======
 // Controllers
 const resourcesController = require("./resourcesController.js");
 const favoritesController = require("./favoritesController.js");
->>>>>>> e89996bb2df5bfd1bc1b20cb5db3390849e205f8
 users.use("/:usersId/resources", resourcesController);
 users.use("/:usersId/favorites", favoritesController);
 
