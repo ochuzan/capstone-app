@@ -7,8 +7,8 @@ import { Visibility, VisibilityOff } from "@mui/icons-material"
 
 function ProfileCreate() {
     const [ userProfile, setUserProfile ] = useState({
-        first_name: "",
-        last_name: "",
+        firstname: "",
+        lastname: "",
         username: "",
         password: "",
         contact_email: "",
@@ -62,9 +62,9 @@ function ProfileCreate() {
     };
 
     const disableButton = () =>{
-        const { active, first_name, last_name, username, contact_email} = userProfile;
+        const { active, firstname, lastname, username, contact_email} = userProfile;
 
-        if(active && first_name && last_name && username && contact_email){
+        if(active && firstname && lastname && username && contact_email){
             return false;
         } else {
             return true;
@@ -88,8 +88,8 @@ function ProfileCreate() {
                     </div>
                 </Grid>
                 <form onSubmit={handleSubmit}>
-                    <TextField required onChange={handleChange('first_name')} margin="dense" fullWidth label='First Name' placeholder="Enter your first name"/>
-                    <TextField required onChange={handleChange('last_name')} margin="dense" fullWidth label='Last Name' placeholder="Enter your last name"/>
+                    <TextField required onChange={handleChange('firstname')} margin="dense" fullWidth label='First Name' placeholder="Enter your first name"/>
+                    <TextField required onChange={handleChange('lastname')} margin="dense" fullWidth label='Last Name' placeholder="Enter your last name"/>
                     <TextField required onChange={handleChange('username')} margin="dense" fullWidth label='Username' placeholder="Enter your username"/>
                     <TextField required onChange={handleChange('contact_email')} margin="dense" fullWidth label='Email' placeholder="Enter your email address"/>
                     <FormControl fullWidth margin="dense" variant="outlined">
