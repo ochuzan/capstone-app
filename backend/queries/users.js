@@ -19,10 +19,19 @@ const createUser = async(user) => {
     };
 };
 
-const getOneUser = async(id) => {
+// const getOneUser = async(id) => {
+//     try{
+//         const oneUser = await db.one("SELECT * FROM users WHERE id=$1", id);
+//         return oneUser;
+//     } catch(err){
+//         return err;
+//     };
+// };
+
+const getOneUserByUsername = async(username) => {
     try{
-        const oneUser = await db.one("SELECT * FROM users WHERE id=$1", id);
-        return oneUser;
+        const oneUserByUsername = await db.one("SELECT * FROM users WHERE username=$1", username);
+        return oneUserByUsername;
     } catch(err){
         return err;
     };
@@ -61,7 +70,8 @@ const deleteUser = async(id) => {
 };
 
 module.exports = {
-    getOneUser,
+    // getOneUser,
+    getOneUserByUsername,
     createUser,
     updateUser,
     deleteUser
