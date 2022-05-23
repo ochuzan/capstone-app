@@ -36,8 +36,9 @@ function ProfileCreate() {
     const addLocalStorageUser = () => {
         localStorage.setItem("username", JSON.stringify(btoa(userProfile.username)));
         localStorage.setItem("email", JSON.stringify(btoa(userProfile.contact_email)));
+        localStorage.setItem("password", JSON.stringify(btoa(userProfile.password)));
         console.log("Added to local storage");
-    }
+    };
 
 
     const handleSubmit = (event) => {
