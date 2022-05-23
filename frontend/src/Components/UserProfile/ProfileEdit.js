@@ -8,7 +8,7 @@ function ProfileEdit() {
     let { id } = useParams();
     let navigate = useNavigate();
 
-    const [editProfile, setEditProfile] = useState({
+    const [user, setUser] = useState({
         firstname: "",
         lastname: "",
         username: "",
@@ -17,10 +17,10 @@ function ProfileEdit() {
         active: true
     });
 
-    const updateProfile = (updatedProfile) => {
-        axios.put(`${API}/profile/${id}`, updatedProfile)
+    const updateUser = (updatedUser) => {
+        axios.put(`${API}/users/${id}`, updatedUser)
             .then(()=>{
-                    navigate(`/profile/${id}`);
+                    navigate(`/users/${id}`);
                 },
                 (error) => console.error(error)
             )
@@ -28,33 +28,32 @@ function ProfileEdit() {
     };
 
     const handleTextChange = (event) => {
-        setEditProfile({ ...editProfile, [event.target.id]: event.target.value })
+        setUser({ ...user, [event.target.id]: event.target.value })
     };
 
     const handleCheckboxChange = () => {
-        setEditProfile({ ...editProfile, active: !editProfile.active });
+        setUser({ ...user, active: !user.active });
     }
 
     useEffect(()=>{
-        axios.get(`${API}/profile/${id}`).then(
-            (response) => setEditProfile(response.data),
+        axios.get(`${API}/users/${id}`).then(
+            (response) => setUser(response.data),
             (error) => navigate(`/not-found`)
         );
     }, [id, navigate])
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        updateProfile(editProfile, id)
+        updateUser(user, id)
     };
 
     return (
         <div className="Edit">
-            Hello ProfileEdit.js
             <form onSubmit={handleSubmit} >
                 <label htmlFor="firstname">First Name:</label>
                 <input 
                     id="firstname"
-                    value={editProfile.firstname}
+                    value={user.firstname}
                     type="text"
                     onChange={handleTextChange}
                     placeholder="Edit First Name"
@@ -63,7 +62,7 @@ function ProfileEdit() {
                 <label htmlFor="lastname">Last Name:</label>
                 <input 
                     id="lastname"
-                    value={editProfile.lastname}
+                    value={user.lastname}
                     type="text"
                     onChange={handleTextChange}
                     placeholder="Edit Last Name"
@@ -72,7 +71,7 @@ function ProfileEdit() {
                 <label htmlFor="username">Username:</label>
                 <input 
                     id="username"
-                    value={editProfile.username}
+                    value={user.username}
                     type="text"
                     onChange={handleTextChange}
                     placeholder="Edit username"
@@ -81,7 +80,7 @@ function ProfileEdit() {
                 <label htmlFor="password">Password:</label>
                 <input 
                     id="password"
-                    value={editProfile.password}
+                    value={user.password}
                     type="text"
                     onChange={handleTextChange}
                     placeholder="Edit Password"
@@ -90,7 +89,7 @@ function ProfileEdit() {
                 <label htmlFor="contactEmail">Contact Email:</label>
                 <input 
                     id="contactEmail"
-                    value={editProfile.contactEmail}
+                    value={user.contactEmail}
                     type="text"
                     onChange={handleTextChange}
                     placeholder="Edit Last Name"
@@ -101,8 +100,7 @@ function ProfileEdit() {
                     id="active"
                     type="checkbox"
                     onChange={handleCheckboxChange}
-                    checked={editProfile.active}
-
+                    checked={user.active}
                 />
 
                 <br />

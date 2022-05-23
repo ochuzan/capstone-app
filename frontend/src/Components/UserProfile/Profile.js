@@ -11,10 +11,10 @@ function Profile({ user }) {
         )}
       </td>
       <td>
-        {user.firstname} - Last name: {user.lastname}
+        {user.firstname} {user.lastname}
       </td>
       <td>
-        <Link to={`/users/${user.id}`}>✏️</Link>
+        <Link to={`/users/${user.id}`}>👀</Link>
       </td>
     </tr>
   );

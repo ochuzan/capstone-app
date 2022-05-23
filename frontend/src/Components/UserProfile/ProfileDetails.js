@@ -34,25 +34,15 @@ function ProfileDetails() {
   return <article>
   <h3>{true ? <span>⭐️</span> : null} { user.firstname }</h3>
   <div>
-    Profile details of one user:
+    Profile details for {user.firstname} {user.lastname}:
     <ul>
       <li>id: {user.id}</li>
-      <li>firstname: {user.firstname}</li>
-      <li>lastname: {user.lastname}</li>
       <li>username: {user.username}</li>
       <li>password: {user.password}</li>
       <li>contact_email: {user.contact_email}</li>
       <li>active: {true ? <span>⭐️</span> : null} </li>
     </ul>
   </div>
-  <h5>
-    <span>
-      {user.firstname}
-    </span>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ user.lastname }
-  </h5>
-  <h6>{ user.username }</h6>
-  <p>{ user.password }</p>
   <div className="showNavigation">
     <div>
       <Link to={`/users`}>

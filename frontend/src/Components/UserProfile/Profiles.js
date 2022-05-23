@@ -23,8 +23,8 @@ function Profiles() {
         <table>
           <thead>
             <tr>
-              <th></th>
-              <th>Take me there</th>
+              <th>Active</th>
+              <th>User</th>
               <th>See this profile</th>
             </tr>
           </thead>
