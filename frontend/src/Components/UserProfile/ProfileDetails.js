@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import "./Profile.css";
+/* importing Reviews */
+// import Reviews from "./Reviews";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -19,31 +20,42 @@ function ProfileDetails() {
       }).catch((err)=>{
         console.log(err);
       })
-  }, []);
+  }, [id]);
 
   const handleDelete=()=>{
     axios.delete(API + "/users/" + id)
       .then((res)=>{
-        navigate("/")
+        navigate("/users")
       }).catch((err)=>{
         console.log(err);
       })
   }
 
-  return (<article>
-  <h3>{true ? <span>⭐️</span> : null} { user.active }</h3>
+  return <article>
+  <h3>{true ? <span>⭐️</span> : null} { user.firstname }</h3>
+  <div>
+    Profile details of one user:
+    <ul>
+      <li>id: {user.id}</li>
+      <li>firstname: {user.firstname}</li>
+      <li>lastname: {user.lastname}</li>
+      <li>username: {user.username}</li>
+      <li>password: {user.password}</li>
+      <li>contact_email: {user.contact_email}</li>
+      <li>active: {true ? <span>⭐️</span> : null} </li>
+    </ul>
+  </div>
   <h5>
-      Hello Profile.js
     <span>
-      <a href={user.firstname}>{ user.lastname }</a>
+      {user.firstname}
     </span>
-    {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ user.username } */}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ user.lastname }
   </h5>
-  <h6>{ user.password }</h6>
-  <p>{ user.contact_email }</p>
+  <h6>{ user.username }</h6>
+  <p>{ user.password }</p>
   <div className="showNavigation">
     <div>
-      <Link to={`/`}>
+      <Link to={`/users`}>
         <button>Back</button>
       </Link>
     </div>
@@ -58,7 +70,7 @@ function ProfileDetails() {
   </div>
   {/* Adding Reviews component here */}
   {/* <Reviews /> */}
-</article>);
+</article>;
 }
 
 export default ProfileDetails;

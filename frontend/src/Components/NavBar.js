@@ -176,7 +176,7 @@ function NavBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              <Link to="/profile">
+              <Link to="/users">
                 <MenuItem  onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Profile</Typography>
                 </MenuItem>
@@ -186,12 +186,12 @@ function NavBar() {
                     <Typography textAlign="center">Login</Typography>
                 </MenuItem>
               </Link>
-              <Link to="/create-profile">
+              <Link to="/users/new">
                 <MenuItem  onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Sign Up</Typography>
                 </MenuItem>
               </Link>
-              <Link to="/edit-profile">
+              <Link to="/users/:id/edit">
                 <MenuItem  onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Edit Profile</Typography>
                 </MenuItem>

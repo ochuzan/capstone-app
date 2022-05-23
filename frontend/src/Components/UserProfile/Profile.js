@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 
-import "./Profile.css";
-
 function Profile({ user }) {
   return (
     <tr>
       <td>
-        {user.firstname}
+        {user.active ? (
+          <span>⭐️</span>
+        ) : (
+          <span>&nbsp; &nbsp; &nbsp;</span>
+        )}
       </td>
       <td>
-          {user.lastname}
+        {user.firstname} - Last name: {user.lastname}
       </td>
       <td>
         <Link to={`/users/${user.id}`}>✏️</Link>
