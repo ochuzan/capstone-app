@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 import { Avatar, Button, Checkbox, FormControl, FormControlLabel, InputLabel, OutlinedInput, InputAdornment, IconButton, Grid, Paper, TextField, Typography } from "@mui/material"
 import LoginIcon from '@mui/icons-material/Login';
 import { Visibility, VisibilityOff } from "@mui/icons-material"
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 function UserLogin() {
     const [ userLogin, setUserLogin ] = useState({
         username: "",
         password: "",
-        active: false,
+        // active: false,
         showPassword: false
     });
 
@@ -28,30 +28,33 @@ function UserLogin() {
         event.preventDefault();
     };
 
-    const [ user, setUser] = useState({});
-
     const API = process.env.REACT_APP_API_URL;
-    // const { id } = useParams();
-    // let navigate = useNavigate();
-    // const username = 
-    // const usernameStr = atob(localStorage.getItem('username').replace(/"/g, ""));
-    // const username = "Christina_234"
-    // console.log(username)
+    let navigate = useNavigate();    
 
-    let username;
-    if (localStorage.getItem('username')) {
-        username = atob(localStorage.getItem('username').replace(/"/g, ""));
+    const handleLogin = (event) => {
+        event.preventDefault();
+        
+        let username = atob(localStorage.getItem('username').replace(/"/g, ""));
+        let password = atob(localStorage.getItem('password').replace(/"/g, ""));
+        
+        if(!userLogin.username || !userLogin.password){
+            alert("Invalid");
+        } else if ((username !== userLogin.username) || (password !== userLogin.password)){
+            alert("Invalid username or password. Try clicking 'Forgot Password' if you're having trouble signing in.");
+            console.log(username)
+            console.log(password)
+            console.log(userLogin.username)
+            console.log(userLogin.password)
+        } else {
+            axios.get(`${API}/users/login/${username}`)
+                .then((res) => {
+                    localStorage.setItem("id", JSON.stringify(btoa(res.data.id)));
+                    navigate("/users")
+                }).catch((error) => {
+                    console.log(error);
+                })
+        }
     }
-
-    useEffect(() => {
-        axios.get(`${API}/users/${username}`)
-            .then((res) => {
-                setUser(res.data);
-                console.log(res.data)
-            }).catch((error) => {
-                console.log(error);
-            })
-    }, [])
 
     const paperStyle = { padding: 20, width: 280, margin: "20px auto" }
     const avatarStyle = { backgroundColor: "#4366F5" }
@@ -62,7 +65,7 @@ function UserLogin() {
                     <Avatar style={avatarStyle}><LoginIcon/></Avatar>
                     <h2>Sign in</h2>
                 </Grid>
-                <TextField required onChange={null} margin="dense" fullWidth label='Username' placeholder="Enter username"/>
+                <TextField required onChange={handleChange('username')} margin="dense" fullWidth label='Username' placeholder="Enter username"/>
                 <FormControl fullWidth margin="dense" variant="outlined">
                     <InputLabel required htmlFor="outlined-adornment-password">Password</InputLabel>
                     <OutlinedInput
@@ -90,7 +93,7 @@ function UserLogin() {
                     <Checkbox />}
                     label="Remember me"
                 />
-                <Button type="submit" variant="contained" size="large" color="primary" fullWidth >Sign in</Button>
+                <Button type="submit" variant="contained" size="large" color="primary" fullWidth onClick={handleLogin}>Sign in</Button>
                 <Grid align="center" sx={{ marginTop:"20px" }}>
                     <Typography><Link to="#">Forgot password?</Link></Typography>
                     <Typography>Don't have an account? <Link to="/user/new">Sign up</Link></Typography>

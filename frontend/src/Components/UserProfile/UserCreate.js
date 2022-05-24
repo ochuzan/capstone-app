@@ -23,7 +23,7 @@ function UserCreate() {
     const addUser = (newUser) => {
         axios.post(`${API}/users`, newUser)
             .then(() => {
-                navigate("/user/login");
+                navigate("/users/login");
             }).catch((error) => {
                 console.log(error);
             })

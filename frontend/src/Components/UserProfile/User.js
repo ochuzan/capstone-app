@@ -6,20 +6,14 @@ function User() {
     const [ user, setUser] = useState({});
 
     const API = process.env.REACT_APP_API_URL;
-    // const { id } = useParams();
-    // let navigate = useNavigate();
-    // const username = 
-    // const usernameStr = atob(localStorage.getItem('username').replace(/"/g, ""));
-    // const username = "Christina_234"
-    // console.log(username)
 
-    let username;
-    if (localStorage.getItem('username')) {
-        username = atob(localStorage.getItem('username').replace(/"/g, ""));
+    let id;
+    if (localStorage.getItem('id')) {
+        id = atob(localStorage.getItem('id').replace(/"/g, ""));
     }
-
+    console.log(id)
     useEffect(() => {
-        axios.get(`${API}/users/${username}`)
+        axios.get(`${API}/users/${id}`)
             .then((res) => {
                 setUser(res.data);
                 console.log(res.data)

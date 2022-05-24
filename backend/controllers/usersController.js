@@ -2,7 +2,7 @@ const express = require("express");
 const users = express.Router();
 const {
     createUser,
-    // getOneUser,
+    getOneUser,
     updateUser,
     deleteUser,
     getOneUserByUsername,
@@ -29,33 +29,33 @@ users.post("/", async(req, res) => {
 });
 
 // Get user by username
-users.get("/:username", async(req, res) => {
+users.get("/login/:username", async(req, res) => {
     const { username } = req.params;
     try{
         const oneUserByUsername = await getOneUserByUsername(username);
         if(oneUserByUsername.id){
             res.status(200).json(oneUserByUsername);
         } else {
-            res.status(404).json("Error: User not found");
+            res.status(404).json("Error: Username not found");
         }
     } catch(err){
         return err;
     }
 });
 
-// users.get("/:id", async(req, res) => {
-//     const { id } = req.params;
-//     try{
-//         const oneUser = await getOneUser(id);
-//         if(oneUser.id){
-//             res.status(200).json(oneUser);
-//         } else {
-//             res.status(404).json("Error: User not found");
-//         }
-//     } catch(err){
-//         return err;
-//     }
-// });
+users.get("/:id", async(req, res) => {
+    const { id } = req.params;
+    try{
+        const oneUser = await getOneUser(id);
+        if(oneUser.id){
+            res.status(200).json(oneUser);
+        } else {
+            res.status(404).json("Error: User ID not found");
+        }
+    } catch(err){
+        return err;
+    }
+});
 
 users.put("/:id", async(req, res) => {
     const { id } = req.params;
