@@ -5,7 +5,7 @@ import { Avatar, Button, Checkbox, FormControl, FormControlLabel, InputLabel, Ou
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import { Visibility, VisibilityOff } from "@mui/icons-material"
 
-function ProfileCreate() {
+function UserCreate() {
     const [ userProfile, setUserProfile ] = useState({
         first_name: "",
         last_name: "",
@@ -121,4 +121,4 @@ function ProfileCreate() {
     )
 }
 
-export default ProfileCreate;
+export default UserCreate;

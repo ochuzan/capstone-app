@@ -4,7 +4,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material"
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function ProfileLogin() {
+function UserLogin() {
     const [ userProfile, setUserProfile ] = useState({
         first_name: "",
         last_name: "",
@@ -78,4 +78,4 @@ function ProfileLogin() {
     )
 }
 
-export default ProfileLogin;
+export default UserLogin;

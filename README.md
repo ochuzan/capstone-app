@@ -2,7 +2,13 @@ Christina Loiacono, Deborah Campos, Milton Clark, Oliver Chuzan <br>
 ERD
 <img src="./images/erd.png" alt="event-relational-database"/>
 
+# Frontend
 
+[Material UI](https://mui.com/) 
+```
+npm install @mui/material @emotion/react @emotion/styled
+
+```
 
 # Backend Routes
 

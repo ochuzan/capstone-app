@@ -1,26 +1,36 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+
+// Components
 import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
 import Header from "./Components/Header"
-import Cryptocurrency from "./Components/Cryptocurrency";
-import Profile from "./Components/UserProfile/Profile";
-import ProfileCreate from "./Components/UserProfile/ProfileCreate";
-import ProfileEdit from "./Components/UserProfile/ProfileEdit";
-import Education from "./Components/Education";
+import Footer from "./Components/Footer";
 import PageNotFound from "./Components/PageNotFound";
+
+// Users Components - Admin
+import UsersAdmin from "./Components/UserProfile/UsersAdmin";
+import UserEditAdmin from "./Components/UserProfile/UserEditAdmin";
+import UserDetailsAdmin from "./Components/UserProfile/UserDetailsAdmin";
+// Users Components - For User
+import UserCreate from "./Components/UserProfile/UserCreate";
+import UserLogin from "./Components/UserProfile/UserLogin";
+
+// News Articles and Videos Components
 import News from "./Components/News";
-import Popchat from "./Components/ChatBot/Popchat";
+import NewsPage from "./Components/NewsPage"
+import Cryptocurrency from "./Components/Cryptocurrency";
+import Education from "./Components/Education";
 import Articles from "./Components/Articles";
 import Article from "./Components/Article";
-import Footer from "./Components/Footer";
-import NewsPage from "./Components/NewsPage"
 import Videos from "./Components/Videos"
-// import Bot from "./Components/ChatBot/Bot";
 import Video from "./Components/Video";
-import ProfileLogin from "./Components/UserProfile/ProfileLogin";
-// import MuiSandbox from "./Components/MuiSandbox";
+
+// Chatbot Components
+import Bot from "./Components/ChatBot/Bot";
+import Popchat from "./Components/ChatBot/Popchat";
 import AlanBot from "./Components/ChatBot/AlanBot"
 
+import MuiSandbox from "./Components/MuiSandbox";
 
 function App() {
   return (
@@ -38,14 +48,17 @@ function App() {
         <Route path="/articles/:id" element={<Article />} />
         <Route path="videos" element={<Videos />} />
         <Route path="/videos/:id" element={<Video />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/login-profile" element={<ProfileLogin />} />
-        <Route path="/create-profile" element={<ProfileCreate />} />
-        <Route path="/edit-profile" element={<ProfileEdit />} />
-        <Route path="/*" element={<PageNotFound />} />
+
+        <Route path="/users/login" element={<UserLogin />} />
+        <Route path="/users" element={<UsersAdmin />} />
+        <Route path="/users/new" element={<UserCreate />} />
+        <Route exact path="/users/:id" element={<UserDetailsAdmin />} />
+        <Route path="/users/:id/edit" element={<UserEditAdmin />} />
+
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
-      <AlanBot />
+      {/* <AlanBot /> */}
       {/* <Popchat /> */}
     </Router>
   );
