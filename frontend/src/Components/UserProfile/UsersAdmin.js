@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import User from "./User.js";
+import UserAdmin from "./UserAdmin.js";
 
 const API = process.env.REACT_APP_API_URL;
 
-function Users() {
+function UsersAdmin() {
   const [users, setUsers] = useState([]);
   
   useEffect(() => {
@@ -34,7 +34,7 @@ function Users() {
           </thead>
           <tbody>
             {users.map((user) => {
-              return <User key={user.id} user={user} />;
+              return <UserAdmin key={user.id} user={user} />;
             })}
           </tbody>
         </table>
@@ -43,4 +43,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default UsersAdmin;

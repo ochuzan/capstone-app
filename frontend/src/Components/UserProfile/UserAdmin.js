@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function User({ user }) {
+function UserAdmin({ user }) {
   return (
     <tr>
       <td>
@@ -29,4 +29,4 @@ function User({ user }) {
   );
 }
 
-export default User;
+export default UserAdmin;

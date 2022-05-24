@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 
 const API = process.env.REACT_APP_API_URL;
 
-function UserEdit() {
+function UserEditAdmin() {
     let { id } = useParams();
     let navigate = useNavigate();
 
@@ -115,4 +115,4 @@ function UserEdit() {
     )
 }
 
-export default UserEdit;
+export default UserEditAdmin;
