@@ -26,15 +26,15 @@ const newsData = [
     is_favorite: false,
     views: 185
   },
-  {
-    name: "Bitcoin, Ethereum Technical Analysis",
-    description: `The token of the Terra ecosystem, LUNA, took the brunt of the news, and has lost more than 30% of its value since Thursday, May 5th. The price of LUNA fell from $87, down to as low as $58.6, and is trading at $60.17 as of this writing.`,
-    photo: "https://image.cnbcfm.com/api/v1/image/107005776-1643087617730-gettyimages-1237955656-20090101220124-99-833573.jpeg?v=1644414643",
-    url: "https://bitcoinmagazine.com/culture/what-makes-bitcoin-different-from-crypto",
-    date: "June 11, 2022",
-    is_favorite: true,
-    views: 230
-  },
+  // {
+  //   name: "Bitcoin, Ethereum Technical Analysis",
+  //   description: `The token of the Terra ecosystem, LUNA, took the brunt of the news, and has lost more than 30% of its value since Thursday, May 5th. The price of LUNA fell from $87, down to as low as $58.6, and is trading at $60.17 as of this writing.`,
+  //   photo: "https://image.cnbcfm.com/api/v1/image/107005776-1643087617730-gettyimages-1237955656-20090101220124-99-833573.jpeg?v=1644414643",
+  //   url: "https://bitcoinmagazine.com/culture/what-makes-bitcoin-different-from-crypto",
+  //   date: "June 11, 2022",
+  //   is_favorite: true,
+  //   views: 230
+  // },
   {
     name: "Pursuit Announces Crypto for Fellows",
     description: `The market crash, which saw Bitcoin hit a 10-month low, also caused an unexpected twist of fate for Terra’s algorithmic stablecoin, TerraUSD (UST). On Saturday, the UST lost its 1:1 dollar peg for a brief moment.`,
