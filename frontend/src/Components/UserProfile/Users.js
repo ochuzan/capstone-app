@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Profile from "./Profile.js";
+import User from "./User.js";
 
 const API = process.env.REACT_APP_API_URL;
 
-function Profiles() {
+function Users() {
   const [users, setUsers] = useState([]);
   
   useEffect(() => {
@@ -34,7 +34,7 @@ function Profiles() {
           </thead>
           <tbody>
             {users.map((user) => {
-              return <Profile key={user.id} user={user} />;
+              return <User key={user.id} user={user} />;
             })}
           </tbody>
         </table>
@@ -43,4 +43,4 @@ function Profiles() {
   );
 }
 
-export default Profiles;
+export default Users;

@@ -8,11 +8,11 @@ import Footer from "./Components/Footer";
 import PageNotFound from "./Components/PageNotFound";
 
 // Users Components
-import Profiles from "./Components/UserProfile/Profiles";
-import ProfileCreate from "./Components/UserProfile/ProfileCreate";
-import ProfileEdit from "./Components/UserProfile/ProfileEdit";
-import ProfileDetails from "./Components/UserProfile/ProfileDetails";
-import ProfileLogin from "./Components/UserProfile/ProfileLogin";
+import Users from "./Components/UserProfile/Users";
+import UserCreate from "./Components/UserProfile/UserCreate";
+import UserEdit from "./Components/UserProfile/UserEdit";
+import UserDetails from "./Components/UserProfile/UserDetails";
+import UserLogin from "./Components/UserProfile/UserLogin";
 
 // News Articles and Videos Components
 import News from "./Components/News";
@@ -48,11 +48,11 @@ function App() {
         <Route path="videos" element={<Videos />} />
         <Route path="/videos/:id" element={<Video />} />
 
-        <Route path="/login-profile" element={<ProfileLogin />} />
-        <Route path="/users" element={<Profiles />} />
-        <Route path="/users/new" element={<ProfileCreate />} />
-        <Route exact path="/users/:id" element={<ProfileDetails />} />
-        <Route path="/users/:id/edit" element={<ProfileEdit />} />
+        <Route path="/users/login" element={<UserLogin />} />
+        <Route path="/users" element={<Users />} />
+        <Route path="/users/new" element={<UserCreate />} />
+        <Route exact path="/users/:id" element={<UserDetails />} />
+        <Route path="/users/:id/edit" element={<UserEdit />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>

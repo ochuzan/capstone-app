@@ -7,7 +7,7 @@ import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
-function ProfileDetails() {
+function UserDetails() {
   const [user, setUser] = useState({});
   let { id } = useParams();
   let navigate = useNavigate();
@@ -63,4 +63,4 @@ function ProfileDetails() {
 </article>;
 }
 
-export default ProfileDetails;
+export default UserDetails;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Profile({ user }) {
+function User({ user }) {
   return (
     <tr>
       <td>
@@ -29,4 +29,4 @@ function Profile({ user }) {
   );
 }
 
-export default Profile;
+export default User;
