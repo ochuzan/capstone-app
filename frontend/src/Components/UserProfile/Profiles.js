@@ -20,11 +20,15 @@ function Profiles() {
   return (
     <div>
       <section>
+        <h1>Admin page - All Users</h1>
         <table>
           <thead>
             <tr>
               <th>Active</th>
               <th>User</th>
+              <th>Username</th>
+              <th>Password</th>
+              <th>Contact Email</th>
               <th>See this profile</th>
             </tr>
           </thead>

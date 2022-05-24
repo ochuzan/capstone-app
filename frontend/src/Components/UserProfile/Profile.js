@@ -14,6 +14,15 @@ function Profile({ user }) {
         {user.firstname} {user.lastname}
       </td>
       <td>
+        {user.username}
+      </td>
+      <td>
+        {user.password}
+      </td>
+      <td>
+        {user.contact_email}
+      </td>
+      <td>
         <Link to={`/users/${user.id}`}>👀</Link>
       </td>
     </tr>
