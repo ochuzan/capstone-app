@@ -1,34 +1,57 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
 import { Avatar, Button, Checkbox, FormControl, FormControlLabel, InputLabel, OutlinedInput, InputAdornment, IconButton, Grid, Paper, TextField, Typography } from "@mui/material"
 import LoginIcon from '@mui/icons-material/Login';
 import { Visibility, VisibilityOff } from "@mui/icons-material"
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function ProfileLogin() {
-    const [ userProfile, setUserProfile ] = useState({
-        first_name: "",
-        last_name: "",
+function UserLogin() {
+    const [ userLogin, setUserLogin ] = useState({
         username: "",
         password: "",
-        contact_email: "",
         active: false,
         showPassword: false
     });
 
     const handleChange = (prop) => (event) => {
-        setUserProfile({ ...userProfile, [prop]: event.target.value });
+        setUserLogin({ ...userLogin, [prop]: event.target.value });
     };
 
     const handleClickShowPassword = () => {
-        setUserProfile({
-          ...userProfile,
-          showPassword: !userProfile.showPassword,
+        setUserLogin({
+          ...userLogin,
+          showPassword: !userLogin.showPassword,
         });
     };
 
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
+
+    const [ user, setUser] = useState({});
+
+    const API = process.env.REACT_APP_API_URL;
+    // const { id } = useParams();
+    // let navigate = useNavigate();
+    // const username = 
+    // const usernameStr = atob(localStorage.getItem('username').replace(/"/g, ""));
+    // const username = "Christina_234"
+    // console.log(username)
+
+    let username;
+    if (localStorage.getItem('username')) {
+        username = atob(localStorage.getItem('username').replace(/"/g, ""));
+    }
+
+    useEffect(() => {
+        axios.get(`${API}/users/${username}`)
+            .then((res) => {
+                setUser(res.data);
+                console.log(res.data)
+            }).catch((error) => {
+                console.log(error);
+            })
+    }, [])
 
     const paperStyle = { padding: 20, width: 280, margin: "20px auto" }
     const avatarStyle = { backgroundColor: "#4366F5" }
@@ -44,8 +67,8 @@ function ProfileLogin() {
                     <InputLabel required htmlFor="outlined-adornment-password">Password</InputLabel>
                     <OutlinedInput
                         id="outlined-adornment-password"
-                        type={userProfile.showPassword ? 'text' : 'password'}
-                        value={userProfile.password}
+                        type={userLogin.showPassword ? 'text' : 'password'}
+                        value={userLogin.password}
                         onChange={handleChange('password')}
                         endAdornment={
                             <InputAdornment position="end">
@@ -55,7 +78,7 @@ function ProfileLogin() {
                                     onMouseDown={handleMouseDownPassword}
                                     edge="end"
                                 >
-                                    {userProfile.showPassword ? <VisibilityOff /> : <Visibility />}
+                                    {userLogin.showPassword ? <VisibilityOff /> : <Visibility />}
                                 </IconButton>
                             </InputAdornment>
                         }
@@ -70,7 +93,7 @@ function ProfileLogin() {
                 <Button type="submit" variant="contained" size="large" color="primary" fullWidth >Sign in</Button>
                 <Grid align="center" sx={{ marginTop:"20px" }}>
                     <Typography><Link to="#">Forgot password?</Link></Typography>
-                    <Typography>Don't have an account? <Link to="/create-profile">Sign up</Link></Typography>
+                    <Typography>Don't have an account? <Link to="/user/new">Sign up</Link></Typography>
                     <Typography><Link to="#">Privacy Policy</Link></Typography>
                 </Grid>
             </Paper>
@@ -78,4 +101,4 @@ function ProfileLogin() {
     )
 }
 
-export default ProfileLogin;
+export default UserLogin;

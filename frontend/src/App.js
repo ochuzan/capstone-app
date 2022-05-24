@@ -3,9 +3,6 @@ import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
 import Header from "./Components/Header"
 import Cryptocurrency from "./Components/Cryptocurrency";
-import Profile from "./Components/UserProfile/Profile";
-import ProfileCreate from "./Components/UserProfile/ProfileCreate";
-import ProfileEdit from "./Components/UserProfile/ProfileEdit";
 import Education from "./Components/Education";
 import PageNotFound from "./Components/PageNotFound";
 import News from "./Components/News";
@@ -17,7 +14,10 @@ import NewsPage from "./Components/NewsPage"
 import Videos from "./Components/Videos"
 // import Bot from "./Components/ChatBot/Bot";
 import Video from "./Components/Video";
-import ProfileLogin from "./Components/UserProfile/ProfileLogin";
+import User from "./Components/UserProfile/User";
+import UserLogin from "./Components/UserProfile/UserLogin";
+import UserCreate from "./Components/UserProfile/UserCreate";
+import UserEdit from "./Components/UserProfile/UserEdit";
 // import MuiSandbox from "./Components/MuiSandbox";
 
 
@@ -37,10 +37,10 @@ function App() {
         <Route path="/articles/:id" element={<Article />} />
         <Route path="videos" element={<Videos />} />
         <Route path="/videos/:id" element={<Video />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/login-profile" element={<ProfileLogin />} />
-        <Route path="/create-profile" element={<ProfileCreate />} />
-        <Route path="/edit-profile" element={<ProfileEdit />} />
+        <Route path="/users" element={<User />} />
+        <Route path="/users/login" element={<UserLogin />} />
+        <Route path="/users/new" element={<UserCreate />} />
+        <Route path="/users/:id/edit" element={<UserEdit />} />
         <Route path="/*" element={<PageNotFound />} />
       </Routes>
       <Footer />

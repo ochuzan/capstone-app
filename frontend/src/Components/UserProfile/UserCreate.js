@@ -5,7 +5,7 @@ import { Avatar, Button, Checkbox, FormControl, FormControlLabel, InputLabel, Ou
 import PersonAddAltOutlinedIcon from '@mui/icons-material/PersonAddAltOutlined';
 import { Visibility, VisibilityOff } from "@mui/icons-material"
 
-function ProfileCreate() {
+function UserCreate() {
     const [ userProfile, setUserProfile ] = useState({
         firstname: "",
         lastname: "",
@@ -23,7 +23,7 @@ function ProfileCreate() {
     const addUser = (newUser) => {
         axios.post(`${API}/users`, newUser)
             .then(() => {
-                navigate("/profile");
+                navigate("/user/login");
             }).catch((error) => {
                 console.log(error);
             })
@@ -125,11 +125,11 @@ function ProfileCreate() {
                     <Button type="submit" variant="contained" size="large" color="primary" fullWidth disabled={disableButton()}>Create Profile</Button>
                 </form>
                 <Grid align="center" sx={{marginTop:"20px"}}>
-                    <Typography>Already have a CryptoTalk profile? <Link to="/login-profile">Log in</Link></Typography>
+                    <Typography>Already have a CryptoTalk profile? <Link to="/users/login">Log in</Link></Typography>
                 </Grid>
             </Paper>
         </Grid>
     )
 }
 
-export default ProfileCreate;
+export default UserCreate;
