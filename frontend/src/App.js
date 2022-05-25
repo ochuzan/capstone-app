@@ -22,8 +22,6 @@ import UserEdit from "./Components/UserProfile/UserEdit";
 // News Articles and Videos Components
 import News from "./Components/News";
 import NewsPage from "./Components/NewsPage"
-import Cryptocurrency from "./Components/Cryptocurrency";
-import Education from "./Components/Education";
 import Articles from "./Components/Articles";
 import Article from "./Components/Article";
 import Videos from "./Components/Videos"
