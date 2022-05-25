@@ -1,8 +1,10 @@
 import { useParams, Link } from "react-router-dom"
 import newsData from "../data/newsData";
+import { useState } from 'react';
 
 
 function NewsPage(){
+    const [is_favorite, setFavorite] = useState(false)
     const { id } = useParams();
     let links = newsData.map((article)=>{
         let index = newsData.indexOf(article);
@@ -10,6 +12,10 @@ function NewsPage(){
             <li><Link to={`/news/${index}`}><h3 className="hvr-grow">{article.name}</h3></Link></li>
         )
     })
+
+    const handleCheckboxChange = () => {
+        setFavorite(!is_favorite);
+    }
     return(
         <div>
             <h1>{newsData[id].name}</h1>
@@ -24,7 +30,10 @@ function NewsPage(){
                     </iframe>
                 </div>
                 <div className="vid-container">
-                <h3> Favorite {newsData[id].is_favorite ? "💰 yes" : "📈 no"}</h3>
+                <form>
+                <h3>FAVORITE</h3> {is_favorite ? "💰 YES" : "📈 NO"}
+                <span><input type="checkbox" onChange={handleCheckboxChange} checked={newsData[id].is_favorite} /></span>
+                </form>
                 </div>
             </article>
         </div>

@@ -21,6 +21,7 @@ function News() {
       });
   }, []);
 
+  
   return (
     <div className="News">
       <h1>Crypto News</h1>
@@ -37,7 +38,7 @@ function News() {
         {newsData.map((oneArticle, index) => {
           return (
             <article key={index}>
-              <NewsArticle oneArticle={oneArticle} index={index}/>
+              <NewsArticle oneArticle={oneArticle} index={index} />
             </article>
           );
         })}
