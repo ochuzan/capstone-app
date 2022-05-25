@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom"
 const { REACT_APP_API_ARTICLE_KEY } = process.env
 
 
-
-
 function AlanBot(){
   const navigate = useNavigate();
   
@@ -25,7 +23,7 @@ function AlanBot(){
                 navigate('/news/1')
               }
               if(commandData.command === 'articles'){
-                navigate('/articles/1')
+                navigate('/articles/0')
               }
               if(commandData.command === 'home'){
                 navigate('/')
@@ -38,6 +36,27 @@ function AlanBot(){
               }
               if(commandData.command === 'view-profile'){
                 navigate('/profile')
+              }
+              if(commandData.command === 'articles/0'){
+                navigate('/articles/0')
+              }
+              if(commandData.command === 'articles/1'){
+                navigate('/articles/1')
+              }
+              if(commandData.command === 'articles/2'){
+                navigate('/articles/2')
+              }
+              if(commandData.command === 'articles/3'){
+                navigate('/articles/3')
+              }
+              if(commandData.command === 'articles/4'){
+                navigate('/articles/4')
+              }
+              if(commandData.command === 'articles/5'){
+                navigate('/articles/5')
+              }
+              if(commandData.command === 'articles/6'){
+                navigate('/articles/6')
               }
             },
         });

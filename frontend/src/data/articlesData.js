@@ -34,10 +34,10 @@ let articlesData = [
         is_favorite: false
     },
 
-    {
-        source: "Digital Asset Security", 
-        url:"https://www.bitcoin.com/get-started/digital-asset-security/"
-    }
+    // {
+    //     source: "Digital Asset Security", 
+    //     url:"https://www.bitcoin.com/get-started/digital-asset-security/"
+    // }
 
     // {
     //     source: "What is Ethereum", 
