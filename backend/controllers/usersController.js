@@ -6,6 +6,7 @@ const {
     getOneUser,
     updateUser,
     deleteUser,
+    getOneUserByUsername,
 } = require("../queries/users.js");
 
 // Controllers
@@ -43,6 +44,21 @@ users.post("/", async(req, res) => {
     }
 });
 
+// Get user by username
+users.get("/login/:username", async(req, res) => {
+    const { username } = req.params;
+    try{
+        const oneUserByUsername = await getOneUserByUsername(username);
+        if(oneUserByUsername.id){
+            res.status(200).json(oneUserByUsername);
+        } else {
+            res.status(404).json("Error: Username not found");
+        }
+    } catch(err){
+        return err;
+    }
+});
+
 users.get("/:id", async(req, res) => {
     const { id } = req.params;
     try{
@@ -50,7 +66,7 @@ users.get("/:id", async(req, res) => {
         if(oneUser.id){
             res.status(200).json(oneUser);
         } else {
-            res.status(404).json("Error: User not found");
+            res.status(404).json("Error: User ID not found");
         }
     } catch(err){
         return err;

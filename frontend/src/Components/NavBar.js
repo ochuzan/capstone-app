@@ -181,7 +181,7 @@ function NavBar() {
                     <Typography textAlign="center">Profile</Typography>
                 </MenuItem>
               </Link>
-              <Link to="/login-profile">
+              <Link to="/users/login">
                 <MenuItem  onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Login</Typography>
                 </MenuItem>
