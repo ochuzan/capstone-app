@@ -20,7 +20,7 @@ function UserEditAdmin() {
     const updateUser = (updatedUser) => {
         axios.put(`${API}/users/${id}`, updatedUser)
             .then(()=>{
-                    navigate(`/users/${id}`);
+                    navigate(`/admin/${id}`);
                 },
                 (error) => console.error(error)
             )
@@ -107,7 +107,7 @@ function UserEditAdmin() {
                 <input type="submit" />
 
             </form>
-            <Link to={`/users/${id}`} >
+            <Link to={`/admin/${id}`} >
                 <button>Nevermind!</button>
             </Link>
             <h1>Profile Edit Page</h1>
