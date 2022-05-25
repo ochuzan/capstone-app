@@ -27,15 +27,10 @@ import Article from "./Components/Article";
 import Videos from "./Components/Videos"
 import Video from "./Components/Video";
 
-// import MuiSandbox from "./Components/MuiSandbox";
-
-
-// Chatbot Components
-import Bot from "./Components/ChatBot/Bot";
-import Popchat from "./Components/ChatBot/Popchat";
+// Chatbot 
 import AlanBot from "./Components/ChatBot/AlanBot"
 
-import MuiSandbox from "./Components/MuiSandbox";
+// import MuiSandbox from "./Components/MuiSandbox";
 
 function App() {
   return (
@@ -68,8 +63,7 @@ function App() {
 
       </Routes>
       <Footer />
-      {/* <AlanBot /> */}
-      {/* <Popchat /> */}
+      <AlanBot />
     </Router>
   );
 }

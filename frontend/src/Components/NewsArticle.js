@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 
+
 function NewsArticle({ oneArticle , index }) {
+
   return (
     <article>
          <header>
-            <Link to={`/news/${index}`}><h3 className="hvr-grow">{oneArticle.name}</h3></Link>
+          <Link to={`/news/${index}`}><h3 className="hvr-grow">{oneArticle.name}</h3></Link>
         </header>
         <section className="article-preview"> 
             <div>
@@ -22,7 +24,7 @@ function NewsArticle({ oneArticle , index }) {
               src={oneArticle.url}>
             </iframe>
             <br />
-            <h2>Crypto News Favorite? {oneArticle.is_favorite ? "💰 yes" : "📈 no"}</h2>
+            <h3>Crypto News Favorite?{oneArticle.is_favorite ? "💰 YES " : "📈 NO"}</h3>
         </section>
     </article>
   );

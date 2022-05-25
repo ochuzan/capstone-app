@@ -1,27 +1,27 @@
-// import axios from "axios";
-// import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
+import axios from "axios";
+import { useState, useEffect } from "react";
 import "./News.css";
 import NewsArticle from "./NewsArticle";
-import newsData from "../data/newsData";
+// import newsData from "../data/newsData";
 
-// const API = process.env.REACT_APP_API_URL;
+const API = process.env.REACT_APP_API_URL;
 
 function News() {
-  // const [newsData, setNews] = useState([]);
+  const [newsData, setNews] = useState([]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`${API}/news`)
-  //     .then((res) => {
-  //       setNews(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`${API}`)
+      .then((res) => {
+        console.log(res.data)
+        setNews(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
+  
   return (
     <div className="News">
       <h1>Crypto News</h1>
@@ -38,8 +38,7 @@ function News() {
         {newsData.map((oneArticle, index) => {
           return (
             <article key={index}>
-
-              <NewsArticle oneArticle={oneArticle} index={index}/>
+              <NewsArticle oneArticle={oneArticle} index={index} />
             </article>
           );
         })}
