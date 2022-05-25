@@ -1,5 +1,15 @@
 const db = require("../db/dbConfig.js");
 
+// get all users (not using, but can't get a list for the frontend to be able to .map over them)
+const getAllUsers = async() => {
+    try {
+        const allUsers = await db.any("SELECT * FROM users");
+        return allUsers;
+    } catch (error) {
+        return error;
+    }
+}
+
 const createUser = async(user) => {
     try{
         const newUser = await db.one(
@@ -70,6 +80,7 @@ const deleteUser = async(id) => {
 };
 
 module.exports = {
+    getAllUsers,
     getOneUser,
     getOneUserByUsername,
     createUser,

@@ -1,6 +1,7 @@
 const express = require("express");
 const users = express.Router();
 const {
+    getAllUsers,
     createUser,
     getOneUser,
     updateUser,
@@ -13,6 +14,21 @@ const resourcesController = require("./resourcesController.js");
 const favoritesController = require("./favoritesController.js");
 users.use("/:usersId/resources", resourcesController);
 users.use("/:usersId/favorites", favoritesController);
+
+// get all users (not using, but can't get a list for the frontend to be able to .map over them)
+users.get("/", async (req, res)=> {
+    try {
+        const allUsers = await getAllUsers();
+        if (allUsers[0]){
+            res.status(200).json(allUsers);
+        } else {
+            res.status(500).json({ error: "Error: there are no users" });
+        }
+    } catch (err) {
+        console.log(err);
+    }
+})
+
 
 users.post("/", async(req, res) => {
     const { body } = req;
@@ -71,10 +87,14 @@ users.put("/:id", async(req, res) => {
 users.delete("/:id", async(req, res) => {
     const { id } = req.params;
     const deletedUser = await deleteUser(id);
-    if(deletedUser.id){
-        res.status(200).json(deletedUser);
-    } else {
-        res.status(404).json("Error: User not found");
+    try {
+        if(deletedUser.id){
+            res.status(200).json(deletedUser);
+        } else {
+            res.status(404).json("Error: User not found");
+        }
+    } catch (error) {
+        console.log(error);
     }
 });
 

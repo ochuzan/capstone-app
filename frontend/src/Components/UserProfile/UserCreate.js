@@ -62,7 +62,7 @@ function UserCreate() {
         event.preventDefault();
     };
 
-    const disableButton = () =>{
+    const disableButton = () => {
         const { active, firstname, lastname, username, contact_email} = userProfile;
 
         if(active && firstname && lastname && username && contact_email){
