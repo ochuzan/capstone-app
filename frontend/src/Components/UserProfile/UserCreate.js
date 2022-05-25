@@ -7,8 +7,8 @@ import { Visibility, VisibilityOff } from "@mui/icons-material"
 
 function UserCreate() {
     const [ userProfile, setUserProfile ] = useState({
-        first_name: "",
-        last_name: "",
+        firstname: "",
+        lastname: "",
         username: "",
         password: "",
         contact_email: "",
@@ -23,7 +23,7 @@ function UserCreate() {
     const addUser = (newUser) => {
         axios.post(`${API}/users`, newUser)
             .then(() => {
-                navigate("/profile");
+                navigate("/users/login");
             }).catch((error) => {
                 console.log(error);
             })
@@ -33,9 +33,18 @@ function UserCreate() {
         setUserProfile({ ...userProfile, active: !userProfile.active });
     };
 
+    const addLocalStorageUser = () => {
+        localStorage.setItem("username", JSON.stringify(btoa(userProfile.username)));
+        localStorage.setItem("email", JSON.stringify(btoa(userProfile.contact_email)));
+        localStorage.setItem("password", JSON.stringify(btoa(userProfile.password)));
+        console.log("Added to local storage");
+    };
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
         addUser(userProfile);
+        addLocalStorageUser();
     };
 
     const handleChange = (prop) => (event) => {
@@ -53,8 +62,10 @@ function UserCreate() {
         event.preventDefault();
     };
 
-    const disableButton = () =>{
-        if(userProfile.active){
+    const disableButton = () => {
+        const { active, firstname, lastname, username, contact_email} = userProfile;
+
+        if(active && firstname && lastname && username && contact_email){
             return false;
         } else {
             return true;
@@ -78,8 +89,8 @@ function UserCreate() {
                     </div>
                 </Grid>
                 <form onSubmit={handleSubmit}>
-                    <TextField required onChange={handleChange('first_name')} margin="dense" fullWidth label='First Name' placeholder="Enter your first name"/>
-                    <TextField required onChange={handleChange('last_name')} margin="dense" fullWidth label='Last Name' placeholder="Enter your last name"/>
+                    <TextField required onChange={handleChange('firstname')} margin="dense" fullWidth label='First Name' placeholder="Enter your first name"/>
+                    <TextField required onChange={handleChange('lastname')} margin="dense" fullWidth label='Last Name' placeholder="Enter your last name"/>
                     <TextField required onChange={handleChange('username')} margin="dense" fullWidth label='Username' placeholder="Enter your username"/>
                     <TextField required onChange={handleChange('contact_email')} margin="dense" fullWidth label='Email' placeholder="Enter your email address"/>
                     <FormControl fullWidth margin="dense" variant="outlined">
@@ -114,7 +125,7 @@ function UserCreate() {
                     <Button type="submit" variant="contained" size="large" color="primary" fullWidth disabled={disableButton()}>Create Profile</Button>
                 </form>
                 <Grid align="center" sx={{marginTop:"20px"}}>
-                    <Typography>Already have a CryptoTalk profile? <Link to="/login-profile">Log in</Link></Typography>
+                    <Typography>Already have a CryptoTalk profile? <Link to="/users/login">Log in</Link></Typography>
                 </Grid>
             </Paper>
         </Grid>
