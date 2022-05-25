@@ -29,13 +29,13 @@ function AlanBot(){
                 navigate('/')
               }
               if(commandData.command === 'create-profile'){
-                navigate('/create-profile')
+                navigate('/users/new')
               }
-              if(commandData.command === 'profile-page'){
-                navigate('/edit-profile')
+              if(commandData.command === 'user-login'){
+                navigate('/users/login')
               }
               if(commandData.command === 'view-profile'){
-                navigate('/profile')
+                navigate('/users')
               }
               if(commandData.command === 'articles/0'){
                 navigate('/articles/0')
