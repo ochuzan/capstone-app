@@ -20,7 +20,7 @@ INSERT INTO resources(name, type, category, url, is_favorite, users_id) VALUES
     true, 1
 ),
 (
-    'Bitcoin News"', 'article', 'news', 
+    'Bitcoin News', 'article', 'news', 
     'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-btc-surge-over-10-as-big-2-lead-crypto-rebound/', 
     true, 1
 ),

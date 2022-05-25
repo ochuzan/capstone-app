@@ -78,8 +78,7 @@ function SymbolOverview() {
     return (
         <div className="tradingview-widget-container">
             <div id="tradingview_0c358"></div>
-            <div className="tradingview-widget-copyright">
-            </div>
+            <div className="tradingview-widget-copyright"></div>
         </div>
     )
 }

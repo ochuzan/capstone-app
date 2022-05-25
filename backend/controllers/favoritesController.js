@@ -1,17 +1,17 @@
 const express = require("express");
 const favorites = express.Router({mergeParams: true});
 const { 
-    getFavoritesByUserId,
+    getAllFavoritesForUser,
+    getOneUsersFavoriteByFavoriteId,
     createNewFavorite,
-    getOneFavorite,
     deleteFavorite
 } = require("../queries/favorites.js");
 
-// For query `getFavoritesByUserId` - Examples: http://localhost:3333/users/1/favorites , http://localhost:3333/users/3/favorites
+// Get all favorites for a user - Example: http://localhost:3333/users/1/favorites 
 favorites.get("/", async (req, res)=>{
     const { usersId } = req.params;
     try {
-        const allFavorites = await getFavoritesByUserId(usersId);
+        const allFavorites = await getAllFavoritesForUser(usersId);
         if(allFavorites[0]){
             res.status(200).json(allFavorites);
         }else{
@@ -20,7 +20,23 @@ favorites.get("/", async (req, res)=>{
     } catch (error){
         console.log(error);
     }
-});
+})
+
+// Get one favorite by favorites ID - Example: http://localhost:3333/users/1/favorites/8
+favorites.get("/:id", async (req, res)=>{
+    const { id } = req.params;
+    try {
+        const getFavorite = await getOneUsersFavoriteByFavoriteId(id);
+        if (getFavorite.id){
+            res.status(200).json(getFavorite);
+        } else {
+            res.status(500).json({ error: "favorite not found!" });
+        }
+    } catch (error){
+        console.log(error);
+    }
+})
+
 
 // Creating a favorite - http://localhost:3333/users/1/favorites/
 favorites.post("/", async(req, res) => {
@@ -36,22 +52,6 @@ favorites.post("/", async(req, res) => {
         console.log(err);
     }
 });
-
-// Get a favorite by its ID
-// Get one favorite - Example: http://localhost:3333/users/1/favorites/8
-favorites.get("/:id", async (req, res)=>{
-    const { id } = req.params;
-    try {
-        const getFavorite = await getOneFavorite(id);
-        if (getFavorite.id){
-            res.status(200).json(getFavorite);
-        } else {
-            res.status(500).json({ error: "favorite not found!" });
-        }
-    } catch (error){
-        console.log(error);
-    }
-})
 
 // Deleting a favorite by its ID - Example: http://localhost:3333/users/1/favorites/8
 favorites.delete("/:id", async (req, res) => {
