@@ -10,9 +10,9 @@ import Footer from "./Components/Footer";
 import PageNotFound from "./Components/PageNotFound";
 
 // Users Components - Admin
-import UsersAdmin from "./Components/UserProfile/UsersAdmin";
-import UserEditAdmin from "./Components/UserProfile/UserEditAdmin";
-import UserDetailsAdmin from "./Components/UserProfile/UserDetailsAdmin";
+import UsersAdmin from "./Components/Admin/UsersAdmin";
+import UserEditAdmin from "./Components/Admin/UserEditAdmin";
+import UserDetailsAdmin from "./Components/Admin/UserDetailsAdmin";
 // Users Components - For User
 import UserCreate from "./Components/UserProfile/UserCreate";
 import UserLogin from "./Components/UserProfile/UserLogin";
@@ -55,9 +55,9 @@ function App() {
         <Route path="/users/:id/edit" element={<UserEdit />} />
         <Route path="/*" element={<PageNotFound />} />
 
-        <Route path="/users" element={<UsersAdmin />} /> //Same path as public user
-        <Route exact path="/users/:id" element={<UserDetailsAdmin />} />
-        <Route path="/users/:id/edit" element={<UserEditAdmin />} />
+        <Route path="/admin" element={<UsersAdmin />} />
+        <Route exact path="/admin/:id" element={<UserDetailsAdmin />} />
+        <Route path="/admin/:id/edit" element={<UserEditAdmin />} />
 
         <Route path="*" element={<PageNotFound />} />
 

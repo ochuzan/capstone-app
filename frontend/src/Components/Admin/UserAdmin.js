@@ -23,7 +23,7 @@ function UserAdmin({ user }) {
         {user.contact_email}
       </td>
       <td>
-        <Link to={`/users/${user.id}`}>👀</Link>
+        <Link to={`/admin/${user.id}`}>👀</Link>
       </td>
     </tr>
   );
