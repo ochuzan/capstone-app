@@ -54,7 +54,7 @@ function SymbolOverview() {
                     ]
                 ],
                 "chartOnly": false,
-                "width": 900,
+                "width": 1000,
                 "height": 600,
                 "locale": "en",
                 "colorTheme": "dark",
@@ -77,8 +77,9 @@ function SymbolOverview() {
     }, [])
     return (
         <div className="tradingview-widget-container">
-            <div id="tradingview_0c358"></div>
+            <div id="tradingview_0c358"> </div>
             <div className="tradingview-widget-copyright"></div>
+            <h1 className="fade-in-image">Say hello to Alan, your guide ==></h1>
         </div>
     )
 }

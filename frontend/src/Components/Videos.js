@@ -31,8 +31,8 @@ function Videos() {
           <Link to={`/videos/${index}`}><h3 className="">{vid.title}</h3></Link>
           <div >
           <iframe
-            width="450"
-            height="300"
+            width="500"
+            height="350"
             src={`https://www.youtube.com/embed/${vid.videoId}`}
             frameBorder="0"
             allow="autoplay; encrypted-media"
@@ -40,14 +40,14 @@ function Videos() {
             title="video"
 			    />
           </div>
-          <div><h3 className="hvr-grow">Favorite {vid.is_favorite ? "💰 yes" : "📈 no"}</h3></div>   
+          {/* <div><h3 className="hvr-grow">Favorite {vid.is_favorite ? "💰 yes" : "📈 no"}</h3></div>    */}
         </div>
     )
   })
   console.log(videos)
     return (
       <div className="Videos">
-        <h1>Videos</h1>
+        {/* <h1>Videos</h1> */}
         <div className="vids">{fetchedVids}</div>
       </div>
     );

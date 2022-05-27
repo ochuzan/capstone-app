@@ -22,8 +22,8 @@ function Article(){
         <div className="vid-container">
         <iframe id="inlineFrame"
           title={articlesData[id].source}
-          width="1000"
-          height="800"
+          width="850"
+          height="600"
           src={`${articlesData[id].url}`}>
         </iframe>
         </div>

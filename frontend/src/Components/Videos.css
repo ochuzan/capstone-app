@@ -7,13 +7,16 @@
 .vid-container{
     display: grid;
     justify-content: center;
+    padding: 20px;
+    /* overflow:visible; */
+
 }
 .Videos{
     text-align: center;
     
 }
 .vid h3{
-    color: aqua;
+    text-align: center;
 }
 ul{
     padding: 0px 20px;
@@ -22,7 +25,9 @@ ul{
 
 .vid h3:hover{
     /* color:orange; */
-    background-color: black;
+    background-color: white;
+    color: #4366F5;
+    padding: 5px;
 }
 .links h3{
     text-transform: uppercase;
@@ -34,8 +39,9 @@ ul{
     text-transform: uppercase;
 }
 .vid{
-    border: 4px solid aqua;
-    padding: 20px
+    background: linear-gradient(#4366F5, rgb(66, 157, 157));
+    border: 1px solid #4366F5;
+    padding: 10px
 }
 .video-container h1{
     text-align: center;

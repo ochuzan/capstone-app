@@ -8,13 +8,12 @@ function Home() {
   return (
     <div id="chartContainer">
       <header>
-        <h1>Welcome to Crypto-Talk</h1>
-        <h4>Your education portal for crypto</h4>
-        <hr />
+        <h1 className="fade-in-image">Welcome to Crypto-Talk</h1>
+        <h4 className="fade-in">Your education portal for crypto</h4>
       </header>
       <div id="chart-coins-container">
         <div id="chart-widget">
-          <h4>BTC Chart or Crypto Market widget</h4>
+          <h4>CRYPTO CHARTS</h4>
           {/* <SingleTickerBTC /> */}
           <SymbolOverview />
           {/* <div id="chart">
@@ -24,9 +23,9 @@ function Home() {
             />
           </div> */}
         </div>
-        <div id="top-coins">
+        {/* <div id="top-coins">
           <header><h4>Top Coins</h4></header>
-           {/* <div id="coins-list"> */}
+           <div id="coins-list">
           <CryptoMarket />
             {/* /* <div id="coin">DEBCOIN</div>
             <div id="coin">OLIVERCOIN</div>
@@ -41,7 +40,7 @@ function Home() {
             <div id="coin">ETHEREUM</div>
             <div id="coin">DOGECOIN</div> */}
           {/* </div> */}
-        </div>
+        {/* </div>  */}
       </div>
     </div>
   );

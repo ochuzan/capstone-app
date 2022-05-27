@@ -7,9 +7,9 @@ const CryptoMarket = () => {
     script.async = true;
     script.innerHTML = JSON.stringify(
       {
-        "width": "500px",
+        "width": "1400px",
         "height": "900px",
-        "margin": "0 auto",
+        "margin": "auto",
         "defaultColumn": "overview",
         "screener_type": "crypto_mkt",
         "displayCurrency": "USD",
