@@ -9,14 +9,14 @@ function Video(){
         )
     })
     return(
-        <div>
+        <div className="video-container">
             <h1>{videos[id].title}</h1>
             <article id="article">
             <ul className="vid-container">{links}</ul>
             <div className="vid-container">
             <iframe id="inlineFrame"           
                 title={videos[id].title}
-                width="1000"
+                width="1200"
                 height="750"
                 src={`https://www.youtube.com/embed/${videos[id].videoId}`}>
             </iframe>

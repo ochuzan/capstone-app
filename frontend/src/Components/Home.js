@@ -13,7 +13,18 @@ function Home() {
         <hr />
       </header>
       <div id="chart-coins-container">
-      <div id="top-coins">
+        <div id="chart-widget">
+          <h4>BTC Chart or Crypto Market widget</h4>
+          {/* <SingleTickerBTC /> */}
+          <SymbolOverview />
+          {/* <div id="chart">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pushkin_population_history.svg/1200px-Pushkin_population_history.svg.png"
+              alt="chart"
+            />
+          </div> */}
+        </div>
+        <div id="top-coins">
           <header><h4>Top Coins</h4></header>
            {/* <div id="coins-list"> */}
           <CryptoMarket />
@@ -30,18 +41,6 @@ function Home() {
             <div id="coin">ETHEREUM</div>
             <div id="coin">DOGECOIN</div> */}
           {/* </div> */}
-        </div>
-
-        <div id="chart-widget">
-          <h4>BTC Chart or Crypto Market widget</h4>
-          {/* <SingleTickerBTC /> */}
-          <SymbolOverview />
-          {/* <div id="chart">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pushkin_population_history.svg/1200px-Pushkin_population_history.svg.png"
-              alt="chart"
-            />
-          </div> */}
         </div>
       </div>
     </div>

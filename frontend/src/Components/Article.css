@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: top;
-    background-color: #4366F5;
 }
 
 h1{
@@ -15,7 +14,7 @@ h3{
 }
 
 .link-container h3:hover{
-    background-color: black;
+    background-color: #4366F5;
     padding: 20px;
 }
 /* Grow */

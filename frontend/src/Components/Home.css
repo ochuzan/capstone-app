@@ -25,11 +25,11 @@ header {
 }
 
 #chart-widget {
-    background-color:  #4366F5;
+    /* background-color:  #4366F5; */
     /* height: 300px; */
     text-align: center;
     /* color: orange; */
-    padding: 20px;
+    padding: 20px 5px;
 }
 
 #chart {
@@ -43,10 +43,11 @@ header {
 }
 
 #top-coins {
-    background-color:  #4366F5;
+    /* background-color:  #4366F5; */
     /* height: 200px; */
     text-align: center;
     padding: 20px 5px;
+    margin: 5px;
 }
 
 #coins-list {
@@ -57,6 +58,6 @@ header {
 #coin {
     background-color: navy;
     color: orange;
-    padding: 5px;
-    margin: 5px;
+    /* padding: 5px; */
+    /* margin: 5px; */
 }

@@ -41,6 +41,8 @@ body{
 
 body{
     background: #1c1c1c;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
 }
 #bot{
     background:blue;
@@ -48,4 +50,8 @@ body{
 
 #home{
     background: grey;
+}
+#footer{
+    background-color:  #4366F5;
+    height: 100px;
 }
