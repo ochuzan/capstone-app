@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 
-function NewsArticle({ oneArticle }) {
+
+function NewsArticle({ oneArticle , index }) {
+
   return (
     <article>
          <header>
-            <h2>{oneArticle.name}</h2>
+          <Link to={`/news/${index}`}><h3 className="hvr-grow">{oneArticle.name}</h3></Link>
         </header>
         <section className="article-preview"> 
             <div>
-                Date: {oneArticle.date} - Views: {oneArticle.views}
+                {/* Date: {oneArticle.date} - Views: {oneArticle.views} */}
+
             </div>
             {/* <div>
                 <img className="news-image" src={oneArticle.photo} alt="coins for crypto" />
@@ -21,7 +24,7 @@ function NewsArticle({ oneArticle }) {
               src={oneArticle.url}>
             </iframe>
             <br />
-            Crypto News Favorite? {oneArticle.favorite ? "💰 yes" : "📈 no"}
+            <h3>Crypto News Favorite?{oneArticle.is_favorite ? "💰 YES " : "📈 NO"}</h3>
         </section>
     </article>
   );

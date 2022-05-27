@@ -1,17 +1,21 @@
 const db = require("../db/dbConfig.js");
 
-const getAllResources = async (users_id) => {
+// Method GET      `users/{id}/resources/`   Returns the details of all resources with an id of {id}.
+// Example: http://localhost:3333/users/2/resources
+const getAllResources = async(users_id) => {
     try {
         const allResources = await db.any(
             "SELECT * FROM resources WHERE users_id=$1",
             users_id
-        );
+        )
         return allResources;
     } catch (error) {
         return error;
     }
-};
+}
 
+// Method GET      `/users/{id}/resources/{id}`  Return details of one `resource` associated with the `users` with an id of {id}
+// Example: http://localhost:3333/users/1/resources/3
 const getOneResource = async (id) => {
     try {
         const oneResource = await db.one(
@@ -25,16 +29,16 @@ const getOneResource = async (id) => {
 };
 
 // This might be a feature later on - for a user to create a resource
+// http://localhost:3333/users/2/resources/
 const createResource = async(resource) => {
     try{
         const newResource = await db.one(
-            "INSERT INTO resources (subject, description, type, url, articles_id, is_favorite, users_id) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+            "INSERT INTO resources (name, type, category, url, is_favorite, users_id) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
             [
-                resource.subject,
-                resource.description,
+                resource.name,
                 resource.type,
+                resource.category,
                 resource.url,
-                resource.articles_id,
                 resource.is_favorite,
                 resource.users_id,
             ]
@@ -46,17 +50,18 @@ const createResource = async(resource) => {
 };
 
 // Should this only update the is_favorite field since they shouldn't update any articles
+// http://localhost:3333/users/2/resources/3
 const updateResource = async (id, resource) => {
     try {
         const updatedResource = await db.one(
-            "UPDATE resources SET subject=$1, description=$2, type=$3, url=$4, articles_id=$5, is_favorite=$6 WHERE id=$7 RETURNING *",
+            "UPDATE resources SET name=$1, type=$2, category=$3, url=$4, is_favorite=$5, users_id=$6 WHERE id=$7 RETURNING *",
             [
-                resource.subject,
-                resource.description,
+                resource.name,
                 resource.type,
+                resource.category,
                 resource.url,
-                resource.articles_id,
                 resource.is_favorite,
+                resource.users_id,
                 id
             ]
         )
@@ -67,6 +72,7 @@ const updateResource = async (id, resource) => {
 };
 
 // Do we need delete resource? Will regular users be able to delete or admin only?
+// // http://localhost:3333/users/2/resources/3
 const deleteResource = async (id) => {
     try {
         const deletedResource = await db.one(

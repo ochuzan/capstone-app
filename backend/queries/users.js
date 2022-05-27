@@ -1,10 +1,22 @@
 const db = require("../db/dbConfig.js");
 
+// get all users (not using, but can't get a list for the frontend to be able to .map over them)
+const getAllUsers = async() => {
+    try {
+        const allUsers = await db.any("SELECT * FROM users");
+        return allUsers;
+    } catch (error) {
+        return error;
+    }
+}
+
 const createUser = async(user) => {
     try{
         const newUser = await db.one(
-            "INSERT INTO users (username, password, contact_email, active) VALUES($1, $2, $3, $4) RETURNING *",
+            "INSERT INTO users (firstname, lastname, username, password, contact_email, active) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
             [
+                user.firstname,
+                user.lastname,
                 user.username,
                 user.password,
                 user.contact_email,
@@ -26,11 +38,22 @@ const getOneUser = async(id) => {
     };
 };
 
+const getOneUserByUsername = async(username) => {
+    try{
+        const oneUserByUsername = await db.one("SELECT * FROM users WHERE username=$1", username);
+        return oneUserByUsername;
+    } catch(err){
+        return err;
+    };
+};
+
 const updateUser = async(id, user) => {
     try{
         const updatedUser = await db.one(
-            "UPDATE users SET username=$1, password=$2, contact_email=$3, active=$4 WHERE id=$5 RETURNING *",
+            "UPDATE users SET firstname=$1, lastname=$2, username=$3, password=$4, contact_email=$5, active=$6 WHERE id=$7 RETURNING *",
             [
+                user.firstname,
+                user.lastname,
                 user.username,
                 user.password,
                 user.contact_email,
@@ -57,7 +80,9 @@ const deleteUser = async(id) => {
 };
 
 module.exports = {
+    getAllUsers,
     getOneUser,
+    getOneUserByUsername,
     createUser,
     updateUser,
     deleteUser

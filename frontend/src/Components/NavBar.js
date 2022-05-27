@@ -14,6 +14,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import "./NavBar.css"
+import logo from "../Images/chatbot-logo.png"
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -35,10 +36,12 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: "#4D4DFF", height: "90px" }}>
+    <AppBar position="sticky" sx={{ backgroundColor: "#4366F5", height: "90px" }}>
       <Container maxWidth="xl" >
         <Toolbar sx={{ marginTop: "10px" }} disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,  }} />
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1,  }}>
+            <img id="navbar-logo" src={logo} alt="cryptotalk logo"/>
+          </Box>
           <Typography
             variant="h6"
             noWrap
@@ -54,7 +57,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            CRYPTO-VERSATION
+            CryptoTalk
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -103,7 +106,9 @@ function NavBar() {
               </Link>
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Box sx={{ display: { xs: 'flex', md: 'none' }, mr: 1,  }}>
+            <img id="navbar-logo" src={logo} alt="cryptotalk logo"/>
+          </Box>
           <Typography
             variant="h5"
             noWrap
@@ -120,7 +125,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            CRYPTO-VERSATION
+            CryptoTalk
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Link to="/cryptocurrency">
@@ -171,17 +176,22 @@ function NavBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              <Link to="/profile">
+              <Link to="/users">
                 <MenuItem  onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Profile</Typography>
                 </MenuItem>
               </Link>
-              <Link to="/create-profile">
+              <Link to="/users/login">
                 <MenuItem  onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">Create Profile</Typography>
+                    <Typography textAlign="center">Login</Typography>
                 </MenuItem>
               </Link>
-              <Link to="/edit-profile">
+              <Link to="/users/new">
+                <MenuItem  onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">Sign Up</Typography>
+                </MenuItem>
+              </Link>
+              <Link to="/users/:id/edit">
                 <MenuItem  onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">Edit Profile</Typography>
                 </MenuItem>

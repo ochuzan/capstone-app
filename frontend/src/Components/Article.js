@@ -1,8 +1,6 @@
 import { Link, useParams } from "react-router-dom";
-// import Articles from "./Articles";
 import articlesData from "../data/articlesData";
 import "./Article.css";
-// import Video from "./Video";
 
 function Article(){
     const { id } = useParams();
@@ -16,15 +14,19 @@ function Article(){
         <div>
         <h1 >{articlesData[id].source}</h1>
         <article id="article">
-        <ul>{links}</ul>
+        <ul className="vid-container">{links}</ul>
+        <div className="vid-container">
         <iframe id="inlineFrame"
           title={articlesData[id].source}
           width="1000"
           height="800"
           src={`${articlesData[id].url}`}>
         </iframe>
+        </div>
+        <div className="vid-container">
+        <h3> Favorite {articlesData[id].is_favorite ? "💰 yes" : "📈 no"}</h3>
+        </div>
         </article>
-        {/* <Video /> */}
         </div>
     )
 }
