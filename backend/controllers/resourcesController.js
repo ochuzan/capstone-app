@@ -13,11 +13,7 @@ resources.get('/', async (req, res)=>{
     const { usersId } = req.params;
     try {
         const allResources = await getAllResources(usersId);
-<<<<<<< HEAD
-        if(allResources[0]){
-=======
         if (allResources[0]){
->>>>>>> 87b898b3e5076b3644a139465e2aeacd7eda49d5
             res.status(200).json(allResources);
         } else {
             res.status(500).json({ error: "no resources found." });

@@ -44,6 +44,7 @@ favorites.post("/", async(req, res) => {
     try{
         const createdResource = await createNewFavorite(body);
         if(createdResource.id){
+            console.log(createdResource)
             res.status(200).json(createdResource);
         } else {
             res.status(422).json({ error: "Favorites creation error" });
