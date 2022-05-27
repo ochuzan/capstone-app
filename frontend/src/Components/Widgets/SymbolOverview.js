@@ -79,7 +79,7 @@ function SymbolOverview() {
         <div className="tradingview-widget-container">
             <div id="tradingview_0c358"> </div>
             <div className="tradingview-widget-copyright"></div>
-            <h1 className="fade-in-image">Say hello to Alan, your guide ==></h1>
+            <h1 className="say-hi">Say hello to Alan, your guide ==></h1>
         </div>
     )
 }
