@@ -14,7 +14,7 @@ function Article(){
         )
     })
     return(
-        <div>
+        <div className="video-container">
         <h1 >{articlesData[id].source}</h1>
         <article id="article">
         <ul className="vid-container">{links}</ul>

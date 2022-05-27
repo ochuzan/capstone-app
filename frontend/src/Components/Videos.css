@@ -28,25 +28,44 @@ ul{
     background-color: white;
     color: #4366F5;
     padding: 5px;
+    filter: drop-shadow(0px 5px 5px rgb(202, 106, 106));
+
 }
 .links h3{
     text-transform: uppercase;
     letter-spacing: 5px;
 }
 .links h3:hover {
-    background-color: #4366F5;
+    /* background-color: #4366F5; */
+    background: linear-gradient(#4366F5, rgb(66, 157, 157));
+    filter: drop-shadow(0px 5px 10px rgb(202, 106, 106));
+
     padding: 25px;
     text-transform: uppercase;
 }
 .vid{
     background: linear-gradient(#4366F5, rgb(66, 157, 157));
     border: 1px solid #4366F5;
-    padding: 10px
+    padding: 10px;
 }
 .video-container h1{
     text-align: center;
+    /* border: 1px solid rgb(202, 106, 106); */
     /* background-color: #3857d3; */
     padding: 5px 0px;
+    /* color: black; */
+    background: linear-gradient(#4366F5, rgb(66, 157, 157));
+
+
+}
+.vid iframe{
+    /* border: 1px solid rgb(202, 106, 106); */
+    padding-bottom: 10px;
+    filter: drop-shadow(0px 5px 10px rgb(202, 106, 106));
+}
+#article iframe{
+    filter: drop-shadow(0px 5px 15px rgb(202, 106, 106));
+
 }
 
 /* .hvr-grow {

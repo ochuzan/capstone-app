@@ -7,11 +7,11 @@ function Articles() {
   let fetchedArticles = articlesData.map((article, index)=>{
     return(
       <div className="article" key={index}>
-        <Link to={`/articles/${index}`}><h3 className="articles-links">{article.source}</h3></Link>
         <div>
+          <Link to={`/articles/${index}`}><h3 className="articles-links">{article.source}</h3></Link>
           <iframe id="inlineFrameExample"
           title={article.source}
-          width="450"
+          width="600"
           height="350"
           src={`${article.url}`}>
         </iframe>

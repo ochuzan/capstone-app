@@ -55,5 +55,5 @@ body{
     height: 100px;
     border: 1px solid rgb(202, 106, 106);
     background-color: #4366F5;
-    background: linear-gradient(#4366F5,rgb(109, 85, 85) );
+    background: linear-gradient( #4366F5, rgb(44, 102, 102),rgb(71, 56, 56));
 }

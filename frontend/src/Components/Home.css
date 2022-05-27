@@ -33,7 +33,6 @@ header {
     padding: 5px;
     grid-area: "chart";
     border: 1px solid rgb(202, 106, 106)
-    
 }
 
 #chart {

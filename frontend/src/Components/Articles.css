@@ -26,9 +26,14 @@
     background-color: white;
     color: #4366F5;
     padding: 5px;
+    /* border: 2px solid rgb(202, 106, 106) */
+    filter: drop-shadow(0px 5px 5px rgb(202, 106, 106));
+
 }
 .article iframe{
     /* margin-bottom: 10px; */
+    filter: drop-shadow(0px 10px 10px rgb(202, 106, 106));
+
     padding-bottom: 10px;
     margin: 10px;
 }
