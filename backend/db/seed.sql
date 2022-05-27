@@ -62,14 +62,14 @@ INSERT INTO resources(name, type, category, url, is_favorite, users_id) VALUES
     true, 10);
 
 -- adding `favorited_date` so we can see the differences in our tables/data
-INSERT INTO favorites(favorited_date, resources_id, users_id) VALUES
-('10/22/2017 10:00', 1, 1),
-('09/24/2019 10:15', 2, 1),
-('07/18/2018 12:00', 3, 3),
-('11/21/2021 09:45', 4, 3),
-('02/13/2021 14:00', 5, 5),
-('03/02/2017 09:30', 6, 6),
-('04/22/2016 14:00', 7, 7),
-('05/19/2016 18:00', 8, 1),
-('06/25/2014 20:15', 9, 9),
-('01/11/2022 09:00', 10, 10);
+INSERT INTO favorites(favorited_date, resources_id, users_id, resources_name) VALUES
+('10/22/2017 10:00', 1, 1, 'Ethereum News'),
+('09/24/2019 10:15', 2, 1, 'Bitcoin News'),
+('07/18/2018 12:00', 3, 3, 'Crypto Wallet'),
+('11/21/2021 09:45', 4, 3, 'Bitcoin, Ethereum Technical Analysis'),
+('02/13/2021 14:00', 5, 5, 'Pursuit Announces Crypto for Fellows'),
+('03/02/2017 09:30', 6, 6, 'Crypto for Retirement'),
+('04/22/2016 14:00', 7, 7, 'Teachers Donating Crypto'),
+('05/19/2016 18:00', 8, 1, 'Pursuit Now Accepting Crypto'),
+('06/25/2014 20:15', 9, 9, 'Bitcoin News'),
+('01/11/2022 09:00', 10, 10, 'Crypto Accelerator Program in Kenya');
