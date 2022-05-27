@@ -5,7 +5,7 @@ function Video(){
     const{ id } = useParams();
     let links = videos.map((vid, index)=>{
         return(
-            <li> <Link to={`/videos/${index}`}><h3 className="hvr-grow">{vid.title}</h3></Link></li>
+            <li className="links"> <Link to={`/videos/${index}`}><h3 className="">{vid.title}</h3></Link></li>
         )
     })
     return(
@@ -16,12 +16,12 @@ function Video(){
             <div className="vid-container">
             <iframe id="inlineFrame"           
                 title={videos[id].title}
-                width="800"
+                width="1000"
                 height="750"
                 src={`https://www.youtube.com/embed/${videos[id].videoId}`}>
             </iframe>
             </div>
-            <div className="vid-container"><h3> Favorite {videos[id].is_favorite ? "💰 yes" : "📈 no"}</h3></div>
+            {/* <div className="vid-container"><h3> Favorite {videos[id].is_favorite ? "💰 yes" : "📈 no"}</h3></div> */}
             </article>
         </div>
     )

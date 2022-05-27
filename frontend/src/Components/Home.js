@@ -1,31 +1,23 @@
 import SingleTickerBTC from "./Widgets/SingleTickerBTC";
 import SymbolOverview from "./Widgets/SymbolOverview";
+import CryptoMarket from "./Widgets/CryptoMarket";
+
 import "./Home.css";
 
 function Home() {
   return (
     <div id="chartContainer">
       <header>
-        <h1>Welcome to Crypto-versation</h1>
+        <h1>Welcome to Crypto-Talk</h1>
         <h4>Your education portal for crypto</h4>
         <hr />
       </header>
       <div id="chart-coins-container">
-        <div id="chart-widget">
-          BTC Chart or Crypto Market widget
-          {/* <SingleTickerBTC /> */}
-          <SymbolOverview />
-          {/* <div id="chart">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pushkin_population_history.svg/1200px-Pushkin_population_history.svg.png"
-              alt="chart"
-            />
-          </div> */}
-        </div>
-        <div id="top-coins">
-          <header>Top Coins</header>
-          <div id="coins-list">
-            <div id="coin">DEBCOIN</div>
+      <div id="top-coins">
+          <header><h4>Top Coins</h4></header>
+           {/* <div id="coins-list"> */}
+          <CryptoMarket />
+            {/* /* <div id="coin">DEBCOIN</div>
             <div id="coin">OLIVERCOIN</div>
             <div id="coin">CHRISTINEUM</div>
             <div id="coin">MILTONERIUM</div>
@@ -36,8 +28,20 @@ function Home() {
             <div id="coin">LITECOIN</div>
             <div id="coin">STELLAR</div>
             <div id="coin">ETHEREUM</div>
-            <div id="coin">DOGECOIN</div>
-          </div>
+            <div id="coin">DOGECOIN</div> */}
+          {/* </div> */}
+        </div>
+
+        <div id="chart-widget">
+          <h4>BTC Chart or Crypto Market widget</h4>
+          {/* <SingleTickerBTC /> */}
+          <SymbolOverview />
+          {/* <div id="chart">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pushkin_population_history.svg/1200px-Pushkin_population_history.svg.png"
+              alt="chart"
+            />
+          </div> */}
         </div>
       </div>
     </div>

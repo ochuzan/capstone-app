@@ -54,8 +54,8 @@ function SymbolOverview() {
                     ]
                 ],
                 "chartOnly": false,
-                "width": 1000,
-                "height": 500,
+                "width": 900,
+                "height": 600,
                 "locale": "en",
                 "colorTheme": "dark",
                 "gridLineColor": "rgba(240, 243, 250, 0)",

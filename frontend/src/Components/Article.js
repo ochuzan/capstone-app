@@ -7,7 +7,10 @@ function Article(){
     let links = articlesData.map((article)=>{
         let index = articlesData.indexOf(article)
         return(
-            <li ><Link to={`/articles/${index}`} ><h3 className="hvr-grow">{article.source}</h3></Link></li>
+        <div className="link-container">
+            <li className="links"><Link to={`/articles/${index}`}><h3 className="">{article.source}</h3></Link></li>
+            {/* <span>{articlesData[id].is_favorite ? "💰 favorite" : "📈 not-favorite"}</span> */}
+        </div>
         )
     })
     return(
@@ -15,6 +18,7 @@ function Article(){
         <h1 >{articlesData[id].source}</h1>
         <article id="article">
         <ul className="vid-container">{links}</ul>
+
         <div className="vid-container">
         <iframe id="inlineFrame"
           title={articlesData[id].source}
@@ -23,9 +27,8 @@ function Article(){
           src={`${articlesData[id].url}`}>
         </iframe>
         </div>
-        <div className="vid-container">
-        <h3> Favorite {articlesData[id].is_favorite ? "💰 yes" : "📈 no"}</h3>
-        </div>
+        {/* <div className="vid-container">
+        </div> */}
         </article>
         </div>
     )

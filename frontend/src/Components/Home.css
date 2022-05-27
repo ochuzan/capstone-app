@@ -20,30 +20,33 @@ header {
 #chart-coins-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
+    width: 80%;
     /* grid-template-rows: 1fr 1fr; */
 }
 
 #chart-widget {
-    background-color: navy;
+    background-color:  #4366F5;
     /* height: 300px; */
     text-align: center;
-    color: orange;
+    /* color: orange; */
+    padding: 20px;
 }
 
 #chart {
     background-color: white;
-    margin: 10px;
+    /* margin: 5px; */
 }
 
 #chart img {
     height: auto;
-    width: 45%;
+    width: 65%;
 }
 
 #top-coins {
-    background-color: #333;
-    height: 300px;
+    background-color:  #4366F5;
+    /* height: 200px; */
     text-align: center;
+    padding: 20px 5px;
 }
 
 #coins-list {

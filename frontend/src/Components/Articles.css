@@ -12,10 +12,10 @@
 }
 .article{
     padding:20px;
-    background: black;
+    background: rgb(60, 59, 59);
     border: 2px solid black;
     align-items: center;
-    border: 4px solid aqua;
+    /* border: 4px solid aqua; */
 }
 .article h3{
     text-align: center;
@@ -23,6 +23,7 @@
 .article iframe{
     /* margin-bottom: 10px; */
     padding-bottom: 10px;
+    margin: 10px;
 }
 p{
     font-weight: 500;
@@ -33,14 +34,12 @@ p{
 h3 {
     color: aqua;
 }
-h3:hover{
-    color: orange;
-}
-.hvr-grow {
+
+/* .hvr-grow {
     text-decoration: none;
-    display: inline-block;
-    vertical-align: middle;
-    transform: translateZ(0);
+    /* display: inline-block; */
+    /* vertical-align: middle; */
+    /* transform: translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
@@ -52,4 +51,4 @@ h3:hover{
 .hvr-grow:focus,
 .hvr-grow:active {
     transform: scale(1.1);
-}
+} */ 
