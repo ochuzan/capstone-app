@@ -23,13 +23,14 @@ function Videos() {
   // const setSearch = (e) =>{
   //   setSearchValue(e)
   // }
-  
+  function onYouTubeIframeAPIReady() {}
 
   let fetchedVids = videos.map((vid, index)=>{
     return(
         <div className="vid" key={index}>
           <Link to={`/videos/${index}`}><h3 className="">{vid.title}</h3></Link>
           <div >
+          
           <iframe
             width="500"
             height="350"

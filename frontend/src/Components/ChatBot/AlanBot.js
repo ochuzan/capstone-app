@@ -16,11 +16,11 @@ function AlanBot(){
               }
               if(commandData.command === 'videos'){
                 console.log(" to videos")
-                navigate('/videos/1')
+                navigate('/videos/0')
               }
               if(commandData.command === 'news'){
                 console.log('to news')
-                navigate('/news/1')
+                navigate('/news/0')
               }
               if(commandData.command === 'articles'){
                 navigate('/articles/0')
@@ -57,6 +57,9 @@ function AlanBot(){
               }
               if(commandData.command === 'articles/6'){
                 navigate('/articles/6')
+              }
+              if(commandData.command === 'play-video'){
+                  // playVideo();
               }
             },
         });
