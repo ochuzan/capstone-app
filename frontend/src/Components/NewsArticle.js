@@ -1,30 +1,30 @@
 import { Link } from "react-router-dom";
 
 
-function NewsArticle({ oneArticle , index }) {
+function NewsArticle({ resource, id }) {
 
   return (
     <article>
          <header>
-          <Link to={`/news/${index}`}><h3 className="hvr-grow">{oneArticle.name}</h3></Link>
+          <Link to={`/users/${resource.users_id}/news/${resource.id}`}><h3 className="hvr-grow">{resource.name}</h3></Link>
         </header>
         <section className="article-preview"> 
             <div>
-                {/* Date: {oneArticle.date} - Views: {oneArticle.views} */}
+                {/* Date: {resource.date} - Views: {resource.views} */}
 
             </div>
             {/* <div>
-                <img className="news-image" src={oneArticle.photo} alt="coins for crypto" />
+                <img className="news-image" src={resource.photo} alt="coins for crypto" />
             </div> */}
             <br />
             <iframe id="inlineFrameExample"
               title="Inline Frame Example"
               width="450"
               height="250"
-              src={oneArticle.url}>
+              src={resource.url}>
             </iframe>
             <br />
-            <h3>Crypto News Favorite?{oneArticle.is_favorite ? "💰 YES " : "📈 NO"}</h3>
+            <h3>Crypto News Favorite?{resource.is_favorite ? "💰 YES " : "📈 NO"}</h3>
         </section>
     </article>
   );

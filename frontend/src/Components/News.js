@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import "./News.css";
 import NewsArticle from "./NewsArticle";
 // import newsData from "../data/newsData";
@@ -8,10 +9,11 @@ const API = process.env.REACT_APP_API_URL;
 
 function News() {
   const [newsData, setNews] = useState([]);
+  const { id } = useParams()
 
   useEffect(() => {
     axios
-      .get(`${API}`)
+      .get(`${API}/users/${id}/resources`)
       .then((res) => {
         console.log(res.data)
         setNews(res.data);
@@ -35,10 +37,10 @@ function News() {
       </div>
 
       <div className="news-container">
-        {newsData.map((oneArticle, index) => {
+        {newsData.map((resource) => {
           return (
-            <article key={index}>
-              <NewsArticle oneArticle={oneArticle} index={index} />
+            <article key={resource.id}>
+              <NewsArticle resource={resource} key={resource.id} />
             </article>
           );
         })}
