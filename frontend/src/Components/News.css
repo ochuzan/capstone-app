@@ -23,7 +23,7 @@
 }
 
 .news-container article {
-    background-color: grey;
+    /* background-color: grey; */
     margin: 5px;
     display: grid;
 }
