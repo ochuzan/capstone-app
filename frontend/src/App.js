@@ -1,9 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 // Components
 import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
-import Header from "./Components/Header"
+import Header from "./Components/Header";
 import Cryptocurrency from "./Components/Cryptocurrency";
 import Education from "./Components/Education";
 import Footer from "./Components/Footer";
@@ -21,18 +22,23 @@ import UserEdit from "./Components/UserProfile/UserEdit";
 
 // News Articles and Videos Components
 import News from "./Components/News";
-import NewsPage from "./Components/NewsPage"
+import NewsPage from "./Components/NewsPage";
 import Articles from "./Components/Articles";
 import Article from "./Components/Article";
 import Videos from "./Components/Videos"
 import Video from "./Components/Video";
 
 // Chatbot 
-import AlanBot from "./Components/ChatBot/AlanBot"
+import AlanBot from "./Components/ChatBot/AlanBot";
 
-// import MuiSandbox from "./Components/MuiSandbox";
+//helper function to grab newsData from fetched on News page, send down to news/:id
 
 function App() {
+const [newsData, setNews] = useState([])
+
+  const getNewsData =(newsData)=>{
+    setNews(newsData)
+  }
   return (
     <Router>
       <Header />
@@ -40,8 +46,8 @@ function App() {
       <Routes>
         {/* <Route path="/sandbox" element={<MuiSandbox />} /> */}
         <Route path="/" element={<Home />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/news/:id" element={<NewsPage />} />
+        <Route path="/news" element={<News getNewsData={getNewsData} />} />
+        <Route path="/news/:id" element={<NewsPage newsData={newsData}/>} />
         <Route path="/cryptocurrency" element={<Cryptocurrency />} />
         <Route path="/education" element={<Education/>} />
         <Route path="/articles" element={<Articles />} />

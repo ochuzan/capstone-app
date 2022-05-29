@@ -6,7 +6,9 @@ import NewsArticle from "./NewsArticle";
 
 const Resources_API = process.env.REACT_APP_API_URL;
 
-function News() {
+//helper function will grab fetched articles from Resources_API, & send back up to App.js 
+
+function News({getNewsData}) {
   const [newsData, setNews] = useState([]);
 
   useEffect(() => {
@@ -21,6 +23,7 @@ function News() {
       });
   }, []);
 
+  getNewsData(newsData);
   
   return (
     <div className="News">
@@ -35,10 +38,10 @@ function News() {
       </div>
 
       <div className="news-container">
-        {newsData.map((oneArticle, index) => {
+        {newsData.map((oneArticle, index, id) => {
           return (
             <article key={index}>
-              <NewsArticle oneArticle={oneArticle} index={index} />
+              <NewsArticle oneArticle={oneArticle} index={index} id={id} />
             </article>
           );
         })}

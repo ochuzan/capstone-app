@@ -15,21 +15,20 @@ function Article(){
     })
     return(
         <div className="video-container">
-        <h1 >{articlesData[id].source}</h1>
-        <article id="article">
-        <ul className="vid-container">{links}</ul>
+            <h1 >{articlesData[id].source}</h1>
+            <article id="article" className="articles">
+            <ul className="">{links}</ul>
 
-        <div className="vid-container">
-        <iframe id="inlineFrame"
-          title={articlesData[id].source}
-          width="850"
-          height="600"
-          src={`${articlesData[id].url}`}>
-        </iframe>
-        </div>
-        {/* <div className="vid-container">
-        </div> */}
-        </article>
+            <div className="articles">
+            <iframe id="inlineFrame"
+            title={articlesData[id].source}
+            width="850"
+            height="600"
+            src={`${articlesData[id].url}`}>
+            </iframe>
+            </div>
+            <div className="articles"> Favorite?</div>
+            </article>
         </div>
     )
 }

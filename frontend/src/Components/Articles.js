@@ -2,6 +2,7 @@ import {Link} from "react-router-dom";
 import "./Articles.css";
 import articlesData from "../data/articlesData";
 
+
 function Articles() {
   console.log(articlesData)
   let fetchedArticles = articlesData.map((article, index)=>{
@@ -11,7 +12,7 @@ function Articles() {
           <Link to={`/articles/${index}`}><h3 className="articles-links">{article.source}</h3></Link>
           <iframe id="inlineFrameExample"
           title={article.source}
-          width="600"
+          width="525"
           height="350"
           src={`${article.url}`}>
         </iframe>

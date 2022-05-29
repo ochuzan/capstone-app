@@ -1,6 +1,6 @@
-#article{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.article{
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
     justify-content: top;
 }
 

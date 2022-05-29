@@ -1,26 +1,16 @@
 import { Link } from "react-router-dom";
 
 
-function NewsArticle({ oneArticle , index }) {
+function NewsArticle({ oneArticle , index, id }) {
 
   return (
     <article>
-         <header>
+        <section className="article-preview">
           <Link to={`/news/${index}`}><h3 className="hvr-grow">{oneArticle.name}</h3></Link>
-        </header>
-        <section className="article-preview"> 
-            <div>
-                {/* Date: {oneArticle.date} - Views: {oneArticle.views} */}
-
-            </div>
-            {/* <div>
-                <img className="news-image" src={oneArticle.photo} alt="coins for crypto" />
-            </div> */}
-            <br />
             <iframe id="inlineFrameExample"
               title="Inline Frame Example"
-              width="450"
-              height="250"
+              width="520"
+              height="350"
               src={oneArticle.url}>
             </iframe>
             <br />
