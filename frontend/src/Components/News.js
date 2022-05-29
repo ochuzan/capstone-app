@@ -4,14 +4,14 @@ import "./News.css";
 import NewsArticle from "./NewsArticle";
 // import newsData from "../data/newsData";
 
-const API = process.env.REACT_APP_API_URL;
+const Resources_API = process.env.REACT_APP_API_URL;
 
 function News() {
   const [newsData, setNews] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${API}`)
+      .get(`${Resources_API}`)
       .then((res) => {
         console.log(res.data)
         setNews(res.data);
