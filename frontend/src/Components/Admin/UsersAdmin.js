@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import UserAdmin from "./UserAdmin.js";
+import UserAdmin from "./UserAdmin";
 
 const API = process.env.REACT_APP_API_URL;
 

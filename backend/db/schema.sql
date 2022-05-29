@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS resources;
 
 CREATE TABLE resources(
     id SERIAL PRIMARY KEY,
-    name TEXT NOT NULL,
+    name TEXT NOT NULL UNIQUE,
     type TEXT,
     category TEXT,
     url VARCHAR(2048),
@@ -30,9 +30,11 @@ DROP TABLE IF EXISTS favorites;
 
 CREATE TABLE favorites(
   id SERIAL PRIMARY KEY,
-  favorited_date TEXT,
+  favorited_date TIMESTAMP ,
   resources_id INTEGER REFERENCES resources(id)
   ON DELETE CASCADE,
   users_id INTEGER REFERENCES users(id)
-  ON DELETE CASCADE
+  ON DELETE CASCADE,
+  resources_name TEXT REFERENCES resources(name)
 );
+

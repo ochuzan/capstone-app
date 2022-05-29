@@ -18,6 +18,9 @@ const getAllFavoritesForUser = async (users_id) => {
 
 // Get a favorite by its ID
 // Get one favorite - Example: http://localhost:3333/users/1/favorites/8
+
+// WE MAY NEED TO PASS ADDITIONAL PARAMETER OF USER_ID TO GET CORRECT FAVORITES FOR EACH SPECIFIC USER
+
 const getOneUsersFavoriteByFavoriteId = async (id) => {
     try {
         const oneFavorite = await db.one(
@@ -40,11 +43,12 @@ const getOneUsersFavoriteByFavoriteId = async (id) => {
 const createNewFavorite = async (favorite) => {
     try {
         const newFavorite = await db.one(
-            `INSERT INTO favorites (favorited_date, resources_id, users_id) VALUES($1, $2, $3) RETURNING *`,
+            `INSERT INTO favorites (favorited_date, resources_id, users_id, resources_name) VALUES($1, $2, $3, $4) RETURNING *`,
             [
                 favorite.favorited_date,
                 favorite.resources_id,
                 favorite.users_id,
+                favorite.resources_name
             ]
         );
         return newFavorite;
