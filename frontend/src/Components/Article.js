@@ -6,7 +6,7 @@ function Article({educationArticles}){
     let links = educationArticles.map((article)=>{
         let index = educationArticles.indexOf(article)
         return(
-        <div className="link-container">
+        <div key={index} className="link-container">
             <li className="links"><Link to={`/articles/${index}`}><h3 className="">{article.name}</h3></Link></li>
             {/* <span>{articlesData[id].is_favorite ? "💰 favorite" : "📈 not-favorite"}</span> */}
         </div>

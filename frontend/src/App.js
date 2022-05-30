@@ -6,7 +6,6 @@ import Home from "./Components/Home";
 import NavBar from "./Components/NavBar";
 import Header from "./Components/Header";
 import Cryptocurrency from "./Components/Cryptocurrency";
-import Education from "./Components/Education";
 import Footer from "./Components/Footer";
 import PageNotFound from "./Components/PageNotFound";
 
