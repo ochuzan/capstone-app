@@ -20,7 +20,7 @@ CREATE TABLE resources(
     name TEXT NOT NULL UNIQUE,
     type TEXT,
     category TEXT,
-    url VARCHAR(2048),
+    url VARCHAR(2048) UNIQUE,
     is_favorite BOOLEAN,
     users_id INTEGER REFERENCES users(id)
     ON DELETE CASCADE
@@ -35,6 +35,7 @@ CREATE TABLE favorites(
   ON DELETE CASCADE,
   users_id INTEGER REFERENCES users(id)
   ON DELETE CASCADE,
-  resources_name TEXT REFERENCES resources(name)
+  resources_name TEXT REFERENCES resources(name),
+  resources_url TEXT REFERENCES resources(url)
 );
 
