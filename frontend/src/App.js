@@ -31,14 +31,23 @@ import Video from "./Components/Video";
 // Chatbot 
 import AlanBot from "./Components/ChatBot/AlanBot";
 
-//helper function to grab newsData from fetched on News page, send down to news/:id
+
 
 function App() {
-const [newsData, setNews] = useState([])
-
-  const getNewsData =(newsData)=>{
-    setNews(newsData)
+  const [newsData, setNewsData] = useState([])
+  const [educationArticles, setEducationArticles] = useState([])
+  const [videosData, setVideosData] = useState([])
+  
+  const getNewsData = (news) =>{
+    setNewsData(news)
   }
+  const getEducationData = (data) =>{
+    setEducationArticles(data)
+  }
+  const getVideosData =(videos)=>{
+    setVideosData(videos)
+  }
+  
   return (
     <Router>
       <Header />
@@ -49,11 +58,10 @@ const [newsData, setNews] = useState([])
         <Route path="/news" element={<News getNewsData={getNewsData} />} />
         <Route path="/news/:id" element={<NewsPage newsData={newsData}/>} />
         <Route path="/cryptocurrency" element={<Cryptocurrency />} />
-        <Route path="/education" element={<Education/>} />
-        <Route path="/articles" element={<Articles />} />
-        <Route path="/articles/:id" element={<Article />} />
-        <Route path="videos" element={<Videos />} />
-        <Route path="/videos/:id" element={<Video />} />
+        <Route path="/articles" element={<Articles getEducationData={getEducationData}/>} />
+        <Route path="/articles/:id" element={<Article educationArticles={educationArticles}/>} />
+        <Route path="videos" element={<Videos getVideosData={getVideosData}/>} />
+        <Route path="/videos/:id" element={<Video videosData={videosData}/>} />
 
         <Route path="/users" element={<User />} />
         <Route path="/users/login" element={<UserLogin />} />
@@ -64,9 +72,6 @@ const [newsData, setNews] = useState([])
         <Route path="/admin" element={<UsersAdmin />} />
         <Route exact path="/admin/:id" element={<UserDetailsAdmin />} />
         <Route path="/admin/:id/edit" element={<UserEditAdmin />} />
-
-        <Route path="*" element={<PageNotFound />} />
-
       </Routes>
       <Footer />
       <AlanBot />

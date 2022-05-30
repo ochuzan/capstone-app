@@ -1,17 +1,38 @@
+import axios from 'axios';
 import {Link} from "react-router-dom";
+import { useState , useEffect } from "react";
 import "./Articles.css";
-import articlesData from "../data/articlesData";
 
+const Resources_API = process.env.REACT_APP_API_URL;
 
-function Articles() {
-  console.log(articlesData)
-  let fetchedArticles = articlesData.map((article, index)=>{
+function Articles({getEducationData}) {
+  const [educationData, setEducation] = useState([])
+
+  useEffect(() => {
+    axios
+      .get(`${Resources_API}`)
+      .then((res) => {
+        console.log(res.data)
+        const education = res.data.filter((article)=>{
+          return article.category === "education-article"
+        });
+        setEducation(education)
+        console.log(educationData)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }, []);
+
+    getEducationData(educationData)  
+
+  let fetchedArticles = educationData.map((article, index)=>{
     return(
       <div className="article" key={index}>
         <div>
-          <Link to={`/articles/${index}`}><h3 className="articles-links">{article.source}</h3></Link>
+          <Link to={`/articles/${index}`}><h3 className="articles-links">{article.name}</h3></Link>
           <iframe id="inlineFrameExample"
-          title={article.source}
+          title={article.name}
           width="525"
           height="350"
           src={`${article.url}`}>
@@ -24,7 +45,7 @@ function Articles() {
 console.log(fetchedArticles.length)
     return (
       <div className="Articles">
-        {/* <h1>Articles</h1> */}
+        <h1>Educational Articles</h1>
         <div className="articles">
           {fetchedArticles}
         </div>

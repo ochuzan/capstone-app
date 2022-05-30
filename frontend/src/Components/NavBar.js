@@ -94,9 +94,9 @@ function NavBar() {
                   <Typography textAlign="center">Cryptocurrency</Typography>
                 </MenuItem>
               </Link>
-              <Link to="/education">
+              <Link to="/articles">
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Education</Typography>
+                  <Typography textAlign="center">Articles</Typography>
                 </MenuItem>
               </Link>
               <Link to="/news">
@@ -136,12 +136,20 @@ function NavBar() {
                 Cryptocurrency
               </Button>
             </Link>
-            <Link to="/education">
+            <Link to="/articles">
               <Button
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none" }}
               >
-                Education
+                Articles
+              </Button>
+            </Link>
+            <Link to="/videos">
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none" }}
+              >
+                Videos
               </Button>
             </Link>
             <Link to="/news">

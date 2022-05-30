@@ -1,10 +1,10 @@
-import SingleTickerBTC from "./Widgets/SingleTickerBTC";
+// import SingleTickerBTC from "./Widgets/SingleTickerBTC";
+// import CryptoMarket from "./Widgets/CryptoMarket";
 import SymbolOverview from "./Widgets/SymbolOverview";
-import CryptoMarket from "./Widgets/CryptoMarket";
-
 import "./Home.css";
 
 function Home() {
+  
   return (
     <div id="chartContainer">
       <header>
@@ -23,24 +23,6 @@ function Home() {
             />
           </div> */}
         </div>
-        {/* <div id="top-coins">
-          <header><h4>Top Coins</h4></header>
-           <div id="coins-list">
-          <CryptoMarket />
-            {/* /* <div id="coin">DEBCOIN</div>
-            <div id="coin">OLIVERCOIN</div>
-            <div id="coin">CHRISTINEUM</div>
-            <div id="coin">MILTONERIUM</div>
-            <div id="coin">BITCOIN</div>
-            <div id="coin">GRRRRCOIN</div>
-            <div id="coin">CARDANO</div>
-            <div id="coin">RUBENCOIN</div>
-            <div id="coin">LITECOIN</div>
-            <div id="coin">STELLAR</div>
-            <div id="coin">ETHEREUM</div>
-            <div id="coin">DOGECOIN</div> */}
-          {/* </div> */}
-        {/* </div>  */}
       </div>
     </div>
   );

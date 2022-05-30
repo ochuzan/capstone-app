@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
-
-function NewsArticle({ oneArticle , index, id }) {
+function NewsArticle({ oneArticle , index }) {
 
   return (
     <article>

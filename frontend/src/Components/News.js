@@ -1,29 +1,28 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
 import "./News.css";
+import axios from 'axios';
+import { useState , useEffect } from "react";
 import NewsArticle from "./NewsArticle";
-// import newsData from "../data/newsData";
 
 const Resources_API = process.env.REACT_APP_API_URL;
 
-//helper function will grab fetched articles from Resources_API, & send back up to App.js 
-
 function News({getNewsData}) {
-  const [newsData, setNews] = useState([]);
+  const [newsData, setNews] = useState([])
 
   useEffect(() => {
     axios
       .get(`${Resources_API}`)
       .then((res) => {
-        console.log(res.data)
-        setNews(res.data);
+        const news = res.data.filter((article)=>{
+          return article.category === "news";
+        })
+        setNews(news)
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+    }, []);
 
-  getNewsData(newsData);
+  getNewsData(newsData)
   
   return (
     <div className="News">
@@ -38,10 +37,10 @@ function News({getNewsData}) {
       </div>
 
       <div className="news-container">
-        {newsData.map((oneArticle, index, id) => {
+        {newsData.map((oneArticle, index) => {
           return (
             <article key={index}>
-              <NewsArticle oneArticle={oneArticle} index={index} id={id} />
+              <NewsArticle oneArticle={oneArticle} index={index} />
             </article>
           );
         })}

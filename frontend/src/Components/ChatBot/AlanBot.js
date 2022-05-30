@@ -16,14 +16,14 @@ function AlanBot(){
               }
               if(commandData.command === 'videos'){
                 console.log(" to videos")
-                navigate('/videos/0')
+                navigate('/videos')
               }
               if(commandData.command === 'news'){
                 console.log('to news')
-                navigate('/news/0')
+                navigate('/news')
               }
               if(commandData.command === 'articles'){
-                navigate('/articles/0')
+                navigate('/articles')
               }
               if(commandData.command === 'home'){
                 navigate('/')

@@ -1,40 +1,41 @@
-// import { useState, useEffect } from "react";
+import axios from 'axios';
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import videos from "./VideoData";
 import "./Videos.css";
 
-function Videos() {
-  // const [videos, setVideos] = useState([]);
-  // const [searchValue, setSearchValue] = useState("ETH Basics")
+const Resources_API = process.env.REACT_APP_API_URL;
 
-  // let search = "BTC Basics"
+function Videos({getVideosData}) {
+  const [videos, setVideos] = useState([]);
 
-  // useEffect(()=>{
-  //   fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=9&q=${search}&type=video&key=${process.env.REACT_APP_API_KEY}`)
-  //   .then(res=> res.json())
-  //   .then((data)=>{
-  //     setVideos(data.items);
-  //     console.log(data)
-  //   }).catch((err)=>{
-  //     console.log(err)
-  //   })
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`${Resources_API}`)
+      .then((res) => {
+        console.log(res.data)
+        const vids = res.data.filter((vid)=>{
+          return vid.type === "video";
+        })
+        setVideos(vids)
+        console.log(videos)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }, []);
 
-  // const setSearch = (e) =>{
-  //   setSearchValue(e)
-  // }
-  function onYouTubeIframeAPIReady() {}
+    getVideosData(videos)
 
   let fetchedVids = videos.map((vid, index)=>{
     return(
         <div className="vid" key={index}>
-          <Link to={`/videos/${index}`}><h3 className="">{vid.title}</h3></Link>
+          <Link to={`/videos/${index}`}><h3 className="">{vid.name}</h3></Link>
           <div >
             <article id="article">
             <iframe
               width="600"
               height="350"
-              src={`https://www.youtube.com/embed/${vid.videoId}`}
+              src={`${vid.url}`}
               frameBorder="0"
               allow="autoplay; encrypted-media"
               allowFullScreen
@@ -49,7 +50,7 @@ function Videos() {
   console.log(videos)
     return (
       <div className="Videos">
-        {/* <h1>Videos</h1> */}
+        <h1>Educational Videos</h1>
         <div className="vids">{fetchedVids}</div>
       </div>
     );
