@@ -26,7 +26,7 @@ import Tab from '@mui/material/Tab';
 
 function User() {
     const [ user, setUser] = useState({});
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState('1');
 
     const API = process.env.REACT_APP_API_URL;
 
@@ -91,16 +91,17 @@ function User() {
                 </Grid>
                 </Toolbar>
             </AppBar>
-            <AppBar component="div" position="static" elevation={10} sx={{ backgroundColor: "whitesmoke", zIndex: 0 }}>
-                
-                <Tabs value={value} onChange={handleChange} textColor="primary">
-                    <Tab label="Profile Details" />
-                    <Tab label="Favorites" />
-                </Tabs>
-            </AppBar>
             <TabContext value={value}>
-                <TabPanel value="1" index={0}>User details</TabPanel>
-                <TabPanel value="2" index={1}>
+                <AppBar component="div" position="static" elevation={10} sx={{ backgroundColor: "whitesmoke", zIndex: 0 }}>
+                    <TabList onChange={handleChange}>
+                        <Tab label="Profile Details" value='1'/>
+                        <Tab label="Favorites" value='2'/>
+                    </TabList>
+                    {/* <Tabs value={value} onChange={handleChange} textColor="primary"> */}
+                    {/* </Tabs> */}
+                </AppBar>
+                <TabPanel value="1">User details</TabPanel>
+                <TabPanel value="2">
                     <Paper sx={{ maxWidth: 936, margin: 'auto', marginTop: "10px", overflow: 'hidden' }}>
                     <AppBar
                         position="static"
