@@ -10,7 +10,7 @@ function Articles({getEducationData}) {
 
   useEffect(() => {
     axios
-      .get(`${Resources_API}`)
+      .get(`${Resources_API}/resources`)
       .then((res) => {
         console.log(res.data)
         const education = res.data.filter((article)=>{

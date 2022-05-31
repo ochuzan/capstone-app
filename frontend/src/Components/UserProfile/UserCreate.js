@@ -16,7 +16,7 @@ function UserCreate() {
         showPassword: false
     });
 
-    const API = 'http://localhost:3333';
+    const API = process.env.REACT_APP_API_URL;
 
     let navigate = useNavigate();
 

@@ -10,7 +10,7 @@ function Videos({getVideosData}) {
 
   useEffect(() => {
     axios
-      .get(`${Resources_API}`)
+      .get(`${Resources_API}/resources`)
       .then((res) => {
         console.log(res.data)
         const vids = res.data.filter((vid)=>{

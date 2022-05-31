@@ -10,7 +10,7 @@ function News({getNewsData}) {
 
   useEffect(() => {
     axios
-      .get(`${Resources_API}`)
+      .get(`${Resources_API}/resources`)
       .then((res) => {
         const news = res.data.filter((article)=>{
           return article.category === "news";
