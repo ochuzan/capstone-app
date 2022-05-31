@@ -29,9 +29,6 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 |-----------|--------|----------------------------|------------------------------------------------------------------------------|
 | resources | GET    | /users/{id}/resources      | Return all `resources` associated with the `users` with and id of {id}.          |
 | resources | GET    | /users/{id}/resources/{id} | Return details of one `resource` associated with the `users` with an id of {id}. |
-| resources | POST   | /users/{id}/resources      | Creates a new `resource` associated with the `user` with an id of {id}.          |
-| resources | PUT    | /users/{id}/resources/{id} | Updates one `resource` associated with the `users` with an id of {id}.           |
-| resources | DELETE | /users/{id}/resources/{id} | Deletes one `resource` associated with the `users` with an id of {id}.           |
 
 ## Favorites Table
 
@@ -41,3 +38,8 @@ Our backend database using [Postgres](https://www.postgresql.org/) has three tab
 | favorites | GET    | /users/{id}/favorites/{id} | Return details of one `favorite` associated with the `users` with an id of {id}. |
 | favorites | POST   | /users/{id}/favorites      | Creates a new `favorite` associated with the `user` with an id of {id}.          |
 | favorites | DELETE | /users/{id}/favorites/{id} | Deletes one `favorite` associated with the `users` with an id of {id}.           |
+
+## Not Currently in Use / Potential Stretch for Admin 
+| resources | POST   | /users/{id}/resources      | Creates a new `resource` associated with the `user` with an id of {id}.          |
+| resources | PUT    | /users/{id}/resources/{id} | Updates one `resource` associated with the `users` with an id of {id}.           |
+| resources | DELETE | /users/{id}/resources/{id} | Deletes one `resource` associated with the `users` with an id of {id}.           |
