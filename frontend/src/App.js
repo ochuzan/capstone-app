@@ -18,6 +18,9 @@ import UserCreate from "./Components/UserProfile/UserCreate";
 import UserLogin from "./Components/UserProfile/UserLogin";
 import User from "./Components/UserProfile/User";
 import UserEdit from "./Components/UserProfile/UserEdit";
+import UserFavorites from "./Components/UserProfile/UserFavorites";
+import UserFavorite from "./Components/UserProfile/UserFavorite";
+
 
 // News Articles and Videos Components
 import News from "./Components/News";
@@ -66,6 +69,8 @@ function App() {
         <Route path="/users/login" element={<UserLogin />} />
         <Route path="/users/new" element={<UserCreate />} />
         <Route path="/users/:id/edit" element={<UserEdit />} />
+        <Route path="/users/:id/favorites" element={<UserFavorites />} />
+        <Route path="/users/:id/favorites/:id" element={<UserFavorite />} />
         <Route path="/*" element={<PageNotFound />} />
 
         <Route path="/admin" element={<UsersAdmin />} />

@@ -24,7 +24,7 @@ export default function LabTabs() {
             <Tab label="Educational Videos" value="2" />
           </TabList>
         </Box>
-        {/* <TabPanel value="1"><Articles educationArticles={educationArticles}/></TabPanel> */}
+        <TabPanel value="1"><Articles educationArticles={educationArticles}/></TabPanel>
         <TabPanel value="2"><Videos /></TabPanel>
       </TabContext>
     </Box>

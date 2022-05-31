@@ -22,6 +22,7 @@ import TabContext from "@mui/lab/TabContext";
 import PropTypes from 'prop-types';
 import TabList from '@mui/lab/TabList';
 import Tab from '@mui/material/Tab';
+import UserFavorites from "./UserFavorites";
 
 
 function User() {
@@ -101,6 +102,7 @@ function User() {
             <TabContext value={value}>
                 <TabPanel value="1" index={0}>User details</TabPanel>
                 <TabPanel value="2" index={1}>
+                    <UserFavorites />
                     <Paper sx={{ maxWidth: 936, margin: 'auto', marginTop: "10px", overflow: 'hidden' }}>
                     <AppBar
                         position="static"
