@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./News.css";
 import NewsArticle from "./NewsArticle";
 
-const API = process.env.REACT_APP_API_URL;
+const Resources_API = process.env.REACT_APP_API_URL;
 
 function News({getNewsData}) {
   const [newsData, setNews] = useState([])
