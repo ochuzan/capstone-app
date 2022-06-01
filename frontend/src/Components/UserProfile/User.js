@@ -58,24 +58,24 @@ function User() {
         // </div>
         <React.Fragment>
             <AppBar
-                component="div"
+                // component="div"
                 // color="primary"
                 position="static"
                 elevation={0}
-                sx={{ backgroundColor: "#1C1C1C", zIndex: 0, height: "80px" }}
+                sx={{ maxWidth: 936, margin: "auto", backgroundColor: "whitesmoke", zIndex: 0 }}
             >
                 <Toolbar>
                 <Grid container alignItems="center" spacing={1}>
                     <Grid item xs>
-                    <Typography sx={{ backgroundColor: "#1C1C1C" }}color="inherit" variant="h5" component="h2">
-                        Welcome {user.firstname} {user.lastname}!
-                    </Typography>
+                        <Typography color="black" variant="h5" component="h2" align="left">
+                            Welcome {user.firstname} {user.lastname}!
+                        </Typography>
                     </Grid>
                     <Grid item>
                     <Button
                         sx={{ borderColor: "#4366F5" }}
                         variant="outlined"
-                        color="inherit"
+                        color="primary"
                         size="small"
                     >
                         Edit Profile
@@ -83,7 +83,7 @@ function User() {
                     </Grid>
                     <Grid item>
                     <Tooltip title="Help">
-                        <IconButton color="inherit">
+                        <IconButton color="primary">
                         <HelpIcon />
                         </IconButton>
                     </Tooltip>
@@ -92,7 +92,7 @@ function User() {
                 </Toolbar>
             </AppBar>
             <TabContext value={value}>
-                <AppBar component="div" position="static" elevation={10} sx={{ backgroundColor: "whitesmoke", zIndex: 0 }}>
+                <AppBar component="div" position="static" elevation={10} sx={{ maxWidth: 936, margin: "auto", backgroundColor: "whitesmoke", zIndex: 0, borderBottomLeftRadius: "5px", borderBottomRightRadius: "5px" }}>
                     <TabList onChange={handleChange}>
                         <Tab label="Profile Details" value='1'/>
                         <Tab label="Favorites" value='2'/>
@@ -100,7 +100,13 @@ function User() {
                     {/* <Tabs value={value} onChange={handleChange} textColor="primary"> */}
                     {/* </Tabs> */}
                 </AppBar>
-                <TabPanel value="1">User details</TabPanel>
+                <TabPanel value="1">
+                    <Paper sx={{ maxWidth: 936, margin: 'auto', marginTop: "10px", overflow: 'hidden' }}>
+                        <Typography sx={{ my: 5, mx: 2 }} color="text.secondary" align="center">
+                            No favorites for this profile yet
+                        </Typography>
+                    </Paper>
+                </TabPanel>
                 <TabPanel value="2">
                     <Paper sx={{ maxWidth: 936, margin: 'auto', marginTop: "10px", overflow: 'hidden' }}>
                     <AppBar
