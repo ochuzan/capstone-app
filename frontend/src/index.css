@@ -1,27 +1,3 @@
-/* a {
-    text-decoration: none;
-}
-
-#nav{
-    font-weight: bold;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: aliceblue;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 1em;
-}
-#nav a{
-    text-decoration: none;
-    color:blue;
-}
-body{
-    background: rgb(29, 28, 30);
-    width: 100%;
-    margin: 0 auto;
-    height: auto;
-    color: whitesmoke;
-} */
 
 body{
     /* background: rgb(29, 28, 30); */
@@ -54,6 +30,6 @@ body{
     /* background-color:  #2f51dc; */
     height: 100px;
     border: 1px solid rgb(202, 106, 106);
-    background-color: #4366F5;
-    background: linear-gradient( #4366F5, rgb(71, 56, 56));
+    background-color: black;
+    /* background: linear-gradient( #4366F5, rgb(71, 56, 56)); */
 }

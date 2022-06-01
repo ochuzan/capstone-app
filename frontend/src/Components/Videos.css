@@ -44,7 +44,7 @@ ul{
     text-transform: uppercase;
 }
 .vid{
-    background: linear-gradient(#4366F5, rgb(66, 157, 157));
+    background: linear-gradient(black, #4366F5, rgb(66, 157, 157));
     border: 1px solid #4366F5;
     padding: 10px;
 }
@@ -63,24 +63,7 @@ ul{
     padding-bottom: 10px;
     filter: drop-shadow(0px 5px 10px rgb(202, 106, 106));
 }
-#article iframe{
-    filter: drop-shadow(0px 5px 15px rgb(202, 106, 106));
+/* #article iframe{ */
+    /* filter: drop-shadow(0px 5px 15px rgb(202, 106, 106)); */
 
-}
-
-/* .hvr-grow {
-    display: inline-block;
-    vertical-align: middle;
-    transform: translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    backface-visibility: hidden;
-    -moz-osx-font-smoothing: grayscale;
-    transition-duration: 0.3s;
-    transition-property: transform;
-}
-
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
-    transform: scale(1.1);
-} */
+/* } */

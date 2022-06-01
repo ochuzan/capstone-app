@@ -11,7 +11,7 @@ function UserFavorites(){
 
     useEffect(() => {
         axios
-          .get(`${API}/users/1/favorites`)
+          .get(`${API}/users/2/favorites`)
           .then((res) => {
             console.log(res.data)
             setFavorites(res.data)
