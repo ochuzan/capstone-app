@@ -1,30 +1,17 @@
 import alanBtn from '@alan-ai/alan-sdk-web';
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
-const { REACT_APP_API_ARTICLE_KEY } = process.env
+// const { REACT_APP_API_ARTICLE_KEY } = process.env
 
+const alanKey = 'b4aa8cff0bc676107cfe2f2865278fe92e956eca572e1d8b807a3e2338fdd0dc/stage';
 
 function AlanBot(){
   const navigate = useNavigate();
   
     useEffect(() => {
         alanBtn({
-            key: REACT_APP_API_ARTICLE_KEY,
+            key: alanKey,
             onCommand: (commandData) => {
-              if (commandData.command === 'go:back') {
-                // Call the client code that will react to the received command
-              }
-              if(commandData.command === 'videos'){
-                console.log(" to videos")
-                navigate('/videos/1')
-              }
-              if(commandData.command === 'news'){
-                console.log('to news')
-                navigate('/news/1')
-              }
-              if(commandData.command === 'articles'){
-                navigate('/articles/0')
-              }
               if(commandData.command === 'home'){
                 navigate('/')
               }
@@ -36,6 +23,9 @@ function AlanBot(){
               }
               if(commandData.command === 'view-profile'){
                 navigate('/users')
+              }
+              if(commandData.command === 'articles'){
+                navigate('/articles')
               }
               if(commandData.command === 'articles/0'){
                 navigate('/articles/0')
@@ -57,6 +47,12 @@ function AlanBot(){
               }
               if(commandData.command === 'articles/6'){
                 navigate('/articles/6')
+              }
+              if(commandData.command === 'videos'){
+                navigate('/videos')
+              }
+              if(commandData.command === 'news'){
+                navigate('/news')
               }
             },
         });
