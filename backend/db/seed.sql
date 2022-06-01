@@ -62,14 +62,14 @@ INSERT INTO resources(name, type, category, url, is_favorite, users_id) VALUES
     true, 10);
 
 -- adding `favorited_date` so we can see the differences in our tables/data
-INSERT INTO favorites(favorited_date, resources_id, users_id, resources_name) VALUES
-('10/22/2017 10:00', 1, 1, 'Ethereum News'),
-('09/24/2019 10:15', 2, 1, 'Bitcoin News'),
-('07/18/2018 12:00', 3, 3, 'Crypto Wallet'),
-('11/21/2021 09:45', 4, 3, 'Bitcoin, Ethereum Technical Analysis'),
-('02/13/2021 14:00', 5, 5, 'Pursuit Announces Crypto for Fellows'),
-('03/02/2017 09:30', 6, 6, 'Crypto for Retirement'),
-('04/22/2016 14:00', 7, 7, 'Teachers Donating Crypto'),
-('05/19/2016 18:00', 8, 1, 'Pursuit Now Accepting Crypto'),
-('06/25/2014 20:15', 9, 9, 'Bitcoin News'),
-('01/11/2022 09:00', 10, 10, 'Crypto Accelerator Program in Kenya');
+INSERT INTO favorites(favorited_date, resources_id, users_id, resources_name, resources_url) VALUES
+('10/22/2017 10:00', 1, 2, 'Ethereum News','https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-back-below-2000-as-btc-down-6-to-start-weekend/'),
+('09/24/2019 10:15', 2, 1, 'Bitcoin News', 'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-btc-surge-over-10-as-big-2-lead-crypto-rebound/'),
+('07/18/2018 12:00', 3, 4, 'Crypto Wallet', 'https://news.bitcoin.com/rich-dad-poor-dads-robert-kiyosaki-plans-to-buy-bitcoin-when-the-bottom-is-in-17k/'),
+('11/21/2021 09:45', 4, 3, 'Bitcoin, Ethereum Technical Analysis','https://bitcoinmagazine.com/culture/what-makes-bitcoin-different-from-crypto'),
+('02/13/2021 14:00', 5, 6, 'Pursuit Announces Crypto for Fellows','https://news.bitcoin.com/coinbase-now-allows-cardano-staking-services-firm-plans-to-continue-to-scale-staking-portfolio/'),
+('03/02/2017 09:30', 6, 1, 'Crypto for Retirement','https://news.bitcoin.com/lbank-and-adanian-labs-kickstarts-a-crypto-accelerator-program-in-kenya/' ),
+('04/22/2016 14:00', 7, 4, 'Teachers Donating Crypto', 'https://news.bitcoin.com/cardano-to-reach-58-by-2030-according-to-finders-poll/'),
+('05/19/2016 18:00', 8, 1, 'Pursuit Now Accepting Crypto', 'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-bounces-back-up-2-while-btc-climbs-above-30000/'),
+('06/25/2014 20:15', 9, 2, 'Bitcoin News','https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-btc-surge-over-10-as-big-2-lead-crypto-rebound/'),
+('01/11/2022 09:00', 10, 5, 'Crypto Accelerator Program in Kenya','https://news.bitcoin.com/lbank-and-adanian-labs-kickstarts-a-crypto-accelerator-program-in-kenya/' );

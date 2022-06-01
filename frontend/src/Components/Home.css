@@ -1,9 +1,11 @@
-#chartContainer {
+/* #chartContainer {
     display: grid;
-}
+} */
 
 header {
     text-align: center;
+    border: 1px solid rgb(202, 106, 106);
+    height: 100px;
 }
 
 /* #chatbot {
@@ -16,44 +18,120 @@ header {
     width: 30%;
     margin: 10px;
 }
+#tradingview_0c358{
+  /* border: 1px solid rgb(202, 106, 106); */
+  filter: drop-shadow(0px 10px 10px rgb(202, 106, 106));
 
-#chart-coins-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    /* grid-template-rows: 1fr 1fr; */
 }
 
 #chart-widget {
-    background-color: navy;
+    
+    background: linear-gradient(#4366F5, rgb(66, 157, 157));
     /* height: 300px; */
     text-align: center;
-    color: orange;
+    /* color: orange; */
+    padding: 5px;
+    grid-area: "chart";
+    border: 1px solid rgb(202, 106, 106)
 }
 
 #chart {
     background-color: white;
-    margin: 10px;
+    /* margin: 5px; */
 }
 
 #chart img {
     height: auto;
-    width: 45%;
+    width: 65%;
 }
 
 #top-coins {
-    background-color: #333;
-    height: 300px;
-    text-align: center;
+    /* background-color:  #4366F5; */
+    /* height: 200px; */
+    grid-area: "coins";
+    justify-content: center;
+    padding: 20px 0px;
+    margin: 0px 5px;
+    border: 2px solid aqua;
+    /* margin: auto; */
 }
 
 #coins-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
 }
 
 #coin {
     background-color: navy;
     color: orange;
-    padding: 5px;
-    margin: 5px;
+    /* padding: 5px; */
+    /* margin: 5px; */
 }
+
+@keyframes FadeIn {
+    0% {
+      position: absolute;
+      /* left: -2.5rem; */
+      opacity: 0;
+    }
+  
+    75% {
+      position: absolute;
+      /* left: 10rem; */
+      opacity: 0.5;
+    }
+  
+    100% {
+      opacity: 1;
+      right: 10rem;
+    }
+  }
+  .fade-in {
+    font-size: 1.5 rem;
+    position: absolute;
+    top: 8.5rem;
+    opacity: 1;
+    animation-name: FadeIn;
+    animation-delay: 3s;
+    animation-duration: 8s;
+    color: #ccc;
+    padding: 15px;
+  }
+.fade-in{
+    text-align: center;
+}
+.fade-in-image {
+    /* color: black; */
+    padding-bottom: 15px;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+  }
+  .say-hi{
+    padding: 15px;
+  }
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }

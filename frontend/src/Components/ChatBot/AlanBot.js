@@ -1,17 +1,21 @@
 import alanBtn from '@alan-ai/alan-sdk-web';
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
-// const { REACT_APP_API_ARTICLE_KEY } = process.env
-
-const alanKey = 'b4aa8cff0bc676107cfe2f2865278fe92e956eca572e1d8b807a3e2338fdd0dc/stage';
+const { REACT_APP_API_BOT_KEY } = process.env
 
 function AlanBot(){
   const navigate = useNavigate();
   
     useEffect(() => {
         alanBtn({
-            key: alanKey,
+            key: REACT_APP_API_BOT_KEY,
             onCommand: (commandData) => {
+              if (commandData.command === 'go:back') {
+                // Call the client code that will react to the received command
+              }
+              if(commandData.command === 'articles'){
+                navigate('/articles')
+              }
               if(commandData.command === 'home'){
                 navigate('/')
               }

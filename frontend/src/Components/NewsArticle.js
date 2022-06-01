@@ -1,39 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import "./News.css";
-
-function NewsArticle({ resource }) {
-  const [showResults, setShowResults] = useState(true);
-
-  const ToggleiFrame = () => {
-    setShowResults(!showResults);
-  }
+function NewsArticle({ oneArticle , index }) {
 
   return (
     <article>
-      <header>
-        <Link to={`/users/${resource.users_id}/news/${resource.id}`}>
-          <h3 className="hvr-grow">{resource.name}</h3>
-        </Link>
-      </header>
-      <section className="article-preview">
-        { showResults ?  
-        <div>
-            <iframe
-            id="inlineFrameExample"
-            title="Inline Frame Example"
-            width="97%"
-            height="300px"
-            src={resource.url}
-          ></iframe>
-          <br />
-          <input type="submit" value="Hide Article" onClick={ToggleiFrame} />
-        </div>
-        : 
-        <input type="submit" value="Show Article" onClick={ToggleiFrame} />
-        }
-      </section>
+        <section className="article-preview">
+          <Link to={`/news/${index}`}><h3 className="hvr-grow">{oneArticle.name}</h3></Link>
+            <iframe id="inlineFrameExample"
+              title="Inline Frame Example"
+              width="520"
+              height="350"
+              src={oneArticle.url}>
+            </iframe>
+            <br />
+            {/* <h3>Crypto News Favorite?{oneArticle.is_favorite ? "💰 YES " : "📈 NO"}</h3> */}
+        </section>
     </article>
   );
 }

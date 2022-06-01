@@ -1,27 +1,26 @@
 import { Link , useParams } from "react-router-dom";
-import videos from "./VideoData";
 
-function Video(){
+function Video({videosData}){
     const{ id } = useParams();
-    let links = videos.map((vid, index)=>{
+    let links = videosData.map((vid, index)=>{
         return(
-            <li> <Link to={`/videos/${index}`}><h3 className="hvr-grow">{vid.title}</h3></Link></li>
+            <li className="links"> <Link to={`/videos/${index}`}><h3 className="">{vid.name}</h3></Link></li>
         )
     })
     return(
-        <div>
-            <h1>{videos[id].title}</h1>
+        <div className="video-container">
+            <h1>{videosData[id].name}</h1>
             <article id="article">
             <ul className="vid-container">{links}</ul>
             <div className="vid-container">
             <iframe id="inlineFrame"           
-                title={videos[id].title}
-                width="800"
-                height="750"
-                src={`https://www.youtube.com/embed/${videos[id].videoId}`}>
+                title={videosData[id].title}
+                width="850"
+                height="700"
+                src={`${videosData[id].url}`}>
             </iframe>
             </div>
-            <div className="vid-container"><h3> Favorite {videos[id].is_favorite ? "💰 yes" : "📈 no"}</h3></div>
+            {/* <div className="vid-container"><h3> Favorite {videos[id].is_favorite ? "💰 yes" : "📈 no"}</h3></div> */}
             </article>
         </div>
     )

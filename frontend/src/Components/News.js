@@ -1,27 +1,29 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import "./News.css";
 import NewsArticle from "./NewsArticle";
 
 const API = process.env.REACT_APP_API_URL;
 
-function News() {
-  const [newsData, setNews] = useState([]);
-  const { id } = useParams();
+function News({getNewsData}) {
+  const [newsData, setNews] = useState([])
 
   useEffect(() => {
     axios
-      .get(`${API}/users/${id}/resources`)
+      .get(`${Resources_API}/resources`)
       .then((res) => {
-        // console.log(res.data);
-        setNews(res.data);
+        const news = res.data.filter((article)=>{
+          return article.category === "news";
+        })
+        setNews(news)
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [id]);
+    }, []);
 
+  getNewsData(newsData)
+  
   return (
     <div className="News">
       <h1>Crypto News</h1>

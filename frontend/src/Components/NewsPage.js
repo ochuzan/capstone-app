@@ -1,40 +1,32 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom"
 
-const API = process.env.REACT_APP_API_URL;
-
-function NewsPage() {
-  const [resources, setResources] = useState([]);
-  const { id } = useParams();
-
-  useEffect(() => {
-    axios
-      .get(`${API}/users/${id}/resources/${id}`)
-      .then((res) => {
-        console.log("newspage res.data:", res.data);
-        setResources(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  return (
-    <div>
-      <h1>{resources.name}</h1>
-      <article id="article">
-        <ul className="vid-container">
-            List of Articles
-        </ul>
-        <div className="vid-container">
-          <iframe
-            id="inlineFrame"
-            title={resources.name}
-            width="750"
-            height="750"
-            src={`${resources.url}`}
-          ></iframe>
+function NewsPage({newsData}){
+    const { id } = useParams();
+    let links = newsData.map((article)=>{
+        let index = newsData.indexOf(article);
+        return(
+            <li><Link to={`/news/${index}`}><h3 className="hvr-grow">{article.name}</h3></Link></li>
+        )
+    })
+    return(
+        <div>
+            <h1>{newsData[id].name}</h1>
+            <article id="article">
+                <ul className="vid-container">{links}</ul>
+                <div className="vid-container">
+                    <iframe id="inlineFrame"
+                        title={newsData[id].name}
+                        width="850"
+                        height="600"
+                        src={`${newsData[id].url}`} >
+                    </iframe>
+                </div>
+                <div className="vid-container">
+                <form>
+                {/* <h3>FAVORITE</h3> {is_favorite ? "💰 YES" : "📈 NO"} */}
+                </form>
+                </div>
+            </article>
         </div>
       </article>
     </div>
