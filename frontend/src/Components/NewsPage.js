@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom"
 function NewsPage({newsData}){
     const { id } = useParams();
     let links = newsData.map((article)=>{
-        let index = newsData.indexOf(article);
+    let index = newsData.indexOf(article);
         return(
             <li><Link to={`/news/${index}`}><h3 className="hvr-grow">{article.name}</h3></Link></li>
         )

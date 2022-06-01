@@ -23,7 +23,7 @@ function News({getNewsData}) {
     }, []);
 
   getNewsData(newsData)
-  
+  console.log(newsData)
   return (
     <div className="News">
       <h1>Crypto News</h1>
@@ -39,10 +39,10 @@ function News({getNewsData}) {
       </div>
       
       <div className="news-container">
-        {newsData.map((resource) => {
+        {newsData.map((oneArticle, index) => {
           return (
-            <article key={resource.id}>
-              <NewsArticle resource={resource} key={resource.id} />
+            <article key={index}>
+              <NewsArticle oneArticle={oneArticle} index={index} />
             </article>
           );
         })}
