@@ -12,7 +12,7 @@ function NewsPage() {
     axios
       .get(`${API}/users/${id}/resources/${id}`)
       .then((res) => {
-        console.log(res.data);
+        console.log("newspage res.data:", res.data);
         setResources(res.data);
       })
       .catch((err) => {

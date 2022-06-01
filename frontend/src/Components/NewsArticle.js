@@ -1,6 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import "./News.css";
+
 function NewsArticle({ resource }) {
+  const [showResults, setShowResults] = useState(true);
+
+  const ToggleiFrame = () => {
+    setShowResults(!showResults);
+  }
+
   return (
     <article>
       <header>
@@ -9,14 +18,21 @@ function NewsArticle({ resource }) {
         </Link>
       </header>
       <section className="article-preview">
-        <br />
-        <iframe
-          id="inlineFrameExample"
-          title="Inline Frame Example"
-          width="450"
-          height="250"
-          src={resource.url}
-        ></iframe>
+        { showResults ?  
+        <div>
+            <iframe
+            id="inlineFrameExample"
+            title="Inline Frame Example"
+            width="97%"
+            height="300px"
+            src={resource.url}
+          ></iframe>
+          <br />
+          <input type="submit" value="Hide Article" onClick={ToggleiFrame} />
+        </div>
+        : 
+        <input type="submit" value="Show Article" onClick={ToggleiFrame} />
+        }
       </section>
     </article>
   );

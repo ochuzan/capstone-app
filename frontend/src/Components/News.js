@@ -14,13 +14,13 @@ function News() {
     axios
       .get(`${API}/users/${id}/resources`)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setNews(res.data);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [id]);
 
   return (
     <div className="News">
@@ -35,7 +35,7 @@ function News() {
           <option value="education">education</option>
         </select>
       </div>
-
+      
       <div className="news-container">
         {newsData.map((resource) => {
           return (
