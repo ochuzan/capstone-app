@@ -1,31 +1,39 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import "./News.css";
 
-function NewsArticle({ oneArticle , index }) {
+function NewsArticle({ resource }) {
+  const [showResults, setShowResults] = useState(true);
+
+  const ToggleiFrame = () => {
+    setShowResults(!showResults);
+  }
 
   return (
     <article>
-         <header>
-          <Link to={`/news/${index}`}><h3 className="hvr-grow">{oneArticle.name}</h3></Link>
-        </header>
-        <section className="article-preview"> 
-            <div>
-                {/* Date: {oneArticle.date} - Views: {oneArticle.views} */}
-
-            </div>
-            {/* <div>
-                <img className="news-image" src={oneArticle.photo} alt="coins for crypto" />
-            </div> */}
-            <br />
-            <iframe id="inlineFrameExample"
-              title="Inline Frame Example"
-              width="450"
-              height="250"
-              src={oneArticle.url}>
-            </iframe>
-            <br />
-            {/* <h3>Crypto News Favorite?{oneArticle.is_favorite ? "💰 YES " : "📈 NO"}</h3> */}
-        </section>
+      <header>
+        <Link to={`/users/${resource.users_id}/news/${resource.id}`}>
+          <h3 className="hvr-grow">{resource.name}</h3>
+        </Link>
+      </header>
+      <section className="article-preview">
+        { showResults ?  
+        <div>
+            <iframe
+            id="inlineFrameExample"
+            title="Inline Frame Example"
+            width="97%"
+            height="300px"
+            src={resource.url}
+          ></iframe>
+          <br />
+          <input type="submit" value="Hide Article" onClick={ToggleiFrame} />
+        </div>
+        : 
+        <input type="submit" value="Show Article" onClick={ToggleiFrame} />
+        }
+      </section>
     </article>
   );
 }

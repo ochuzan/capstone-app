@@ -40,8 +40,8 @@ function App() {
       <Routes>
         {/* <Route path="/sandbox" element={<MuiSandbox />} /> */}
         <Route path="/" element={<Home />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/news/:id" element={<NewsPage />} />
+        <Route path="users/:id/news" element={<News />} />
+        <Route path="users/:id/news/:id" element={<NewsPage />} />
         <Route path="/cryptocurrency" element={<Cryptocurrency />} />
         <Route path="/education" element={<Education/>} />
         <Route path="/articles" element={<Articles />} />

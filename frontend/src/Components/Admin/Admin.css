@@ -1,0 +1,39 @@
+/* admin */
+.admin-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#admin ul {
+    background-color: #333;
+    box-shadow: 0px 0px 5px black;
+}
+
+#admin li:nth-child(2n) {
+    background-color: #444; 
+}
+
+/* resources-and-favorites */
+
+#resources-and-favorites {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#resources-and-favorites ul {
+    background-color: #333;
+    box-shadow: 0px 0px 5px black;
+}
+
+#resources-and-favorites li:nth-child(2n) {
+    background-color: #444; 
+}
+
+#admin h3, 
+#resources-and-favorites h3 {
+    text-align: left;
+    display: inline-block;
+    padding: 5px;
+    margin: 0 auto;
+    background-color: rgb(51, 74, 242);
+}
