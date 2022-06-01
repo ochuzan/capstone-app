@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./News.css";
 import NewsArticle from "./NewsArticle";
 
-const API = process.env.REACT_APP_API_URL;
+const Resources_API = process.env.REACT_APP_API_URL;
 
 function News({getNewsData}) {
   const [newsData, setNews] = useState([])
@@ -23,7 +23,7 @@ function News({getNewsData}) {
     }, []);
 
   getNewsData(newsData)
-  
+  console.log(newsData)
   return (
     <div className="News">
       <h1>Crypto News</h1>
@@ -39,10 +39,10 @@ function News({getNewsData}) {
       </div>
       
       <div className="news-container">
-        {newsData.map((resource) => {
+        {newsData.map((oneArticle, index) => {
           return (
-            <article key={resource.id}>
-              <NewsArticle resource={resource} key={resource.id} />
+            <article key={index}>
+              <NewsArticle oneArticle={oneArticle} index={index} />
             </article>
           );
         })}
