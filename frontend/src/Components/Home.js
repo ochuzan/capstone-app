@@ -9,7 +9,7 @@ function Home() {
     <div id="chartContainer">
       <header>
         <h1 className="fade-in-image">Welcome to Crypto-Talk</h1>
-        <h4 className="fade-in">Your education portal for crypto</h4>
+        <h4 className="">Your education portal for crypto</h4>
       </header>
       <div id="chart-coins-container">
         <div id="chart-widget">
