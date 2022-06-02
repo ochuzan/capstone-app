@@ -30,6 +30,7 @@
 .article h3{
     text-align: center;
     padding: 5px;
+    transition: .66s;
 }
 .article h3:hover{
     background-color: white;

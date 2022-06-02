@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom"
 const { REACT_APP_API_DEB_BOT_KEY } = process.env
 
-
 function AlanBot(){
   const navigate = useNavigate();
   
@@ -13,14 +12,6 @@ function AlanBot(){
             onCommand: (commandData) => {
               if (commandData.command === 'go:back') {
                 // Call the client code that will react to the received command
-              }
-              if(commandData.command === 'videos'){
-                console.log(" to videos")
-                navigate('/videos')
-              }
-              if(commandData.command === 'news'){
-                console.log('to news')
-                navigate('/news')
               }
               if(commandData.command === 'articles'){
                 navigate('/articles')
@@ -36,6 +27,9 @@ function AlanBot(){
               }
               if(commandData.command === 'view-profile'){
                 navigate('/users')
+              }
+              if(commandData.command === 'articles'){
+                navigate('/articles')
               }
               if(commandData.command === 'articles/0'){
                 navigate('/articles/0')
@@ -58,8 +52,11 @@ function AlanBot(){
               if(commandData.command === 'articles/6'){
                 navigate('/articles/6')
               }
-              if(commandData.command === 'play-video'){
-                  // playVideo();
+              if(commandData.command === 'videos'){
+                navigate('/videos')
+              }
+              if(commandData.command === 'news'){
+                navigate('/news')
               }
             },
         });
