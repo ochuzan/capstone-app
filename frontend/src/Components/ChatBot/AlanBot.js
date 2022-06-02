@@ -13,9 +13,6 @@ function AlanBot(){
               if (commandData.command === 'go:back') {
                 // Call the client code that will react to the received command
               }
-              if(commandData.command === 'articles'){
-                navigate('/articles')
-              }
               if(commandData.command === 'home'){
                 navigate('/')
               }
@@ -48,9 +45,6 @@ function AlanBot(){
               }
               if(commandData.command === 'articles/5'){
                 navigate('/articles/5')
-              }
-              if(commandData.command === 'articles/6'){
-                navigate('/articles/6')
               }
               if(commandData.command === 'videos'){
                 navigate('/videos')
