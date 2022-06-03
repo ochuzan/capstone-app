@@ -7,6 +7,7 @@ body{
     margin: 0 auto;
     height: auto;
     color: whitesmoke;
+    
 }
 
 #market-container{
@@ -16,7 +17,7 @@ body{
  
 body{
     background:black;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
 #bot{

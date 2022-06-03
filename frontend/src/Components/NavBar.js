@@ -50,7 +50,7 @@ function NavBar() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              fontFamily: 'Poppins',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -91,17 +91,17 @@ function NavBar() {
             >
               <Link to="/cryptocurrency">
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Cryptocurrency</Typography>
+                  <Typography sx={{fontFamily: 'Poppins',fontWeight: 700}}textAlign="center">Cryptocurrency</Typography>
                 </MenuItem>
               </Link>
               <Link to="/articles">
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Articles</Typography>
+                  <Typography sx={{fontFamily: 'Poppins',fontWeight: 700}} textAlign="center">Articles</Typography>
                 </MenuItem>
               </Link>
               <Link to="/news">
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">News</Typography>
+                  <Typography sx={{fontFamily: 'Poppins',fontWeight: 700}} textAlign="center">News</Typography>
                 </MenuItem>
               </Link>
             </Menu>
@@ -118,7 +118,7 @@ function NavBar() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: 'Poppins',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -131,7 +131,7 @@ function NavBar() {
             <Link to="/cryptocurrency">
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none" }}
+                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none", fontFamily: 'Poppins',fontWeight: 700}}
               >
                 Cryptocurrency
               </Button>
@@ -139,7 +139,7 @@ function NavBar() {
             <Link to="/articles">
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none" }}
+                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none", fontFamily: 'Poppins',fontWeight: 700 }}
               >
                 Articles
               </Button>
@@ -147,7 +147,7 @@ function NavBar() {
             <Link to="/videos">
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none" }}
+                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none", fontFamily: 'Poppins',fontWeight: 700 }}
               >
                 Videos
               </Button>
@@ -155,7 +155,7 @@ function NavBar() {
             <Link to="/news">
               <Button
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none" }}
+                sx={{ my: 2, color: 'white', display: 'block', textDecoration: "none", fontFamily: 'Poppins',fontWeight: 700 }}
               >
                 News
               </Button>
