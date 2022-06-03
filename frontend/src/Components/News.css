@@ -1,6 +1,6 @@
 .News {
     text-align: center;
-    color: blue;
+    color: white;
 }
 
 .news-dropdown {
@@ -28,4 +28,12 @@
 }
 h2 { 
     color: aqua;
+ }
+ .hvr-grow {
+     text-align: center;
+ }
+ .hvr-grow h3{
+    background-color: white;
+    color: #4366F5;
+    padding: 5px;
  }
