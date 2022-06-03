@@ -49,11 +49,26 @@ function AlanBot(){
               if(commandData.command === 'articles/5'){
                 navigate('/articles/5')
               }
-              if(commandData.command === 'articles/6'){
-                navigate('/articles/6')
-              }
               if(commandData.command === 'videos'){
                 navigate('/videos')
+              }
+              if(commandData.command === 'videos/0'){
+                navigate('/videos/0')
+              }
+              if(commandData.command === 'videos/1'){
+                navigate('/videos/1')
+              }
+              if(commandData.command === 'videos/2'){
+                navigate('/videos/2')
+              }
+              if(commandData.command === 'videos/3'){
+                navigate('/videos/3')
+              }
+              if(commandData.command === 'videos/4'){
+                navigate('/videos/4')
+              }
+              if(commandData.command === 'videos/5'){
+                navigate('/videos/5')
               }
               if(commandData.command === 'news'){
                 navigate('/news')
