@@ -4,13 +4,13 @@ CREATE DATABASE crypto_users;
 \c crypto_users;
 
 CREATE TABLE users(
-    id SERIAL PRIMARY KEY,
-    firstname TEXT,
-    lastname TEXT,
-    username TEXT UNIQUE NOT NULL,
-    password TEXT,
-    contact_email TEXT,
-    active BOOLEAN
+  id SERIAL PRIMARY KEY,
+  firstname TEXT,
+  lastname TEXT,
+  username TEXT UNIQUE NOT NULL,
+  password TEXT,
+  contact_email TEXT,
+  active BOOLEAN
 );
 
 DROP TABLE IF EXISTS resources;
@@ -21,9 +21,7 @@ CREATE TABLE resources(
     type TEXT,
     category TEXT,
     url VARCHAR(2048) UNIQUE,
-    is_favorite BOOLEAN,
-    users_id INTEGER REFERENCES users(id)
-    ON DELETE CASCADE
+    is_favorite BOOLEAN
 );
 
 DROP TABLE IF EXISTS favorites;

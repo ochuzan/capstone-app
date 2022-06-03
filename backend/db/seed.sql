@@ -13,63 +13,121 @@ INSERT INTO users(firstname, lastname, username, password, contact_email, active
 ('Sam', 'Caffeinated', 'g00dCoffee','goodCoffe3','garbagecoffee@coffee.com', true),
 ('Cody', 'Coder', 'coderHero','codecode4','cody@coding.com', true);
 
-INSERT INTO resources(name, type, category, url, is_favorite, users_id) VALUES
+INSERT INTO resources(name, type, category, url, is_favorite) VALUES
 (
-    'Ethereum News', 'article', 'education', 
-    'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-back-below-2000-as-btc-down-6-to-start-weekend/', 
-    true, 1
+    'Dodgecoin Jumps On Elon Musk Space X Tweet', 'article', 'news', 
+    'https://www.coindesk.com/business/2022/05/27/dogecoin-jumps-on-elon-musk-space-x-tweet/', 
+    true
 ),
 (
-    'Bitcoin News', 'article', 'news', 
-    'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-btc-surge-over-10-as-big-2-lead-crypto-rebound/', 
-    true, 1
+    'Crypto City Guide To New York', 'article', 'news', 
+    'https://cointelegraph.com/magazine/2021/10/28/crypto-city-guide-to-new-york', 
+    true
 ),
 (
-    'Crypto Wallet', 'article', 'education', 
-    'https://news.bitcoin.com/rich-dad-poor-dads-robert-kiyosaki-plans-to-buy-bitcoin-when-the-bottom-is-in-17k/', 
-    false, 2
+    'Crypto Is Changing How Humanitarian Agencies Deliver Aid', 'article', 'news', 
+    'https://cointelegraph.com/magazine/2022/05/25/crypto-blockchain-changing-humanitarian-agencies-deliver-aid', 
+    true
 ),
 (
-    'Bitcoin, Ethereum Technical Analysis', 'article', 'education', 
-    'https://bitcoinmagazine.com/culture/what-makes-bitcoin-different-from-crypto', 
-    true, 2
+    'How Can The U.S. Establish Itself As a Crypto Leader?', 'article', 'news', 
+    'https://www.coindesk.com/layer2/2022/05/27/how-the-us-can-establish-itself-as-a-crypto-leader/', 
+    true
 ),
 (
-    'Pursuit Announces Crypto for Fellows', 'article', 'news', 
-    'https://news.bitcoin.com/coinbase-now-allows-cardano-staking-services-firm-plans-to-continue-to-scale-staking-portfolio/', 
-    false, 3
+    'How To Keep Your Crypto Safe', 'article', 'news', 
+    'https://cointelegraph.com/magazine/2022/01/25/security-experts-reveal-how-keep-crypto-safe', 
+    true
 ),
-('Crypto for Retirement', 'article', 'education', 
-    'https://news.bitcoin.com/tesla-ceo-elon-musk-reaffirms-dogecoin-has-potential-as-a-currency-as-twitter-deal-is-put-on-hold/', 
-    false, 4),
-('Teachers Donating Crypto', 'article', 'news', 
-    'https://news.bitcoin.com/cardano-to-reach-58-by-2030-according-to-finders-poll/', 
-    false, 5),
-('Pursuit Now Accepting Crypto', 'article', 'education',
-    'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-bounces-back-up-2-while-btc-climbs-above-30000/', 
-    true, 6),
-('Bitcoin Market Crash', 'article', 'news', 
-    'https://news.bitcoin.com/top-diamond-producer-de-beers-deploys-blockchain-based-platform-at-scale/', 
-    true, 7),
-('Crypto Platform Hack Rocks Blockchain Community', 'article', 'education', 
-    'https://www.bloomberg.com/news/features/2022-05-19/crypto-platform-hack-rocks-blockchain-community', 
-    true, 8),
-('Crypto-loving S.Koreans bet on Luna rising from ashes, worrying regulator', 'article', 'news', 
-    'https://www.reuters.com/markets/currencies/crypto-loving-skoreans-bet-luna-rising-ashes-worrying-regulator-2022-05-19/', 
-    true, 9),
-('Crypto Accelerator Program in Kenya', 'article', 'education', 
-    'https://news.bitcoin.com/lbank-and-adanian-labs-kickstarts-a-crypto-accelerator-program-in-kenya/', 
-    true, 10);
+(   
+    'Inflationary & Deflationary Cryptocurrencies', 'article', 'news', 
+    'https://www.coindesk.com/learn/inflationary-and-deflationary-cryptocurrencies-whats-the-difference/', 
+    true
+),
+(   
+    'Stripe Partners With Opennnode To Allow Instant Bitcoin Conversions for Businesses', 'article', 'news', 
+    'https://www.coindesk.com/business/2022/05/24/stripe-partners-with-opennode-to-allow-instant-fiat-to-bitcoin-conversions-for-businesses/', 
+    true
+),
+(   
+    '6 Crypto Myths Debunked', 'article', 'news',
+    'https://www.gobankingrates.com/investing/crypto/crypto-myths-debunked/', 
+    true
+),
+(   
+    'How To Use Crypto For Buy Now Pay Later Transactions', 'article', 'news', 
+    'https://www.gobankingrates.com/investing/crypto/how-use-crypto-buy-now-pay-later-transactions/', 
+    true
+),
+(   
+    'What is Bitcoin?', 'article', 'education-article', 
+    'https://www.bitcoin.com/get-started/what-is-bitcoin/', 
+    true
+),
+(   
+    'How to Buy Bitcoin', 'article', 'education-article', 
+    'https://www.bitcoin.com/get-started/how-to-buy-bitcoin/', 
+    true
+),
+(   
+    'How to Sell Bitcoin', 'article', 'education-article', 
+    'https://www.bitcoin.com/get-started/how-to-sell-bitcoin/', 
+    true
+),
+(   
+    'What is a Bitcoin Wallet?', 'article', 'education-article', 
+    'https://www.bitcoin.com/get-started/what-is-a-bitcoin-wallet/', 
+    true
+),
+(   
+    'What is Ethereum?', 'article', 'education-article', 
+    'https://www.bitcoin.com/get-started/what-is-ethereum/', 
+    true
+),
+(   
+    'What is Ethereum Used For?', 'article', 'education-article', 
+    'https://www.bitcoin.com/get-started/what-is-eth-used-for/', 
+    true
+),
+(   
+    'What is Bitcoin? Bitcoin Explained Simply', 'video', 'education', 
+    'https://www.youtube.com/embed/41JCpzvnn_0', 
+    true
+),
+(   
+    'Bitcoin Cryptocurrency For Beginners 2022', 'video', 'education', 
+    'https://www.youtube.com/embed/WO-O2K_Fqw0', 
+    true
+),
+(   
+    'How does a blockchain work - Simply Explained', 'video', 'education', 
+    'https://www.youtube.com/embed/SSo_EIwHSd4', 
+    true
+),
+(   
+    'Cryptocurrency In 5 Minutes | Cryptocurrency Explained', 'video', 'education', 
+    'https://www.youtube.com/embed/1YyAzVmP9xQ', 
+    true
+),
+(   
+    'How Cryptocurrency ACTUALLY works', 'video', 'education', 
+    'https://www.youtube.com/embed/rYQgy8QDEBI', 
+    true
+),
+(   
+    'Cryptocurrency For Beginners Full Course', 'video', 'education', 
+    'https://www.youtube.com/embed/dgjZ2fHg4y4', 
+    true
+);
 
--- adding `favorited_date` so we can see the differences in our tables/data
 INSERT INTO favorites(favorited_date, resources_id, users_id, resources_name, resources_url) VALUES
-('10/22/2017 10:00', 1, 2, 'Ethereum News','https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-back-below-2000-as-btc-down-6-to-start-weekend/'),
-('09/24/2019 10:15', 2, 1, 'Bitcoin News', 'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-btc-surge-over-10-as-big-2-lead-crypto-rebound/'),
-('07/18/2018 12:00', 3, 4, 'Crypto Wallet', 'https://news.bitcoin.com/rich-dad-poor-dads-robert-kiyosaki-plans-to-buy-bitcoin-when-the-bottom-is-in-17k/'),
-('11/21/2021 09:45', 4, 3, 'Bitcoin, Ethereum Technical Analysis','https://bitcoinmagazine.com/culture/what-makes-bitcoin-different-from-crypto'),
-('02/13/2021 14:00', 5, 6, 'Pursuit Announces Crypto for Fellows','https://news.bitcoin.com/coinbase-now-allows-cardano-staking-services-firm-plans-to-continue-to-scale-staking-portfolio/'),
-('03/02/2017 09:30', 6, 1, 'Crypto for Retirement','https://news.bitcoin.com/lbank-and-adanian-labs-kickstarts-a-crypto-accelerator-program-in-kenya/' ),
-('04/22/2016 14:00', 7, 4, 'Teachers Donating Crypto', 'https://news.bitcoin.com/cardano-to-reach-58-by-2030-according-to-finders-poll/'),
-('05/19/2016 18:00', 8, 1, 'Pursuit Now Accepting Crypto', 'https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-bounces-back-up-2-while-btc-climbs-above-30000/'),
-('06/25/2014 20:15', 9, 2, 'Bitcoin News','https://news.bitcoin.com/bitcoin-ethereum-technical-analysis-eth-btc-surge-over-10-as-big-2-lead-crypto-rebound/'),
-('01/11/2022 09:00', 10, 5, 'Crypto Accelerator Program in Kenya','https://news.bitcoin.com/lbank-and-adanian-labs-kickstarts-a-crypto-accelerator-program-in-kenya/' );
+('10/22/2017 10:00', 1, 2, 'Dodgecoin Jumps On Elon Musk Space X Tweet','https://www.coindesk.com/business/2022/05/27/dogecoin-jumps-on-elon-musk-space-x-tweet/'),
+('09/24/2019 10:15', 2, 1, 'Crypto City Guide To New York', 'https://cointelegraph.com/magazine/2021/10/28/crypto-city-guide-to-new-york'),
+('07/18/2018 12:00', 3, 4, 'Crypto Is Changing How Humanitarian Agencies Deliver Aid', 'https://cointelegraph.com/magazine/2022/05/25/crypto-blockchain-changing-humanitarian-agencies-deliver-aid'),
+('11/21/2021 09:45', 4, 3, 'How Can The U.S. Establish Itself As a Crypto Leader?','https://www.coindesk.com/layer2/2022/05/27/how-the-us-can-establish-itself-as-a-crypto-leader/'),
+('02/13/2021 14:00', 5, 6, 'How To Keep Your Crypto Safe','https://cointelegraph.com/magazine/2022/01/25/security-experts-reveal-how-keep-crypto-safe'),
+('03/02/2017 09:30', 13, 1, 'What is a Bitcoin Wallet?','https://www.bitcoin.com/get-started/what-is-a-bitcoin-wallet/' ),
+('04/22/2016 14:00', 17, 4, 'Bitcoin Cryptocurrency For Beginners 2022', 'https://www.youtube.com/embed/WO-O2K_Fqw0'),
+('05/19/2016 18:00', 16, 1, 'What is Bitcoin? Bitcoin Explained Simply', 'https://www.youtube.com/embed/41JCpzvnn_0'),
+('06/25/2014 20:15', 21, 2, 'Cryptocurrency For Beginners Full Course','https://www.youtube.com/embed/dgjZ2fHg4y4'),
+('01/11/2022 09:00', 10, 5, 'What is Bitcoin?','https://www.bitcoin.com/get-started/what-is-bitcoin/' );
