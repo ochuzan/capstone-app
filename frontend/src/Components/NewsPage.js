@@ -28,7 +28,6 @@ function NewsPage({newsData}){
                 </div>
             </article>
         </div>
-     
   );
 }
 

@@ -4,19 +4,21 @@
     gap: 5px;
     margin: 0 auto; 
 }
-.vid-container{
+/* .vid-container{
     display: grid;
     justify-content: center;
     padding: 20px;
     /* overflow:visible; */
 
-}
+
 .Videos{
     text-align: center;
     
 }
 .vid h3{
     text-align: center;
+    padding: 5px;
+    transition: .66;
 }
 ul{
     padding: 0px 20px;
@@ -34,6 +36,7 @@ ul{
 .links h3{
     text-transform: uppercase;
     letter-spacing: 5px;
+    transition: .66;
 }
 .links h3:hover {
     /* background-color: #4366F5; */
